@@ -12,27 +12,39 @@ body {
 }
 
 .navigation {
-  @extend .vertical-center;
-  z-index: 32;
+  // TODO: make this desktop only
+  @media screen and (min-width: 401px) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 32;
+  }
 }
 
 .navigation-wrap {
-  padding-bottom: 0px;
-  height: 84px;
+  // TODO: make this desktop only.
+  @media screen and (min-width: 401px) {
+    padding-bottom: 0px;
+    height: 84px;
+  }
 }
 
 .nav-menu {
   margin-left: 0px;
 }
 
+// hidden on desktop (includes account/cart buttons)
 .main-header {
-  // (1/2) take these out to show mobile nav
-  display: none;
+  @media screen and (min-width: 401px) {
+    display: none;
+  }
 }
 
+// hidden on desktop
 .navigation-tier {
-  // (2/2)
-  display: none;
+  @media screen and (min-width: 401px) {
+    display: none;
+  }
 }
 
 .nav-main-options {
@@ -40,6 +52,10 @@ body {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  @media screen and (max-width: 400px) {
+    // hide on mobile
+    display: none;
+  }
 }
 
 .nav-option {
@@ -189,7 +205,7 @@ body {
   border: none;
   outline: none;
   z-index: 1;
-  padding: 24px;
+  padding: 36px;
 }
 
 .navigation-search-submit {
@@ -212,4 +228,51 @@ body {
 
 .page-banner-inner:last-of-type {
   border-bottom: 1px solid #2B7FA0;
+}
+
+// mobile navigation overrides
+.nav-menu-item {
+  position: relative;
+  >a {
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-top: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-bottom: none;
+    border-top: none;
+  }
+}
+
+.nav-menu-item.menu-open > a {
+  border-bottom: none;
+  border-top: none;
+  margin-bottom: 0px;
+  background: rgba(255, 0, 0, 0.15);
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+.nav-menu-item::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  height: 1px;
+  background: rgba(55,51,61,0.06);
+}
+
+.nav-submenu-item>a {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 0px;
+  margin-right: 24px;
+  margin-left: 24px;
 }
