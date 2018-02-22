@@ -1,0 +1,591 @@
+<script>
+
+	(function(a){function d(e){0<e.pageY||(b&&clearTimeout(b),0>=a.exitIntent.settings.sensitivity?a.event.trigger("exitintent"):b=setTimeout(function(){b=null;a.event.trigger("exitintent")},a.exitIntent.settings.sensitivity))}function c(){b&&(clearTimeout(b),b=null)}var b;a.exitIntent=function(b,f){a.exitIntent.settings=a.extend(a.exitIntent.settings,f);if("enable"==b)a(window).mouseleave(d),a(window).mouseenter(c);else if("disable"==b)c(),a(window).unbind("mouseleave",d),a(window).unbind("mouseenter",
+c);else throw"Invalid parameter to jQuery.exitIntent -- should be 'enable'/'disable'";};a.exitIntent.settings={sensitivity:300}})(jQuery);
+
+window.Custom || (window.Custom = {});
+
+Custom.init = function() {
+	var core_client = new Custom.CoreClient();
+	core_client.footer();
+	core_client.extra_tabs();
+	core_client.category_menu();
+	core_client.inject_form();
+	core_client.interactive();
+	console.log('custom script init');
+};
+
+//== Import JS Cookie ==//
+/*!
+ * JavaScript Cookie v2.1.3
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader = false;
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+		registeredInModuleLoader = true;
+	}
+	if (typeof exports === 'object') {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function init (converter) {
+		function api (key, value, attributes) {
+			var result;
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			// Write
+
+			if (arguments.length > 1) {
+				attributes = extend({
+					path: '/'
+				}, api.defaults, attributes);
+
+				if (typeof attributes.expires === 'number') {
+					var expires = new Date();
+					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+					attributes.expires = expires;
+				}
+
+				// We're using "expires" because "max-age" is not supported by IE
+				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+				try {
+					result = JSON.stringify(value);
+					if (/^[\{\[]/.test(result)) {
+						value = result;
+					}
+				} catch (e) {}
+
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
+
+				key = encodeURIComponent(String(key));
+				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+				key = key.replace(/[\(\)]/g, escape);
+
+				var stringifiedAttributes = '';
+
+				for (var attributeName in attributes) {
+					if (!attributes[attributeName]) {
+						continue;
+					}
+					stringifiedAttributes += '; ' + attributeName;
+					if (attributes[attributeName] === true) {
+						continue;
+					}
+					stringifiedAttributes += '=' + attributes[attributeName];
+				}
+				return (document.cookie = key + '=' + value + stringifiedAttributes);
+			}
+
+			// Read
+
+			if (!key) {
+				result = {};
+			}
+
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all. Also prevents odd result when
+			// calling "get()"
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var rdecode = /(%[0-9A-Z]{2})+/g;
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = parts[0].replace(rdecode, decodeURIComponent);
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+					if (this.json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					if (key === name) {
+						result = cookie;
+						break;
+					}
+
+					if (!key) {
+						result[name] = cookie;
+					}
+				} catch (e) {}
+			}
+
+			return result;
+		}
+
+		api.set = api;
+		api.get = function (key) {
+			return api.call(api, key);
+		};
+		api.getJSON = function () {
+			return api.apply({
+				json: true
+			}, [].slice.call(arguments));
+		};
+		api.defaults = {};
+
+		api.remove = function (key, attributes) {
+			api(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
+
+$(document).ready(function() {
+	Custom.init();
+
+//== Banner Text ==//
+var homeBannerText1 = $('#home-banner-text-1');
+var homeBannerText2 = $('#home-banner-text-2');
+
+function changeHomeBannerText() {
+	setInterval(function(){
+		homeBannerText1.fadeToggle();
+		homeBannerText2.fadeToggle();
+	}, 3000);
+};
+
+changeHomeBannerText();
+
+//== Subscribe Popup ==//
+
+var subscribePopupClose = $('#close-subscribe-popup, #close-image');
+var subscribePopup = $('#subscribe-popup');
+var popupImage = $('#subscribe-popup img');
+
+if (Cookies.get('subscribe-popup') !== 'value9') {
+	subscribePopup.css({
+		'display':'flex'
+	});
+}
+
+subscribePopupClose.click(function(){
+	Cookies.set('subscribe-popup', 'value9', { expires: 7 });
+	subscribePopup.hide();
+});
+
+popupImage .click(function(){
+	Cookies.set('subscribe-popup', 'value9', { expires: 7 });
+});
+
+//== Body Class ==//
+var url = window.location.href;
+var bodyClass = url.replace('http://www.osmotics.com', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '');
+
+$('body').addClass(bodyClass);
+
+$('body.3-in-1-ageless-facial-enhancer-1').removeClass('3-in-1-ageless-facial-enhancer-1').addClass('three-in-1-ageless-facial-enhancer-1');
+$('body.4-step-systemstep-1-cleanse').removeClass('4-step-systemstep-1-cleanse').addClass('four-step-systemstep-1-cleanse');
+$('body.4-step-systemstep-2-correct').removeClass('4-step-systemstep-2-correct').addClass('four-step-systemstep-2-correct');
+$('body.4-step-systemstep-3-defend').removeClass('4-step-systemstep-3-defend').addClass('four-step-systemstep-3-defend');
+$('body.4-step-systemstep-4-protect').removeClass('4-step-systemstep-4-protect').addClass('four-step-systemstep-4-protect');
+$('body.4-step-collections').removeClass('4-step-collections').addClass('four-step-collections');
+
+var singlePressLogo = $('.flex-row.press .logo-box.hasSlider');
+
+function getPressLogoImageSize() {
+	var pressLogo = $('.flex-row.press .logo-box');
+	var pressImageWidth = pressLogo.width();
+	pressLogo.css({'height': pressImageWidth});
+}
+
+getPressLogoImageSize();
+
+$(window).resize(function() {
+	getPressLogoImageSize();
+});
+
+function constructSlider() {
+	$('.press-slider').unslider({
+		speed: 500,
+		delay: 5000,
+		autoplay: false,
+		dots:true,
+		keys: true,
+	});
+
+	$('.close-slider').click(function(){
+		$('.slider-overlay').remove();
+	});
+
+	$('.unslider-arrow.next').text('').append('<i class="fa fa-angle-right"></i>');
+	$('.unslider-arrow.prev').text('').append('<i class="fa fa-angle-left"></i>');
+}
+
+var altMedImages = [
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/alternativemedicine1.jpg?t=1489943064'},
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/alternativemedicine2.jpg?t=1489943065'}
+];
+
+var americanSpaImages = [
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/americanspa1.jpg?t=1489943438'},
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/americanspa2.jpg?t=1489943439'}
+];
+
+var bisousImages = [
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/bisous1.jpg?t=1489944300'},
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/bisous2.jpg?t=1489944301'},
+	{image: 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/bisous3.jpg?t=1489944302'}
+];
+
+var carolinaImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/carolinawoman1.jpg?t=1489944409'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/carolinawoman2.jpg?t=1489944410'}
+];
+
+var composureImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/composure1.jpg?t=1489947699'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/composure2.jpg?t=1489944588'}
+];
+
+var denverLifeImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/denverlife1.jpg?t=1489944814'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/denverlife2.jpg?t=1489944815'}
+];
+
+var eliteImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/elitefall2016-1.jpg?t=1489945018'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/elitefall2016-2.jpg?t=1489945019'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/elitesummer2016-1.jpg?t=1489945020'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/elitesummer2016-2.jpg?t=1489945021'}
+];
+
+var essenceImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/essence1.jpg?t=14899451778'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/essence2.jpg?t=1489945178'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/essence3.jpg?t=1489945179'}
+];
+
+var oMagImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/omagazine1.jpg?t=1489945312'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/omagazine2.jpg?t=1489945315'}
+];
+
+var residentImages = [
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentseptember-1.jpg?t=1489945538'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentseptember-2.jpg?t=1489945539'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentseptember-3.jpg?t=1489945540'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentaugust-1.jpg?t=1489945541'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentaugust-2.jpg?t=1489947699'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentjuly-1.jpg?t=1489945543'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentjuly-2.jpg?t=1489945544'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentjuly-3.jpg?t=1489945545'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentnov-1.jpg?t=1489945547'},
+	{'image': 'https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/residentnov-2.jpg?t=1489945548'}
+];
+
+function buildPressSlider(logoName, sliderImages) {
+	var sliderID = logoName.replace('-logo', '') + '-slider';
+	var pressName = logoName.replace('-', ' ').replace('-logo').replace('-', ' ');
+
+	$('body').append('<div class="slider-overlay"></div>')
+	$('.slider-overlay').append('<div class="inner-popup"><p class="close-slider">Close</p><h2>' + pressName + '</h2><div class="press-slider"><ul></ul></div></div>');
+
+	for (var i = 0; i < sliderImages.length; i++) {
+		$('.press-slider ul').append('<li><img src="' + sliderImages[i].image + '"/></li>');
+	}
+
+	constructSlider();
+}
+
+singlePressLogo.click(function(){
+	var thisLogo = $(this).attr('id');
+	var theseImages = [];
+
+	if (thisLogo == 'alternative-medicine-magazine') {
+		theseImages = altMedImages;
+	} else if (thisLogo == 'american-spa-magazine') {
+		theseImages = americanSpaImages;
+	} else if (thisLogo == 'bisous-magazine') {
+		theseImages = bisousImages;
+	} else if (thisLogo == 'carolina-woman-magazine') {
+		theseImages = carolinaImages;
+	} else if (thisLogo == 'composure-magazine') {
+		theseImages = composureImages;
+	} else if (thisLogo == 'denver-life-magazine') {
+		theseImages = denverLifeImages;
+	} else if (thisLogo == 'elite-magazine') {
+		theseImages = eliteImages;
+	} else if (thisLogo == 'essence-magazine') {
+		theseImages = essenceImages;
+	} else if (thisLogo == 'the-oprah-magazine') {
+		theseImages = oMagImages;
+	} else if (thisLogo == 'resident-magazine') {
+		theseImages = residentImages;
+	}
+	buildPressSlider(thisLogo, theseImages);
+});
+
+var formCheckbox = $('form .input-container.checkbox i');
+var enterButton = $('.contest form #mc-embedded-subscribe');
+var contestFormInputs = $('.contest #mc_embed_signup form input, .contest #mc_embed_signup form select');
+var fakeButton = $('.contest form .fake-button');
+
+$('form .input-container.checkbox p').each(function(){
+	$(this).parent().prepend('<i class="fa fa-square-o"></i>');
+});
+
+$('#mce-NAME').attr('placeholder', 'Name');
+$('#mce-EMAIL').attr('placeholder', 'Email');
+$('#mce-BIRTHDAY').attr('placeholder', 'Birthday');
+$('#mce-QUESTION').attr('placeholder', 'Solve the following math question: (3 x 20) + (20 + 5) - 2 = ?');
+
+//== Hide Title ==//
+$('.contest').parent().parent().parent().children('.page-header').hide();
+
+var checkboxCounter = 0;
+
+$('form .input-container.checkbox i').click(function(){
+	$(this).toggleClass('fa-square-o').toggleClass('fa-check-square-o');
+	if ($(this).hasClass('fa-check-square-o')) {
+		checkboxCounter = checkboxCounter + 1;
+	} else {
+		checkboxCounter = checkboxCounter - 1;
+	}
+});
+
+var formError = false;
+function validateContestForm() {
+	if (checkboxCounter == 2) {
+		formError = false;
+	} else {
+		formError = true;
+		return false;
+	}
+	contestFormInputs.each(function(){
+		if ($(this).val() == undefined || $(this).val() == '') {
+			formError = true;
+			$(this).addClass('hasError');
+			console.log($(this).val());
+			console.log($(this).attr('class'));
+		}
+	});
+	if (formError) {
+		enterButton.attr('disabled', true);
+	} else {
+		enterButton.attr('disabled', false);
+	}
+}
+
+contestFormInputs.click(function(){
+	$(this).removeClass('hasError');
+});
+
+fakeButton.click(function(e){
+	e.preventDefault();
+	validateContestForm();
+	if (formError) {
+		alert('Form has errors');
+	}
+	else {
+		enterButton.click();
+	}
+});
+
+var termsAndConditions = $('.terms-and-conditions');
+var openTOC = $('#open-toc');
+var closeTOC = $('#close-toc');
+
+openTOC.click(function(){
+	termsAndConditions.addClass('visible');
+});
+
+closeTOC.click(function(){
+	termsAndConditions.removeClass('visible');
+});
+
+
+if (url == 'http://www.osmotics.com/blue-copper-5/') {
+	$('.main-content').append('<div class="product-grid-container footer-opt-in"><p>Love Blue Copper 5? Enter your email below to receive 20% off your first purchase plus exclusive promotions and news on Blue Copper 5 and Osmotics products!</p><div class="mailchimp-container"><div id="mc_embed_signup"><form action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email"><a href="#" class="button teal" id="fake-footer-button">Sign-Up Now (Free)</a><input type="submit" value="Sign-Up Now (Free)" name="subscribe" id="mc-embedded-subscribe" class="button" disabled="true" style="display:none;"></div></form></div></div></div>');
+} else if (url == 'http://www.osmotics.com/bestsellers/') {
+		$('.main-content').append('<div class="product-grid-container footer-opt-in"><p>Don’t miss exclusive promotions on our bestsellers! Enter your email for 20% off your first purchase. </p><div class="mailchimp-container"><div id="mc_embed_signup"><form action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email"><a href="#" class="button teal" id="fake-footer-button">Sign-Up Now (Free)</a><input type="submit" value="Sign-Up Now (Free)" name="subscribe" id="mc-embedded-subscribe" class="button" disabled="true" style="display:none;"></div></form></div></div></div>');
+} else if (url == 'http://www.osmotics.com/eye-care/') {
+		$('.main-content').append('<div class="product-grid-container footer-opt-in"><p>Enter your email to receive 20% off your favorite eye product.</p><div class="mailchimp-container"><div id="mc_embed_signup"><form action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email"><a href="#" class="button teal" id="fake-footer-button">Sign-Up Now (Free)</a><input type="submit" value="Sign-Up Now (Free)" name="subscribe" id="mc-embedded-subscribe" class="button" disabled="true" style="display:none;"></div></form></div></div></div>');
+} else if (url == 'http://www.osmotics.com/value-sets/') {
+		$('.main-content').append('<div class="product-grid-container footer-opt-in"><p>Enter your email to receive 20% off any value set (one per customer)!</p><div class="mailchimp-container"><div id="mc_embed_signup"><form action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email"><a href="#" class="button teal" id="fake-footer-button">Sign-Up Now (Free)</a><input type="submit" value="Sign-Up Now (Free)" name="subscribe" id="mc-embedded-subscribe" class="button" disabled="true" style="display:none;"></div></form></div></div></div>');
+}
+
+if (url == 'http://www.osmotics.com/sun-damage/') {
+	$('.category-details-wrap').hide();
+	$('.category-details').append('<div class="top-page-header sun-damage"><div class="quote-image"><img src="https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/francinequote-2.png"></div><div class="text"><p>Although many of us feel our skin appears healthier when it has a glow from the sun, it actually has a long term aging effect and makes us appear older than we are. Osmotics anti-aging skincare addresses the damage caused by sun exposure to reduce the appearance of fine lines, wrinkles and sun damage for an even skin tone and visibly brighter, smoother looking skin</p></div><div class="header-product"><img src="https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/sunscreenbottle-2.png"></div></div>');
+}
+
+if (url == 'http://www.osmotics.com/hair/' || url == 'http://www.osmotics.com/hair' || url == 'https://www.osmotics.com/hair/' || url == 'https://www.osmotics.com/hair') {
+	$('.category-details-wrap').hide();
+	$('.category-details').append('<div class="top-page-header eye-care"><img src="https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/hair-header.jpg"/><h1 style="display:none;">Hair</h1><p style="display:none;">Restore hair to its youthful glory with copper peptides. Osmotics Blue Copper 5 PRIME for Hair 3-Step Solution combines the anti-aging benefits of copper peptides with new breakthrough  botanical technologies to nourish and hydrate the scalp, while helping to prevent damage, breakage and visible hair loss. The result? Healthier, thicker looking, more beautiful hair. </p></div>');
+}
+
+var footerFormError = false;
+var fakeFooterButton = $('#fake-footer-button');
+var subFooterButton = $('#mc-embedded-subscribe');
+var subFooterInput = $('#mce-EMAIL');
+
+function validateFooterForm() {
+	subFooterInput.each(function(){
+		if ($(this).val() == undefined || $(this).val() == '') {
+			footerFormError = true;
+			$(this).addClass('hasError');
+		}
+	});
+	if (footerFormError) {
+		subFooterButton.attr('disabled', true);
+	} else {
+		subFooterButton.attr('disabled', false);
+	}
+}
+
+subFooterInput.click(function(){
+	$(this).removeClass('hasError');
+});
+
+fakeFooterButton.click(function(e){
+	e.preventDefault();
+	validateFooterForm();
+	if (footerFormError) {
+		alert('Form has errors');
+	}
+	else {
+		subFooterButton.click();
+	}
+});
+
+$('.product-grid-list').attr('id', 'scroll-here');
+
+$('.face-holder .face-check').click(function(){
+	$('body, html').animate({
+		scrollTop: $('#scroll-here').offset().top-0
+	}, 750);
+});
+
+$('html').attr('lang', 'en');
+
+if (window.location.href != 'http://www.osmotics.com/blog' && window.location.href != 'https://www.osmotics.com/blog' && window.location.href != 'http://osmotics.com/blog' && window.location.href != 'https://osmotics.com/blog') {
+  $('.template-blog_post article.blog-post').append('<div id="disqus_thread"></div>');
+  var blogThumbnail = $('.blog-post-content .rte p').first().addClass('blog-thumbnail');
+  blogThumbnail.remove().clone().prependTo('article.blog-post');
+}
+
+if (window.location.href == 'https://www.osmotics.com/blog/five-simple-ways-to-take-off-ten-years/' || window.location.href == 'http://osmotics.com/blog/five-simple-ways-to-take-off-ten-years/' || window.location.href == 'https://osmotics.com/blog/five-simple-ways-to-take-off-ten-years/' || window.location.href == 'http://www.osmotics.com/blog/five-simple-ways-to-take-off-ten-years/') {
+  console.log('found');
+  $('.blog-thumbnail').after('<a href="http://www.osmotics.com/age-prevention-sheer-facial-tint-spf-45/" target="_blank" style="margin-bottom:30px;display:block;"><strong>Age Prevention Sheer Facial Tint SPF 45</strong></a>');
+}
+
+$('.blog-post-content.summary').each(function(){
+  var Blog__Link = $(this).parent().children('.blog-post-title').children('a').attr('href');
+  var Blog__ReadMore = '<a class="read__more" href="' + Blog__Link + '">Read More <i class="fa fa-angle-right"></i><a/>';
+  $(this).children('p').last().after(Blog__ReadMore);
+});
+
+
+// if ($('h1').text() == 'Targeted Solutions') {
+//   $('.product-grid-list .product-grid-item').each(function(){
+//     var thisTitle = $(this).children('.product-grid-item-details').children('h3').children('a').text();
+//     var thisButton = $(this).children('.product-grid-item-thumbnail').children('.quick-shop-trigger');
+//     console.log(thisTitle);
+//     if (thisTitle.indexOf('Nécolleté Age Reversal for Neck and Chest') >= 0) {
+//       thisButton.text('Dark Lines');
+//     } else {
+//       return false;
+//     }
+//   });
+// }
+
+ $.exitIntent('enable');
+
+ $(document).bind('exitintent',
+		function() {
+				console.log('Oops... trying to leave the page');
+		});
+
+
+
+
+		// VPV
+		//
+
+
+		$('.nav-option').click(function() {
+
+			$('.navigation-dropdown').addClass('navigation-dropdown-open')
+
+			$('.nav-option').removeClass('nav-option-open')
+			$(this).addClass('nav-option-open')
+
+			var getNext = function(selector, total) {
+				total = total || 0
+				total += $(selector).innerWidth() + 24
+
+				if($(selector).next('.nav-option')[0]) {
+					return getNext($(selector).next('.nav-option')[0], total)
+				} else {
+					return total + 5.15
+				}
+			}
+
+			var extraSpace = (($(this).width() / 2) - 18)
+
+			$('.nav-border-left').width((window.innerWidth - getNext(this)) + extraSpace)
+			$('.nav-border-right').width((getNext(this) - ($(this).innerWidth())) + (extraSpace + 0.35))
+		})
+
+
+		//
+		// end VPV
+
+
+
+//== End Document Ready ==//
+});
+
+</script>
