@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9 lt-ie10"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <script>console.log('VPV 2018')</script>
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h6yVue3wuHmZWZHO0Nweuybm-Wh01l9mwSxP9xYUKKM" />
+  {{{head.meta_tags}}}
+
+  <title>{{head.title}}</title>
+
+  {{{head.config}}}
+
+  <link href="{{head.favicon}}" rel="shortcut icon">
+
+  <style type="text/css">
+    @font-face {
+      font-family: "form-icons";
+      src: url({{cdn "assets/fonts/form-icons.eot"}});
+      src: url({{cdn "assets/fonts/form-icons.woff"}}) format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  {{{stylesheet '/assets/css/theme.css'}}}
+  {{{stylesheet '/assets/css/header.css'}}}
+
+  {{getFontsCollection}}
+
+  {{{head.scripts}}}
+  {{{head.rsslinks}}}
+
+  {{> components/common/theme-object}}
+  {{> components/global-injects}}
+  {{{snippet 'html_head'}}}
+
+  {{> core/structured-data/website}}
+</head>
+
+<body class="{{> components/body-classes}} mobile-nav-closed" data-currency-token="{{settings.money.currency_token}}" data-currency-location="{{settings.money.currency_location}}">
+
+  {{#if page_type '===' 'product'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog_post'}}
+    {{> components/common/facebook-like}}
+  {{/if}}
+
+  {{#if theme_settings.show_quick_shop}}
+    <div class="quick-shop-wrapper" data-quick-shop-wrapper>
+      <div class="quick-shop" data-quick-shop></div>
+      {{> components/common/spinner}}
+    </div>
+  {{/if}}
+
+  {{> components/header-banners}}
+
+  {{#if theme_settings.header_layout '===' 'left-aligned'}}
+    {{> components/header}}
+  {{else}}
+    {{> components/header-alternate}}
+  {{/if}}
+
+  <div class="main-content">
+    {{#block "page"}}{{/block}}
+  </div>
+
+  {{#if banners.bottom}}
+    <section class="page-banner page-banner-bottom">
+      {{#each banners.bottom}}
+        <div class="page-banner-inner">
+          <div class="banner rte">
+            {{{this}}}
+          </div>
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
+
+  {{> components/footer}}
+
+  {{> core/structured-data/breadcrumbs}}
+
+  <script>
+    function startupApp(stencilBootstrap) {
+      stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+    }
+  </script>
+
+  {{#if in_production}}
+    <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+    <script>
+      startupApp(stencilBootstrap);
+    </script>
+  {{else}}
+    <!-- buggy scripts -->
+    <!-- <script src="{{cdn '/assets/jspm_packages/system.js'}}"></script> -->
+    <!-- <script src="{{cdn '/assets/config.js'}}"></script> -->
+    <!-- <script src="{{cdn '/assets/js/dependency-bundle.js'}}"></script> -->
+    <!-- <script>
+      System.import("js/app").then(function(){ startupApp(stencilBootstrap)});
+    </script> -->
+
+    <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+    <script>
+      startupApp(stencilBootstrap);
+    </script>
+  {{/if}}
+
+  <!-- vpv -->
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  {{> components/footerScripts}}
+  <!--  -->
+
+  {{{footer.scripts}}}
+  {{{snippet 'footer'}}}
+
+  
+</body>
+</html>

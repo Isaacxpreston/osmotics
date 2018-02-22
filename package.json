@@ -1,0 +1,10 @@
+{
+  "name": "Osmotics",
+  "description": "Osmotics Optimization by Verbal + Visual",
+  "version": "1.0",
+  "private": true,
+  "dependencies": {
+    "@bigcommerce/stencil-cli": "^1.14.0",
+    "stencil": "0.0.5"
+  }
+}

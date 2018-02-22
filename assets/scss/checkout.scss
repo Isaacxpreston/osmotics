@@ -1,0 +1,17 @@
+/*! Theme: Foundry v1.1.13 */
+.header {
+  //scss-lint:disable NameFormat
+  background-color: stencilColor("header-background-color");
+}
+
+.header-logo {
+  padding: 20px 40px;
+  text-align: center;
+
+  img {
+    max-width: 200px;
+    max-height: 85px;
+  }
+}
+
+/* Rebillia Style Start */#CheckoutStepPaymentDetails .ExpressCheckoutContent {opacity: 0;visibility: hidden;}/* Rebillia Style Ends */
