@@ -1,11 +1,10 @@
 // vpv
-
 // DEBUG
 body {
-  background: rgba(255, 0, 0, 0.5)  
+  background: rgba(255, 0, 0, 0.5)
 }
-//
 
+//
 .vertical-center {
   position: relative;
   top: 50%;
@@ -13,7 +12,7 @@ body {
 }
 
 .navigation {
-  @extend .vertical-center ;
+  @extend .vertical-center;
   z-index: 32;
 }
 
@@ -26,14 +25,15 @@ body {
   margin-left: 0px;
 }
 
-.main-header { // (1/2) take these out to show mobile nav
+.main-header {
+  // (1/2) take these out to show mobile nav
   display: none;
 }
 
-.navigation-tier { // (2/2)
+.navigation-tier {
+  // (2/2)
   display: none;
 }
-
 
 .nav-main-options {
   position: relative;
@@ -54,10 +54,9 @@ body {
   }
 }
 
-
 // nav dropdown menu
-
-.navigation-dropdown {
+.navigation-dropdown,
+.navigation-dropdown-search {
   // display: none;
   position: fixed;
   max-width: 1280px;
@@ -67,17 +66,18 @@ body {
   margin: auto;
   margin-top: 104px;
   width: 100%;
-  height: calc(100vh - 102px);
-  // background: rgba(255, 0, 0, 0.9);
-  background-image: linear-gradient(-249deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.98) 22%, rgba(255,255,255,0.99) 79%, rgba(255,255,255,0.93) 100%);
-  // background-image: linear-gradient(-251deg, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.79) 32%, rgba(255,255,255,0.90) 50%, rgba(255,255,255,0.90) 100%);
-  box-shadow: inset 0 2px 2px 0 rgba(55,51,61,0.15);
+  height: calc(100vh - 102px); // background: rgba(255, 0, 0, 0.9);
+  background-image: linear-gradient(-249deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 22%, rgba(255, 255, 255, 0.99) 79%, rgba(255, 255, 255, 0.93) 100%); // background-image: linear-gradient(-251deg, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.79) 32%, rgba(255,255,255,0.90) 50%, rgba(255,255,255,0.90) 100%);
+  box-shadow: inset 0 2px 2px 0 rgba(55, 51, 61, 0.15);
   z-index: 31;
   &.navigation-dropdown-open {
     display: block;
   }
 }
 
+.navigation-dropdown-search {
+  height: 100px;
+}
 
 .navigation-dropdown-content {
   position: absolute;
@@ -102,48 +102,43 @@ body {
   position: relative;
   box-sizing: border-box;
   width: calc((100% / 4) - 24px);
-  margin: 24px auto;
-  // background: rgba(0, 0, 255, 0.75);
+  margin: 24px auto; // background: rgba(0, 0, 255, 0.75);
 }
 
 .navigation-dropdown-column-third {
   position: relative;
   box-sizing: border-box;
   width: calc((100% / 3) - 24px);
-  margin: 24px auto;
-  // background: rgba(0, 0, 255, 0.75);
-  > div {
+  margin: 24px auto; // background: rgba(0, 0, 255, 0.75);
+  >div {
     position: relative;
     width: calc(100% - 108px);
     margin: auto;
     top: 50%;
-    transform: translateY(-50%);
-    // background: rgba(255, 0, 0, 0.5);
+    transform: translateY(-50%); // background: rgba(255, 0, 0, 0.5);
   }
 }
 
 // main carousel overwrites
-
-.carousel-item { 
+.carousel-item {
   img {
     transform: scale(2.5, 2.5) // take out later, for demonstration purposes on carousel images
   }
 }
 
-.carousel-wrap, .carousel {
+.carousel-wrap,
+.carousel {
   padding: 0px !important;
 }
 
 // navigation arrow
-
 .banner-container {
   position: absolute;
   top: 0;
   left: 0;
   margin-top: 50px;
   display: none;
-  height: 19px;
-  // background: blue;
+  height: 19px; // background: blue;
   width: 100%;
 }
 
@@ -169,7 +164,7 @@ body {
   height: 20px;
   background: white;
   margin-top: 49px;
-    box-shadow: 0 2px 2px 0 rgba(55,51,61,0.15);
+  box-shadow: 0 2px 2px 0 rgba(55, 51, 61, 0.15);
 }
 
 .nav-border-right {
@@ -180,5 +175,41 @@ body {
   height: 20px;
   background: white;
   margin-top: 49px;
-    box-shadow: 0 2px 2px 0 rgba(55,51,61,0.15);
+  box-shadow: 0 2px 2px 0 rgba(55, 51, 61, 0.15);
+}
+
+// searchbar
+.navigation-searchbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #F5F5F5;
+  border: none;
+  outline: none;
+  z-index: 1;
+  padding: 24px;
+}
+
+.navigation-search-submit {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  margin-top: 50px;
+  margin-right: 36px;
+  user-select: none;
+  cursor: pointer;
+}
+
+// page banner overwrites
+.page-banner {
+  background: #2B7FA0;
+}
+
+.page-banner-inner:last-of-type {
+  border-bottom: 1px solid #2B7FA0;
 }
