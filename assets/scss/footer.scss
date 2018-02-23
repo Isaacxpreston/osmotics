@@ -23,3 +23,21 @@ li[data-page="Privacy Policy"],
 li[data-page="Terms of Use"] {
   display: none;
 }
+
+
+// columns
+
+.footer-navigation , .footer-newsletter {
+  position: relative;
+  box-sizing: border-box;
+  background: rgba(255, 0, 0, 0.15);
+  margin: 24px auto;
+}
+
+.footer-navigation {
+  width: calc((100% * 1/5) - 24px);
+}
+
+.footer-newsletter {
+  width: calc((100% * 2/5) - 24px);
+}

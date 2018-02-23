@@ -3,7 +3,7 @@
 
     <!-- <section class="footer-left"> -->
 
-      {{#if social_media.length}}
+    <!-- {{#if social_media.length}}
       <div class="footer-navigation">
         <h3 class="footer-section-title">{{lang 'footer.headings.social_media'}}</h3>
         <ul>
@@ -22,51 +22,73 @@
           {{/each}}
         </ul>
       </div>
-      {{/if}} {{#if pages.length}}
-      <div class="footer-navigation">
-        <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
-        <ul>
-          {{#each pages}}
-          <li class="footer-navigation-list-item" data-page="{{name}}">
-            <a href="{{url}}">{{name}}</a>
-          </li>
-          {{/each}} {{#if theme_settings.sitemap}}
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.sitemap}}">{{lang 'sitemap.heading'}}</a>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-      {{/if}}
+      {{/if}}  -->
 
-      <div class="footer-navigation">
-        <h3 class="footer-section-title">{{lang 'footer.headings.user_links'}}</h3>
-        <ul>
-          {{#if settings.gift_certificates_enabled}}
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.gift_certificate.purchase}}">{{lang 'footer.gift_certificate'}}</a>
-          </li>
-          {{/if}} {{#if settings.show_wishlist}} {{#if customer}}
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.account.wishlists.all}}">{{lang 'footer.wishlist'}}</a>
-          </li>
-          {{/if}} {{/if}} {{#if settings.account_creation_enabled}} {{#if customer}}
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.account.index}}">{{lang 'footer.your_account'}}</a>
-          </li>
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.auth.logout}}">{{lang 'footer.log_out'}}</a>
-          </li>
-          {{else}}
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.auth.login}}">{{lang 'footer.log_in'}}</a>
-          </li>
-          <li class="footer-navigation-list-item">
-            <a href="{{urls.auth.create_account}}">{{lang 'footer.sign_up'}}</a>
-          </li>
-          {{/if}} {{/if}}
-        </ul>
-      </div>
+    {{#if pages.length}}
+    <div class="footer-navigation">
+      <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
+      <ul>
+        {{#each pages}}
+        <li class="footer-navigation-list-item" data-page="{{name}}">
+          <a href="{{url}}">{{name}}</a>
+        </li>
+        {{/each}} {{#if theme_settings.sitemap}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.sitemap}}">{{lang 'sitemap.heading'}}</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+    {{/if}}
+
+    <!-- duplicate for demonstration. take out later. -->
+    {{#if pages.length}}
+    <div class="footer-navigation">
+      <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
+      <ul>
+        {{#each pages}}
+        <li class="footer-navigation-list-item" data-page="{{name}}">
+          <a href="{{url}}">{{name}}</a>
+        </li>
+        {{/each}} {{#if theme_settings.sitemap}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.sitemap}}">{{lang 'sitemap.heading'}}</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+    {{/if}}
+    <!--  -->
+
+    <div class="footer-navigation">
+      <h3 class="footer-section-title">{{lang 'footer.headings.user_links'}}</h3>
+      <ul>
+        {{#if settings.gift_certificates_enabled}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.gift_certificate.purchase}}">{{lang 'footer.gift_certificate'}}</a>
+        </li>
+        {{/if}} {{#if settings.show_wishlist}} {{#if customer}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.account.wishlists.all}}">{{lang 'footer.wishlist'}}</a>
+        </li>
+        {{/if}} {{/if}} {{#if settings.account_creation_enabled}} {{#if customer}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.account.index}}">{{lang 'footer.your_account'}}</a>
+        </li>
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.auth.logout}}">{{lang 'footer.log_out'}}</a>
+        </li>
+        {{else}}
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.auth.login}}">{{lang 'footer.log_in'}}</a>
+        </li>
+        <li class="footer-navigation-list-item">
+          <a href="{{urls.auth.create_account}}">{{lang 'footer.sign_up'}}</a>
+        </li>
+        {{/if}} {{/if}}
+      </ul>
+
+    </div>
 
     <!-- </section> -->
 
@@ -77,21 +99,36 @@
 
     <!-- <section class="footer-right"> -->
 
-      {{#if settings.show_newsletter_box}}
-      <div class="footer-newsletter">
-        <h3 class="footer-section-title">{{lang 'newsletter.heading'}}</h3>
-        <form class="footer-newsletter-form form" action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e"
-          method="post">
-          <label class="form-label show-for-sr" for="EMAIL">Sign up for emails</label>
-          <input class="newsletter-signup-email form-input" id="mce-EMAIL" name="EMAIL" type="email" placeholder="your@email.com">
-          <div class="newsletter-signup-submit">
-            <input class="submit button" type="submit" value="Submit">
-          </div>
-        </form>
-      </div>
-      {{/if}}
+    {{#if settings.show_newsletter_box}}
+    <div class="footer-newsletter">
+      <h3 class="footer-section-title">{{lang 'newsletter.heading'}}</h3>
+      <form class="footer-newsletter-form form" action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e"
+        method="post">
+        <label class="form-label show-for-sr" for="EMAIL">Sign up for emails</label>
+        <input class="newsletter-signup-email form-input" id="mce-EMAIL" name="EMAIL" type="email" placeholder="your@email.com">
+        <div class="newsletter-signup-submit">
+          <input class="submit button" type="submit" value="Submit">
+        </div>
+      </form>
+      <ul>
+        {{#each social_media}}
+        <li class="footer-navigation-list-item">
+          {{#compare display_name 'google+' operator='==='}}
+          <a href="{{url}}" class="google" target="_blank">
+            <i class="icon-google"></i> Google+
+          </a>
+          {{else}}
+          <a href="{{url}}" class="{{display_name}}" target="_blank">
+            <i class="icon-{{display_name}}"></i> {{display_name}}
+          </a>
+          {{/compare}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
 
-      <!-- <div class="footer-payment-icons">
+    <!-- <div class="footer-payment-icons">
         <ul class="footer-payment-icons-list">
           {{#if theme_settings.payment_visa}}
           <li>
@@ -117,13 +154,13 @@
         </ul>
       </div> -->
 
-      <!-- {{#if theme_settings.theme_credits}}
+    <!-- {{#if theme_settings.theme_credits}}
       <div class="footer-attribution">
           <p>Foundry {{lang 'footer.credits.theme_by'}} <a href="http://pixelunion.net" target="_blank" rel="nofollow">Pixel Union</a>, {{lang 'footer.credits.powered_by'}} <a href="http://www.bigcommerce.com/" target="_blank" rel="nofollow">BigCommerce</a></p>
         </div>
       {{/if}} -->
 
-      <!-- {{#if theme_settings.theme_copyright}}
+    <!-- {{#if theme_settings.theme_copyright}}
         <div class="footer-copyright">
           <p>{{lang 'footer.credits.copyright' name=settings.store_name}} &copy; <script>document.write(new Date().getFullYear())</script></p>
         </div>
@@ -133,7 +170,7 @@
 
   </div>
 
-  <!--  -->
+  <!-- above the line -->
 
 
   <!-- below the line -->
