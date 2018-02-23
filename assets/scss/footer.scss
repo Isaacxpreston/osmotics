@@ -1,0 +1,25 @@
+// vpv
+.main-footer {
+  background: #4F5759;
+  padding-top: 72px;
+  padding-bottom: 0px;
+  .container {
+    position: relative;
+    display: flex;
+    background: rgba(255, 0, 0, 0.15);
+    margin: auto;
+    width: calc(100% * 5/6);
+    &:first-child {
+      margin-bottom: 72px;
+    }
+    &:last-child {
+      border-top: 1px solid white;
+    }
+  }
+}
+
+// hide unwanted lis
+li[data-page="Privacy Policy"],
+li[data-page="Terms of Use"] {
+  display: none;
+}

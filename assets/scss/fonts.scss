@@ -1,0 +1,77 @@
+// todo: register font faces
+// todo: colors
+
+.fonts-vpv {
+  h1,
+  .h1 {
+    font-family: 'Karla-Bold';
+    font-size: 38px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 48px;
+  }
+  h2,
+  .h2 {
+    font-family: 'Karla-Bold';
+    font-size: 28px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 48px;
+  }
+  h3,
+  .h3 {
+    font-family: 'Karla-Regular';
+    font-size: 21px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  h4,
+  .h4 {
+    font-family: 'Karla-Bold';
+    font-size: 16px;
+    color: #37333D;
+    letter-spacing: 1px;
+    line-height: 24px;
+  }
+  h5,
+  .h5 {
+    font-family: 'Karla-Bold';
+    font-size: 14px;
+    color: #37333D;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+  p,
+  .p {
+    .large {
+      font-family: 'Karla-Regular';
+      font-size: 18px;
+      color: #37333D;
+      letter-spacing: 0;
+      line-height: 28px;
+    }
+    .medium {
+      font-family: 'Karla-Regular';
+      font-size: 16px;
+      color: #37333D;
+      letter-spacing: 0;
+      line-height: 24px;
+    }
+    .small {
+      font-family: 'Karla-Regular';
+      font-size: 14px;
+      color: #37333D;
+      letter-spacing: 0;
+      line-height: 24px;
+    }
+  }
+  .utility {
+    font-family: 'Karla-Regular';
+    font-size: 12px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+}
