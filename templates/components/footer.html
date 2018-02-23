@@ -1,29 +1,6 @@
 <footer class="main-footer">
   <div class="fonts-vpv container">
 
-    <!-- <section class="footer-left"> -->
-
-    <!-- {{#if social_media.length}}
-      <div class="footer-navigation">
-        <h3 class="footer-section-title">{{lang 'footer.headings.social_media'}}</h3>
-        <ul>
-          {{#each social_media}}
-          <li class="footer-navigation-list-item">
-            {{#compare display_name 'google+' operator='==='}}
-            <a href="{{url}}" class="google" target="_blank">
-              <i class="icon-google"></i> Google+
-            </a>
-            {{else}}
-            <a href="{{url}}" class="{{display_name}}" target="_blank">
-              <i class="icon-{{display_name}}"></i> {{display_name}}
-            </a>
-            {{/compare}}
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-      {{/if}}  -->
-
     {{#if pages.length}}
     <div class="footer-navigation">
       <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
@@ -90,17 +67,15 @@
 
     </div>
 
-    <!-- </section> -->
-
     <div class="footer-currency-selector">
       <p class="footer-currency-selector-title show-for-sr">{{lang 'footer.headings.select_currency'}}</p>
       {{> components/currency-selector is-mobile=true}}
     </div>
 
-    <!-- <section class="footer-right"> -->
-
     {{#if settings.show_newsletter_box}}
     <div class="footer-newsletter">
+
+      <!-- newsletter -->
       <h3 class="footer-section-title">{{lang 'newsletter.heading'}}</h3>
       <form class="footer-newsletter-form form" action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e"
         method="post">
@@ -110,67 +85,18 @@
           <input class="submit button" type="submit" value="Submit">
         </div>
       </form>
+      <!--  -->
 
       <!-- social media -->
-      <ul>
-        {{#each social_media}}
-        <li class="footer-navigation-list-item">
-          {{#compare display_name 'google+' operator='==='}}
-          <a href="{{url}}" class="google" target="_blank">
-            <i class="icon-google"></i> Google+
-          </a>
-          {{else}}
-          <a href="{{url}}" class="{{display_name}}" target="_blank">
-            <i class="icon-{{display_name}}"></i> {{display_name}}
-          </a>
-          {{/compare}}
-        </li>
-        {{/each}}
-      </ul>
+      {{#each social_media}}
+      <a href="{{url}}" class="{{display_name}}" target="_blank">
+        <i class="icon-{{display_name}}"></i>
+      </a>
+      {{/each}}
       <!--  -->
 
     </div>
     {{/if}}
-
-    <!-- <div class="footer-payment-icons">
-        <ul class="footer-payment-icons-list">
-          {{#if theme_settings.payment_visa}}
-          <li>
-            <i class="icon-visa"></i>
-          </li>
-          {{/if}} {{#if theme_settings.payment_mastercard}}
-          <li>
-            <i class="icon-mastercard"></i>
-          </li>
-          {{/if}} {{#if theme_settings.payment_american_express}}
-          <li>
-            <i class="icon-americanexpress"></i>
-          </li>
-          {{/if}} {{#if theme_settings.payment_discover}}
-          <li>
-            <i class="icon-discover"></i>
-          </li>
-          {{/if}} {{#if theme_settings.payment_paypal}}
-          <li>
-            <i class="icon-paypal"></i>
-          </li>
-          {{/if}}
-        </ul>
-      </div> -->
-
-    <!-- {{#if theme_settings.theme_credits}}
-      <div class="footer-attribution">
-          <p>Foundry {{lang 'footer.credits.theme_by'}} <a href="http://pixelunion.net" target="_blank" rel="nofollow">Pixel Union</a>, {{lang 'footer.credits.powered_by'}} <a href="http://www.bigcommerce.com/" target="_blank" rel="nofollow">BigCommerce</a></p>
-        </div>
-      {{/if}} -->
-
-    <!-- {{#if theme_settings.theme_copyright}}
-        <div class="footer-copyright">
-          <p>{{lang 'footer.credits.copyright' name=settings.store_name}} &copy; <script>document.write(new Date().getFullYear())</script></p>
-        </div>
-      {{/if}} -->
-
-    <!-- </section> -->
 
   </div>
 

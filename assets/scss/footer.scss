@@ -1,19 +1,27 @@
 // vpv
+
+// note
+// 1040px/1039px is the mobile/tablet breakpoint
+
 .main-footer {
   background: #4F5759;
   padding-top: 72px;
   padding-bottom: 0px;
+  // row
   .container {
     position: relative;
-    display: flex;
     background: rgba(255, 0, 0, 0.15);
     margin: auto;
-    width: calc(100% * 5/6);
+    width: calc(100% - 48px);
     &:first-child {
       margin-bottom: 72px;
     }
     &:last-child {
       border-top: 1px solid white;
+    }
+    @media screen and (min-width: 1040px) {
+      display: flex;
+      width: calc(100% * 5/6);
     }
   }
 }
@@ -30,14 +38,21 @@ li[data-page="Terms of Use"] {
 .footer-navigation , .footer-newsletter {
   position: relative;
   box-sizing: border-box;
+  text-align: left;
   background: rgba(255, 0, 0, 0.15);
   margin: 24px auto;
 }
 
 .footer-navigation {
-  width: calc((100% * 1/5) - 24px);
+  width: 100%;
+  @media screen and (min-width: 1040px) {
+    width: calc((100% * 1/5) - 24px);
+  }
 }
 
 .footer-newsletter {
-  width: calc((100% * 2/5) - 24px);
+  width: 100%;
+  @media screen and (min-width: 1040px) {
+    width: calc((100% * 2/5) - 24px);
+  }
 }
