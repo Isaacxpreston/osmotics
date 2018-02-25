@@ -40,7 +40,10 @@ li[data-page="Terms of Use"] {
   box-sizing: border-box;
   text-align: left;
   background: rgba(255, 0, 0, 0.15);
-  margin: 24px auto;
+  margin-bottom: 72px;
+  @media screen and (min-width: 1040px) {
+    margin: 24px auto;
+  }
 }
 
 .footer-navigation {

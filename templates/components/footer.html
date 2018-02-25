@@ -1,45 +1,47 @@
 <footer class="main-footer">
   <div class="fonts-vpv container">
 
-    {{#if pages.length}}
-    <div class="footer-navigation">
-      <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
-      <ul>
-        {{#each pages}}
-        <li class="footer-navigation-list-item" data-page="{{name}}">
-          <a href="{{url}}">{{name}}</a>
-        </li>
-        {{/each}} {{#if theme_settings.sitemap}}
-        <li class="footer-navigation-list-item">
-          <a href="{{urls.sitemap}}">{{lang 'sitemap.heading'}}</a>
-        </li>
-        {{/if}}
-      </ul>
-    </div>
-    {{/if}}
+    <!-- vpv -->
 
-    <!-- duplicate for demonstration. take out later. -->
-    {{#if pages.length}}
     <div class="footer-navigation">
-      <h3 class="footer-section-title">{{lang 'footer.headings.navigation'}}</h3>
+      <h3 class="footer-section-title">Company</h3>
       <ul>
-        {{#each pages}}
-        <li class="footer-navigation-list-item" data-page="{{name}}">
-          <a href="{{url}}">{{name}}</a>
-        </li>
-        {{/each}} {{#if theme_settings.sitemap}}
         <li class="footer-navigation-list-item">
-          <a href="{{urls.sitemap}}">{{lang 'sitemap.heading'}}</a>
+          <a href="/pages/about-us.html">About Us</a>
         </li>
-        {{/if}}
+        <li class="footer-navigation-list-item">
+          <a href="/pages/press-awards.html">Press & Awards</a>
+        </li>
+        <li class="footer-navigation-list-item">
+          <a href="/pages/store-locator.html">Store Locator</a>
+        </li>
+        <li class="footer-navigation-list-item">
+          <a href="/francines-blog">Francine's Blog</a>
+        </li>
       </ul>
     </div>
-    {{/if}}
+
+    <div class="footer-navigation">
+      <h3 class="footer-section-title">Customer Care</h3>
+      <ul>
+        <li class="footer-navigation-list-item">
+          <a href="/pages/contact-us.html">Contact Us</a>
+        </li>
+        <li class="footer-navigation-list-item">
+          <a href="/pages/shipping-returns.html">Shipping & Returns</a>
+        </li>
+      </ul>
+    </div>
     <!--  -->
 
     <div class="footer-navigation">
       <h3 class="footer-section-title">{{lang 'footer.headings.user_links'}}</h3>
       <ul>
+        <!-- vpv -->
+        <li class="footer-navigation-list-item">
+          <a href="/pages/osmotics-elite.html">Osmotics Elite</a>
+        </li>
+        <!--  -->
         {{#if settings.gift_certificates_enabled}}
         <li class="footer-navigation-list-item">
           <a href="{{urls.gift_certificate.purchase}}">{{lang 'footer.gift_certificate'}}</a>
@@ -76,7 +78,8 @@
     <div class="footer-newsletter">
 
       <!-- newsletter -->
-      <h3 class="footer-section-title">{{lang 'newsletter.heading'}}</h3>
+      <!-- <h3 class="footer-section-title">{{lang 'newsletter.heading'}}</h3> -->
+      <p class="medium">Join our newsletter to stay updated on promotions</p>
       <form class="footer-newsletter-form form" action="//osmotics.us13.list-manage.com/subscribe/post?u=51578a4168acd2c67a09d9edc&amp;id=0afb5b166e"
         method="post">
         <label class="form-label show-for-sr" for="EMAIL">Sign up for emails</label>
