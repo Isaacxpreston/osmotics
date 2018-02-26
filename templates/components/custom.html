@@ -250,7 +250,7 @@ var navigationClose = function () {
 				$('.navigation-dropdown, .navigation-dropdown-search').removeClass('navigation-dropdown-open')
 				$('.nav-option').removeClass('nav-option-open')
 				$('.nav-border-left, .nav-border-right').removeClass('borders-visible')
-				$('.navigation-wrap, .page-banner').removeClass('navigation-is-open')
+				$('.navigation-wrap, .page-banner, .main-content').removeClass('navigation-is-open')
 				window.scrollTo(0, 0)
 			} else {
 				console.log('not open')
@@ -589,13 +589,13 @@ $('.blog-post-content.summary').each(function(){
 			if($(this).hasClass('nav-option-open') || !dataMenu) {
 				$('.nav-option').removeClass('nav-option-open')
 				$('.nav-border-left, .nav-border-right').removeClass('borders-visible')
-				$('.navigation-wrap, .page-banner').removeClass('navigation-is-open')
+				$('.navigation-wrap, .page-banner, .main-content').removeClass('navigation-is-open')
 				window.scrollTo(0, 0)
 			} else {
 				$('.nav-option').removeClass('nav-option-open')
 				$(this).addClass('nav-option-open')
 				$('.nav-border-left, .nav-border-right').addClass('borders-visible')
-				$('.navigation-wrap, .page-banner').addClass('navigation-is-open')
+				$('.navigation-wrap, .page-banner, .main-content').addClass('navigation-is-open')
 			}
 
 			// todo: toggle nav border left and right

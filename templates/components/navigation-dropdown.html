@@ -17,7 +17,7 @@
       <ul>
         {{#each children}}
         <a href="{{url}}">
-          <li class="p medium">foo
+          <li class="p medium">link
           </li>
         </a>
         {{/each}}
@@ -78,6 +78,7 @@
 
 <!-- search -->
 <div class="navigation-dropdown-search" data-menu="search">
+  <div class="search-underlay"></div>
   <div class="navigation-dropdown-content">
 
     <form action="{{urls.search}}" class="navigation-search-form">
