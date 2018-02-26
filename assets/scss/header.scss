@@ -201,6 +201,13 @@ body {
   box-shadow: 0 2px 2px 0 rgba(55, 51, 61, 0.15);
 }
 
+.nav-border-left, .nav-border-right {
+  display: none;
+  &.borders-visible {
+    display: block;
+  }
+}
+
 // searchbar
 .navigation-searchbar {
   position: absolute;
@@ -388,5 +395,24 @@ body {
       right: 0;
       transform: translate(30px, -6px);
     }
+  }
+}
+
+// sticky nav 
+.page-banner {
+  &.navigation-is-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
+}
+
+.navigation-wrap {
+  &.navigation-is-open {
+    position: fixed;
+    margin-top: 40px;
+    z-index: 99;
   }
 }

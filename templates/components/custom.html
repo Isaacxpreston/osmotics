@@ -565,11 +565,25 @@ $('.blog-post-content.summary').each(function(){
 		$('.nav-option').click(function() {
 
 			var dataMenu = $(this).attr('data-menu')
-
-			$('.navigation-dropdown, .navigation-dropdown-search').removeClass('navigation-dropdown-open')
+			
+			// toggle dropdown
+			$('.navigation-dropdown:not([data-menu="'+ dataMenu +'"]), .navigation-dropdown-search:not([data-menu="'+ dataMenu +'"])').removeClass('navigation-dropdown-open')
 			$('.navigation-dropdown[data-menu="'+ dataMenu +'"], .navigation-dropdown-search[data-menu="'+ dataMenu +'"]').toggleClass('navigation-dropdown-open')
-			$('.nav-option').removeClass('nav-option-open')
-			$(this).addClass('nav-option-open')
+
+			// toggle carrots
+			if($(this).hasClass('nav-option-open') || !dataMenu) {
+				$('.nav-option').removeClass('nav-option-open')
+				$('.nav-border-left, .nav-border-right').removeClass('borders-visible')
+				$('.navigation-wrap, .page-banner').removeClass('navigation-is-open')
+				window.scrollTo(0, 0)
+			} else {
+				$('.nav-option').removeClass('nav-option-open')
+				$(this).addClass('nav-option-open')
+				$('.nav-border-left, .nav-border-right').addClass('borders-visible')
+				$('.navigation-wrap, .page-banner').addClass('navigation-is-open')
+			}
+
+			// todo: toggle nav border left and right
 			
 
 			var getNext = function(selector, total) {
