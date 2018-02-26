@@ -574,7 +574,7 @@ $('.blog-post-content.summary').each(function(){
 			}
 
 			var extraSpace = (($(this).width() / 2) - 18)
-			var windowWidth = window.innerWidth >= 1280 ? 1280 : window.innerWidth
+			var windowWidth = window.innerWidth >= 1280 ? window.innerWidth : window.innerWidth // 1280 left option alternatively.
 
 			$('.nav-border-left').width((windowWidth - getNext(this)) + extraSpace)
 			$('.nav-border-right').width((getNext(this) - ($(this).innerWidth())) + (extraSpace + 0.35))

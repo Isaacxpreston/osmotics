@@ -12,6 +12,7 @@ body {
 }
 
 .navigation {
+  max-width: initial; // full bleed nav instead of 1280
   @media screen and (min-width: 401px) {
     position: relative;
     top: 50%;
@@ -73,7 +74,7 @@ body {
 .navigation-dropdown-search {
   // display: none;
   position: fixed;
-  max-width: 1280px;
+  // max-width: 1280px; // take out for full bleed width
   top: 0;
   left: 0;
   right: 0;
@@ -99,7 +100,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 0, 0, 0.15);
+  // background: rgba(255, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   overflow: auto; // for short screens
@@ -111,7 +112,7 @@ body {
   width: calc((100% / 6) - 24px);
   margin: 24px auto;
   margin-top: 108px;
-  background: rgba(255, 0, 0, 0.15);
+  // background: rgba(255, 0, 0, 0.15);
 }
 
 .navigation-dropdown-column-fourth {
@@ -305,7 +306,7 @@ body {
 
 // getting started dropdown backgrounds;
 
-.background-image-left, .background-image-right {
+.background-image-left, .background-image-right, .navigation-link-left, .navigation-link-right {
   position: absolute;
   top: 0;
   width: 50%;
@@ -324,4 +325,22 @@ body {
 .background-image-right {
   right: 0;
   background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedRight.png');
+}
+
+.navigation-link-left {
+  left: 0;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.navigation-link-right {
+  right: 0;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+
+// debug for now
+.get-started-dropdown {
+  display: none !important;
 }
