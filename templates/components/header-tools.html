@@ -1,16 +1,27 @@
 <div class="header-tools">
   <ul class="header-tools-inner">
 
-    <li class="header-tools-item navigation-toggle-mobile-container">
-      <button class="navigation-toggle-mobile-wrapper">
-        <span class="navigation-toggle-mobile"><i class="icon-menu"></i></span>
-      </button>
-    </li>
+
+      <div class="header-branding mobile-only">
+          {{#if settings.store_logo.image}}
+            <a class="header-branding-logo" href="{{urls.home}}">
+              <img class="header-branding-image" src="{{getImage settings.store_logo.image 'logo'}}" alt="{{settings.store_logo.title}}">
+            </a>
+          {{else}}
+            <h1 class="header-branding-text">
+              <a href="{{urls.home}}">{{settings.store_logo.title}}</a>
+            </h1>
+          {{/if}}
+        </div>
 
     <li class="header-tools-item search-toggle">
       <a href="#">
-        <i class="icon-search"></i>
-        <span class="label">{{lang 'header.search'}}</span>
+        <!-- <i class="icon-search"></i>
+        <span class="label">{{lang 'header.search'}}</span> -->
+        <svg class="nav-option-search" aria-hidden="true" data-prefix="fal" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-2x">
+          <path fill="currentColor" d="M508.5 481.6l-129-129c-2.3-2.3-5.3-3.5-8.5-3.5h-10.3C395 312 416 262.5 416 208 416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c54.5 0 104-21 141.1-55.2V371c0 3.2 1.3 6.2 3.5 8.5l129 129c4.7 4.7 12.3 4.7 17 0l9.9-9.9c4.7-4.7 4.7-12.3 0-17zM208 384c-97.3 0-176-78.7-176-176S110.7 32 208 32s176 78.7 176 176-78.7 176-176 176z"
+            class=""></path>
       </a>
 
       <div class="search-form-wrapper">
@@ -29,47 +40,49 @@
     </li>
 
     {{#if settings.account_creation_enabled}}
-      <li class="header-tools-item fonts-vpv">
-        {{#if customer}}
-          <a href="{{urls.account.index}}" class="p small">{{customer.name}}
+    <li class="header-tools-item fonts-vpv account-toggle">
+      {{#if customer}}
+      <a href="{{urls.account.index}}" class="p small">{{customer.name}}
 
-              <svg width="16px" height="21px" viewBox="0 0 16 21">
-                  <defs>
-                      <path d="M19.0618175,20.5909091 L19.0618175,16.9545455 C19.0618175,14.4441602 16.9545033,12.4090909 14.3549995,12.4090909 L9.64818157,12.4090909 C7.04867778,12.4090909 4.94136359,14.4441602 4.94136359,16.9545455 L4.94136359,20.5909091 L19.0618175,20.5909091 Z M9.64818157,11.5 L14.3549995,11.5 C17.4744041,11.5 20.0031811,13.9420832 20.0031811,16.9545455 L20.0031811,21.5 L4,21.5 L4,16.9545455 C4,13.9420832 6.52877702,11.5 9.64818157,11.5 Z M11.75,10.1300001 C13.8901034,10.1300001 15.625,8.39510352 15.625,6.25500011 C15.625,4.11489671 13.8901034,2.38000011 11.75,2.38000011 C9.60989659,2.38000011 7.875,4.11489671 7.875,6.25500011 C7.875,8.39510352 9.60989659,10.1300001 11.75,10.1300001 Z M11.75,11 C9.12664744,11 7,8.87335256 7,6.25 C7,3.62664744 9.12664744,1.5 11.75,1.5 C14.3733526,1.5 16.5,3.62664744 16.5,6.25 C16.5,8.87335256 14.3733526,11 11.75,11 Z" id="path-111"></path>
-                  </defs>
-                  <g id="general/icon/account" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, -1.000000)">
-                      <mask id="mask-222" fill="white">
-                          <use xlink:href="#path-111"></use>
-                      </mask>
-                      <use id="Mask" fill="white" fill-rule="nonzero" xlink:href="#path-111"></use>
-                  </g>
-              </svg>
-          </a>
-                 <!-- <i class="icon-user"></i> -->
-            <!-- <span class="label">{{customer.name}}</span> -->
+        <svg width="16px" height="21px" viewBox="0 0 16 21">
+          <defs>
+            <path d="M19.0618175,20.5909091 L19.0618175,16.9545455 C19.0618175,14.4441602 16.9545033,12.4090909 14.3549995,12.4090909 L9.64818157,12.4090909 C7.04867778,12.4090909 4.94136359,14.4441602 4.94136359,16.9545455 L4.94136359,20.5909091 L19.0618175,20.5909091 Z M9.64818157,11.5 L14.3549995,11.5 C17.4744041,11.5 20.0031811,13.9420832 20.0031811,16.9545455 L20.0031811,21.5 L4,21.5 L4,16.9545455 C4,13.9420832 6.52877702,11.5 9.64818157,11.5 Z M11.75,10.1300001 C13.8901034,10.1300001 15.625,8.39510352 15.625,6.25500011 C15.625,4.11489671 13.8901034,2.38000011 11.75,2.38000011 C9.60989659,2.38000011 7.875,4.11489671 7.875,6.25500011 C7.875,8.39510352 9.60989659,10.1300001 11.75,10.1300001 Z M11.75,11 C9.12664744,11 7,8.87335256 7,6.25 C7,3.62664744 9.12664744,1.5 11.75,1.5 C14.3733526,1.5 16.5,3.62664744 16.5,6.25 C16.5,8.87335256 14.3733526,11 11.75,11 Z"
+              id="path-111"></path>
+          </defs>
+          <g id="general/icon/account" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, -1.000000)">
+            <mask id="mask-222" fill="white">
+              <use xlink:href="#path-111"></use>
+            </mask>
+            <use id="Mask" fill="white" fill-rule="nonzero" xlink:href="#path-111"></use>
+          </g>
+        </svg>
+      </a>
+      <!-- <i class="icon-user"></i> -->
+      <!-- <span class="label">{{customer.name}}</span> -->
 
-        {{else}}
-          <a href="{{urls.auth.login}}" class="p small">My Account
+      {{else}}
+      <a href="{{urls.auth.login}}" class="p small">My Account
 
-              <svg width="16px" height="21px" viewBox="0 0 16 21">
-                  <defs>
-                      <path d="M19.0618175,20.5909091 L19.0618175,16.9545455 C19.0618175,14.4441602 16.9545033,12.4090909 14.3549995,12.4090909 L9.64818157,12.4090909 C7.04867778,12.4090909 4.94136359,14.4441602 4.94136359,16.9545455 L4.94136359,20.5909091 L19.0618175,20.5909091 Z M9.64818157,11.5 L14.3549995,11.5 C17.4744041,11.5 20.0031811,13.9420832 20.0031811,16.9545455 L20.0031811,21.5 L4,21.5 L4,16.9545455 C4,13.9420832 6.52877702,11.5 9.64818157,11.5 Z M11.75,10.1300001 C13.8901034,10.1300001 15.625,8.39510352 15.625,6.25500011 C15.625,4.11489671 13.8901034,2.38000011 11.75,2.38000011 C9.60989659,2.38000011 7.875,4.11489671 7.875,6.25500011 C7.875,8.39510352 9.60989659,10.1300001 11.75,10.1300001 Z M11.75,11 C9.12664744,11 7,8.87335256 7,6.25 C7,3.62664744 9.12664744,1.5 11.75,1.5 C14.3733526,1.5 16.5,3.62664744 16.5,6.25 C16.5,8.87335256 14.3733526,11 11.75,11 Z" id="path-1111"></path>
-                  </defs>
-                  <g id="general/icon/account" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, -1.000000)">
-                      <mask id="mask-2222" fill="white">
-                          <use xlink:href="#path-1111"></use>
-                      </mask>
-                      <use id="Mask" fill="white" fill-rule="nonzero" xlink:href="#path-1111"></use>
-                  </g>
-              </svg>
-          </a>
-            <!-- <i class="icon-user"></i> -->
-            <!-- <span class="label">{{lang 'header.log_in'}}</span> -->
+        <svg width="16px" height="21px" viewBox="0 0 16 21">
+          <defs>
+            <path d="M19.0618175,20.5909091 L19.0618175,16.9545455 C19.0618175,14.4441602 16.9545033,12.4090909 14.3549995,12.4090909 L9.64818157,12.4090909 C7.04867778,12.4090909 4.94136359,14.4441602 4.94136359,16.9545455 L4.94136359,20.5909091 L19.0618175,20.5909091 Z M9.64818157,11.5 L14.3549995,11.5 C17.4744041,11.5 20.0031811,13.9420832 20.0031811,16.9545455 L20.0031811,21.5 L4,21.5 L4,16.9545455 C4,13.9420832 6.52877702,11.5 9.64818157,11.5 Z M11.75,10.1300001 C13.8901034,10.1300001 15.625,8.39510352 15.625,6.25500011 C15.625,4.11489671 13.8901034,2.38000011 11.75,2.38000011 C9.60989659,2.38000011 7.875,4.11489671 7.875,6.25500011 C7.875,8.39510352 9.60989659,10.1300001 11.75,10.1300001 Z M11.75,11 C9.12664744,11 7,8.87335256 7,6.25 C7,3.62664744 9.12664744,1.5 11.75,1.5 C14.3733526,1.5 16.5,3.62664744 16.5,6.25 C16.5,8.87335256 14.3733526,11 11.75,11 Z"
+              id="path-1111"></path>
+          </defs>
+          <g id="general/icon/account" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, -1.000000)">
+            <mask id="mask-2222" fill="white">
+              <use xlink:href="#path-1111"></use>
+            </mask>
+            <use id="Mask" fill="white" fill-rule="nonzero" xlink:href="#path-1111"></use>
+          </g>
+        </svg>
+      </a>
+      <!-- <i class="icon-user"></i> -->
+      <!-- <span class="label">{{lang 'header.log_in'}}</span> -->
 
-        {{/if}}
+      {{/if}}
 
 
-      </li>
+    </li>
     {{/if}}
 
     <li class="header-tools-item cart-toggle {{#if cart.items}}has-cart-items{{/if}} fonts-vpv">
@@ -78,25 +91,34 @@
 
         <?xml version="1.0" encoding="UTF-8"?>
         <svg width="16px" height="22px" viewBox="0 0 16 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-            <title>Mask</title>
-            <desc>Created with Sketch.</desc>
-            <defs>
-                <path d="M7.16482618,6 C6.36259884,6 5.70237368,6.63120693 5.66634009,7.43262461 L5.07981057,20.4775415 C5.07930593,20.7761424 5.30316356,21 5.57930593,21 L18.4793132,21 C18.7813554,20.9847939 18.9931369,20.7494791 18.978622,20.4737185 L18.2915896,7.42115541 C18.2496554,6.62447098 17.5914505,6 16.7936632,6 L7.16482618,6 Z M8.5,5 L8.5,3.80743048 C8.5,1.9367765 10.137514,0.5 12,0.5 C13.8621042,0.5 15.5,1.93747585 15.5,3.80743048 L15.5,5 L16.7936632,5 C18.1233087,5 19.220317,6.04078496 19.2902072,7.36859235 L19.9772396,20.4211554 C20.0207843,21.2484373 19.3854397,21.9543817 18.5581578,21.9979264 C18.5187537,21.9996543 18.5187537,21.9996543 18.4793132,22 L5.57930593,22 C4.75087881,22 4.07930593,21.3284271 4.07930593,20.5 C4.07955831,20.466301 4.07955831,20.466301 4.08081984,20.4326246 L4.66734937,7.38770769 C4.72740534,6.05201156 5.82778061,5 7.16482618,5 L8.5,5 Z M9.5,5 L14.5,5 L14.5,3.80743048 C14.5,2.52090797 13.336752,1.5 12,1.5 C10.6628187,1.5 9.5,2.52027251 9.5,3.80743048 L9.5,5 Z" id="path-11"></path>
-            </defs>
-            <g id="general/icon/bag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, 0.000000)">
-                <mask id="mask-22" fill="white">
-                    <use xlink:href="#path-11"></use>
-                </mask>
-                <use id="Mask2" fill="white" fill-rule="nonzero" xlink:href="#path-11"></use>
-            </g>
+          <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+          <title>Mask</title>
+          <desc>Created with Sketch.</desc>
+          <defs>
+            <path d="M7.16482618,6 C6.36259884,6 5.70237368,6.63120693 5.66634009,7.43262461 L5.07981057,20.4775415 C5.07930593,20.7761424 5.30316356,21 5.57930593,21 L18.4793132,21 C18.7813554,20.9847939 18.9931369,20.7494791 18.978622,20.4737185 L18.2915896,7.42115541 C18.2496554,6.62447098 17.5914505,6 16.7936632,6 L7.16482618,6 Z M8.5,5 L8.5,3.80743048 C8.5,1.9367765 10.137514,0.5 12,0.5 C13.8621042,0.5 15.5,1.93747585 15.5,3.80743048 L15.5,5 L16.7936632,5 C18.1233087,5 19.220317,6.04078496 19.2902072,7.36859235 L19.9772396,20.4211554 C20.0207843,21.2484373 19.3854397,21.9543817 18.5581578,21.9979264 C18.5187537,21.9996543 18.5187537,21.9996543 18.4793132,22 L5.57930593,22 C4.75087881,22 4.07930593,21.3284271 4.07930593,20.5 C4.07955831,20.466301 4.07955831,20.466301 4.08081984,20.4326246 L4.66734937,7.38770769 C4.72740534,6.05201156 5.82778061,5 7.16482618,5 L8.5,5 Z M9.5,5 L14.5,5 L14.5,3.80743048 C14.5,2.52090797 13.336752,1.5 12,1.5 C10.6628187,1.5 9.5,2.52027251 9.5,3.80743048 L9.5,5 Z"
+              id="path-11"></path>
+          </defs>
+          <g id="general/icon/bag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, 0.000000)">
+            <mask id="mask-22" fill="white">
+              <use xlink:href="#path-11"></use>
+            </mask>
+            <use id="Mask2" fill="white" fill-rule="nonzero" xlink:href="#path-11"></use>
+          </g>
         </svg>
       </a>
-        <!-- <i class="icon-cart"></i> -->
-        <!-- <span class="label">{{lang 'header.cart'}}</span> -->
+      <!-- <i class="icon-cart"></i> -->
+      <!-- <span class="label">{{lang 'header.cart'}}</span> -->
       <div class="cart-preview">
         {{> components/cart/cart-preview}}
       </div>
+    </li>
+
+    <li class="header-tools-item navigation-toggle-mobile-container">
+      <button class="navigation-toggle-mobile-wrapper">
+        <span class="navigation-toggle-mobile">
+          <i class="icon-menu"></i>
+        </span>
+      </button>
     </li>
 
   </ul>

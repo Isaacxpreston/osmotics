@@ -1,10 +1,24 @@
 // todo: register font faces
 // todo: colors
 
+@font-face {
+  font-family: 'Karla-Bold';
+  src: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Karla-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla-Regular';
+  src: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Karla-Regular.ttf') format('truetype');
+}
+
+*{ 
+  font-family: 'Karla-Regular', 'Futura', 'Lato', sans-serif !important;
+}
+
 .fonts-vpv {
   h1,
   .h1 {
-    font-family: 'Karla-Bold';
+    font-family: 'Karla-Bold' !important;
     font-size: 38px;
     color: #37333D;
     letter-spacing: 0;
@@ -12,7 +26,7 @@
   }
   h2,
   .h2 {
-    font-family: 'Karla-Bold';
+    font-family: 'Karla-Bold' !important;
     font-size: 28px;
     color: #37333D;
     letter-spacing: 0;
@@ -28,7 +42,7 @@
   }
   h4,
   .h4 {
-    font-family: 'Karla-Bold';
+    font-family: 'Karla-Bold' !important;
     font-size: 16px;
     color: #37333D;
     letter-spacing: 1px;
@@ -36,7 +50,7 @@
   }
   h5,
   .h5 {
-    font-family: 'Karla-Bold';
+    font-family: 'Karla-Bold' !important;
     font-size: 14px;
     color: #37333D;
     letter-spacing: 1px;
