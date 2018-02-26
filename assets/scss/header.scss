@@ -1,3 +1,6 @@
+$white: white;
+
+
 // vpv
 // DEBUG
 body {
@@ -366,5 +369,24 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  margin-top: 6px;
   z-index: 99;
+  .search-toggle {
+    display: none;
+  }
+}
+
+.header-tools-item {
+  border: none;
+  > a {
+    padding: 0px;
+    margin-right: 48px;
+    color: $white;
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(30px, -6px);
+    }
+  }
 }
