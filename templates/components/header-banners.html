@@ -7,7 +7,19 @@
         </div>
       </div>
     {{/each}}
+
+    {{> components/header-tools}}
   </section>
+  {{ else }}
+  <!-- blank placeholder -->
+  <section class="page-banner page-banner-top">
+        <div class="page-banner-inner">
+          <div class="banner rte">
+          </div>
+        </div>
+
+    {{> components/header-tools}}
+    </section>
 {{/if}}
 
 {{#if shipping_messages.length}}
