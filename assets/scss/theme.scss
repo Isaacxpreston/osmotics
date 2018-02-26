@@ -11726,12 +11726,16 @@ $page-banner-border: darken($banner-background-color, 18%);
     transition: all 0.2s $ease-out-quad;
   }
 
-  .mobile-nav-open {
-    .main-header,
-    .main-content,
-    .main-footer,
-    .page-banner { transform: translateX(450px); }
-  }
+  // VPV
+
+  // .mobile-nav-open {
+  //   .main-header,
+  //   .main-content,
+  //   .main-footer,
+  //   .page-banner { transform: translateX(450px); }
+  // }
+
+  // 
 }
 
 @include breakpoint(m-only) {
@@ -11742,12 +11746,16 @@ $page-banner-border: darken($banner-background-color, 18%);
 
   .nav-menu { max-width: 300px; }
 
-  .mobile-nav-open {
-    .main-header,
-    .main-content,
-    .main-footer,
-    .page-banner { transform: translateX(300px); }
-  }
+  // VPV
+  
+  // .mobile-nav-open {
+  //   .main-header,
+  //   .main-content,
+  //   .main-footer,
+  //   .page-banner { transform: translateX(300px); }
+  // }
+
+  //
 }
 
 /* scss-combine:components/navigation/nav-desktop */
