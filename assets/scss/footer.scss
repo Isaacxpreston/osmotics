@@ -1,13 +1,17 @@
 // vpv
 // note
 // 1040px/1039px is the mobile/tablet breakpoint
+
+$white: white;
+$transition-1: all 0.4s ease-in-out;
+
 .main-footer {
   background: #4F5759;
   padding-top: 72px;
   padding-bottom: 0px; // row
   .container {
     position: relative;
-    background: rgba(255, 0, 0, 0.15);
+    // background: rgba(255, 0, 0, 0.15);
     margin: auto;
     width: calc(100% - 48px);
     &:first-child {
@@ -36,7 +40,7 @@ li[data-page="Terms of Use"] {
   position: relative;
   box-sizing: border-box;
   text-align: left;
-  background: rgba(255, 0, 0, 0.15);
+  // background: rgba(255, 0, 0, 0.15);
   margin-bottom: 72px;
   @media screen and (min-width: 1040px) {
     margin: 24px auto;
@@ -45,6 +49,9 @@ li[data-page="Terms of Use"] {
 
 .footer-navigation {
   width: 100%;
+  h5 {
+    color: $white;
+  }
   @media screen and (min-width: 1040px) {
     width: calc((100% * 1/5) - 24px);
   }
@@ -52,8 +59,10 @@ li[data-page="Terms of Use"] {
 
 .footer-newsletter {
   width: 100%;
+  background-color: transparent;
   >p {
     margin-top: 0px;
+    color: $white;
   }
   .form-input {
     background: none;
@@ -78,11 +87,13 @@ li[data-page="Terms of Use"] {
 // hide 'order by phone' line
 .footer-copyright {
   width: initial;
-  p {
+  background-color: transparent;
+  p, .utility {
     position: absolute;
     top: 0;
     left: 0;
     margin-top: 18px;
+    color: $white;
   }
   p:last-child {
     display: none;
@@ -92,8 +103,17 @@ li[data-page="Terms of Use"] {
 .footer-terms {
   padding-top: 18px;
   padding-bottom: 30px;
+  text-align: right;
   a:first-child {
     margin-right: 18px;
+  }
+  a, p, .utility {
+    color: $white;
+    transition: $transition-1;
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -102,5 +122,8 @@ li[data-page="Terms of Use"] {
   margin-top: 85px;
   a {
     margin-right: 30px;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    color: $white;
   }
 }
