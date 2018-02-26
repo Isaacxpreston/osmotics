@@ -439,6 +439,21 @@ body {
         border: none !important;
       }
     }
+    .cart-preview-wrap {
+      position: fixed;
+      z-index: 1;
+      width: 100%;
+      left: 0;
+    }
+    .cart-count {
+      top: 15px;
+      pointer-events: none;
+    }
+    .visible {
+      .cart-count {
+        top: 25px !important;
+      }
+    }
   }
 }
 
