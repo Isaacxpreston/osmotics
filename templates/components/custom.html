@@ -243,14 +243,29 @@ function getPressLogoImageSize() {
 getPressLogoImageSize();
 
 // vpv
-var navigationResize = function () {
-		// todo: hide navigation here.
+var navigationClose = function () {
+		$('.nav-option').each(function() {
+			if($(this).hasClass('nav-option-open')) {
+				console.log('has open')
+				$('.navigation-dropdown, .navigation-dropdown-search').removeClass('navigation-dropdown-open')
+				$('.nav-option').removeClass('nav-option-open')
+				$('.nav-border-left, .nav-border-right').removeClass('borders-visible')
+				$('.navigation-wrap, .page-banner').removeClass('navigation-is-open')
+				window.scrollTo(0, 0)
+			} else {
+				console.log('not open')
+			}
+		})
 }
+
+$('[navigation-close-button]').click(function() {
+	navigationClose()
+})
 //
 
 $(window).resize(function() {
 	getPressLogoImageSize();
-	navigationResize();
+	navigationClose();
 });
 
 function constructSlider() {
