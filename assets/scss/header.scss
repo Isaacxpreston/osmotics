@@ -75,7 +75,7 @@ body {
 // nav dropdown menu
 .navigation-dropdown,
 .navigation-dropdown-search {
-  // display: none;
+  display: none;
   position: fixed;
   // max-width: 1280px; // take out for full bleed width
   top: 0;
@@ -351,17 +351,17 @@ body {
 
 
 // debug for now
-.get-started-dropdown {
-  display: none !important;
-}
+// .get-started-dropdown {
+//   display: none !important;
+// }
 
-.shop-dropdown {
-  display: none !important;
-}
+// .shop-dropdown {
+//   display: none !important;
+// }
 
-.navigation-dropdown-search {
-  display: none !important;
-}
+// .navigation-dropdown-search {
+//   display: none !important;
+// }
 
 
 // header tools

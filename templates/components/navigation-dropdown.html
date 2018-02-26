@@ -1,6 +1,6 @@
 
 <!-- shop -->
-<div class="navigation-dropdown fonts-vpv shop-dropdown">
+<div class="navigation-dropdown fonts-vpv shop-dropdown" data-menu="shop">
   <div class="navigation-dropdown-content">
 
     <div class="navigation-dropdown-column">
@@ -48,7 +48,7 @@
 </div>
 
 <!-- get started -->
-<div class="navigation-dropdown fonts-vpv get-started-dropdown">
+<div class="navigation-dropdown fonts-vpv get-started-dropdown" data-menu="get-started">
   <!-- backgrounds -->
   <div class="background-image-left"></div>
   <div class="background-image-right"></div>
@@ -72,15 +72,15 @@
   </div>
 
   <!-- links -->
-  <a href="#" class="navigation-link-left"></a>
-  <a href="#" class="navigation-link-right"></a>
+  <a href="/pages/problem-solution-discovery-tool.html" class="navigation-link-left"></a>
+  <a href="/pages/my-4-step-regimen.html" class="navigation-link-right"></a>
 </div>
 
 <!-- search -->
-<div class="navigation-dropdown-search">
+<div class="navigation-dropdown-search" data-menu="search">
   <div class="navigation-dropdown-content">
 
-    <form action="{{urls.search}}">
+    <form action="{{urls.search}}" class="navigation-search-form">
       <input class="navigation-searchbar" name="search_query" placeholder="{{lang 'header.search'}}">
     </form>
 
