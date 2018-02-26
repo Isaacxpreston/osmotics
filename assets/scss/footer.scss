@@ -62,7 +62,7 @@ li[data-page="Terms of Use"] {
   background-color: transparent;
   padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 0px;
+
   >p {
     margin-top: 0px;
     color: $white;
@@ -84,6 +84,13 @@ li[data-page="Terms of Use"] {
   }
   @media screen and (min-width: 1040px) {
     width: calc((100% * 2/5) - 24px);
+  }
+  @media screen and (max-width: 1039px) {
+    margin-top: 0px;
+    form {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
   }
 }
 
