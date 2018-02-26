@@ -277,6 +277,9 @@ body {
   text-transform: uppercase;
 }
 
+.white-line {
+  position: relative;
+}
 
 .white-line::after {
   content: ' ';

@@ -4,7 +4,7 @@
     <!-- vpv -->
 
     <div class="footer-navigation">
-      <h3 class="footer-section-title">Company</h3>
+      <h5 class="footer-section-title white-line">Company</h5>
       <ul>
         <li class="footer-navigation-list-item">
           <a href="/pages/about-us.html">About Us</a>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="footer-navigation">
-      <h3 class="footer-section-title">Customer Care</h3>
+      <h5 class="footer-section-title white-line">Customer Care</h5>
       <ul>
         <li class="footer-navigation-list-item">
           <a href="/pages/contact-us.html">Contact Us</a>
@@ -35,7 +35,7 @@
     <!--  -->
 
     <div class="footer-navigation">
-      <h3 class="footer-section-title">{{lang 'footer.headings.user_links'}}</h3>
+      <h5 class="footer-section-title white-line">{{lang 'footer.headings.user_links'}}</h5>
       <ul>
         <!-- vpv -->
         <li class="footer-navigation-list-item">
@@ -91,11 +91,13 @@
       <!--  -->
 
       <!-- social media -->
-      {{#each social_media}}
-      <a href="{{url}}" class="{{display_name}}" target="_blank">
-        <i class="icon-{{display_name}}"></i>
-      </a>
-      {{/each}}
+      <div class="footer-social-media">
+        {{#each social_media}}
+        <a href="{{url}}" class="{{display_name}}" target="_blank">
+          <i class="icon-{{display_name}}"></i>
+        </a>
+        {{/each}}
+      </div>
       <!--  -->
 
     </div>
@@ -109,6 +111,8 @@
   <!-- below the line -->
 
   <div class="fonts-vpv container">
+
+
     {{#if theme_settings.theme_copyright}}
     <div class="footer-copyright">
       <p>{{lang 'footer.credits.copyright' name=settings.store_name}} &copy;
@@ -119,8 +123,11 @@
     </div>
     {{/if}}
 
-    <a href="/pages/terms-of-use.html">Terms of Use</a>
-    <a href="/pages/privacy-policy.html">Privacy Policy</a>
+    <div class="footer-terms">
+      <a href="/pages/terms-of-use.html">Terms of Use</a>
+      <a href="/pages/privacy-policy.html">Privacy Policy</a>
+    </div>
+
   </div>
 
   <!--  -->
