@@ -1,43 +1,59 @@
-<div class="navigation-dropdown">
-    <div class="navigation-dropdown-content">
-      <div class="navigation-dropdown-column">
-        <!-- whitespace -->
-      </div>
-      <!-- <div class="navigation-dropdown-column">
-        <h5 class="white-line">Category</h5>
-        <ul>
-          <li class="p medium">Link</li>
-        </ul>
-      </div>
-      <div class="navigation-dropdown-column">content</div>
-      <div class="navigation-dropdown-column">content</div>
-      <div class="navigation-dropdown-column">content</div> -->
 
-
-      {{#each categories}}
-      <div class="navigation-dropdown-column">
-        <a href="{{url}}"><h5 class="white-line">{{name}}</h5></a>
-        {{#if children}}
-        <ul>
-          {{#each children}}
-            <!-- <a href="{{url}}"><li class="p medium">{{name}}</li></a> -->
-          {{/each}}
-        </ul>
-        {{/if}}
-      </div>
-      {{/each}}
-
-
-      <div class="navigation-dropdown-column">
-        <!-- whitespace -->
-      </div>
-    </div>
-</div>
-
-
+<!-- shop -->
 <!-- <div class="navigation-dropdown">
   <div class="navigation-dropdown-content">
-    <div class="navigation-dropdown-column-third">
+
+    <div class="navigation-dropdown-column">
+
+    </div>
+
+
+    {{#each categories}}
+    <div class="navigation-dropdown-column">
+      <a href="{{url}}">
+        <h5 class="white-line">{{name}}</h5>
+      </a>
+      {{#if children}}
+      <ul>
+        {{#each children}}
+        <a href="{{url}}">
+          <li class="p medium">foo
+          </li>
+        </a>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{/each}}
+
+
+    <div class="navigation-dropdown-column">
+
+    </div>
+
+
+    <div class="navigation-close-icon">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <g id="general/icon/x" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-3.000000, -3.000000)" stroke-linecap="square">
+                <g id="X" transform="translate(3.000000, 3.000000)" stroke="#5D5D5D">
+                    <path d="M0.9,0.9 L17.1,17.1" id="Line-2"></path>
+                    <path d="M0.9,17.1 L17.1,0.9" id="Line-2-Copy"></path>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+
+  </div>
+</div> -->
+
+<!-- get started -->
+<div class="navigation-dropdown">
+  <div class="background-image-left"></div>
+  <div class="background-image-right"></div>
+  
+  <div class="navigation-dropdown-content">
+    <div class="navigation-dropdown-column-third ">
       <div>
         <h1>Content</h1>
         <p>Content</p>
@@ -52,7 +68,7 @@
     </div>
     <div class="navigation-dropdown-column"></div>
   </div>
-</div> -->
+</div>
 
 
 <!-- <div class="navigation-dropdown-search">
