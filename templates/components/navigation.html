@@ -43,7 +43,9 @@
 
 
       <!-- shop -->
-      <li class="nav-menu-item shop-nav-toggle nav-top-level"><a href="#">Shop</a></li>
+      <li class="nav-menu-item shop-nav-toggle nav-top-level"><a href="#">Shop</a>
+        {{> components/chevron}}
+      </li>
 
       {{#each categories}}
       <li class="nav-menu-item nav-second-level-item {{#if children}}has-dropdown{{/if}}">
@@ -54,7 +56,7 @@
 
       <!-- get started -->
 
-      <li class="nav-menu-item nav-top-level" get-started-toggle><a href="#">Get Started</a></li>
+      <li class="nav-menu-item nav-top-level" get-started-toggle><a href="#">Get Started</a>{{> components/chevron}}</li>
       <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="#">Your Skincare Solution</a></li>
       <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="#">4 Step Regimen</a></li>
 

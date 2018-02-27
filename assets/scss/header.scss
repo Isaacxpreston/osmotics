@@ -1,5 +1,6 @@
 $white: white;
 $black: #37333D;
+$blue: #4B93AF;
 // vpv
 // DEBUG
 body {
@@ -248,11 +249,11 @@ body {
 
 // page banner overwrites
 .page-banner {
-  background: #2B7FA0;
+  background: #4B93AF;
 }
 
 .page-banner-inner:last-of-type {
-  border-bottom: 1px solid #2B7FA0;
+  border-bottom: 1px solid #4B93AF;
 }
 
 // mobile navigation overrides
@@ -275,11 +276,16 @@ body {
   }
 }
 
+.nav-menu-item.menu-open {
+  background: rgba(55,51,61,0.06);
+}
+
 .nav-menu-item.menu-open>a {
   border-bottom: none;
   border-top: none;
   margin-bottom: 0px;
-  background: rgba(255, 0, 0, 0.15);
+  // background: rgba(255, 0, 0, 0.15);
+  // background: transparent !important;
   padding-left: 24px;
   padding-right: 24px;
   width: 100%;
@@ -447,7 +453,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 0, 0, 0.15);
+    background: white;
+    box-shadow: 0 2px 2px 0 rgba(55, 51, 61, 0.15);
     font-size: 0px;
     height: 66px;
     justify-content: flex-end;
@@ -629,5 +636,27 @@ svg.nav-option-search {
 }
 
 .nav-top-level {
-  background: rgba(255, 0, 0, 0.5);
+  background: white;
+}
+
+
+// chevrons for mobile
+
+.nav-menu-item.has-dropdown > a::after {
+  display: none;
+}
+
+.nav-menu-item.has-dropdown, .nav-top-level {
+  > svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 30px;
+    margin-right: 24px;
+  }
+  &.menu-open, &.top-level-open {
+    >svg {
+      transform: rotate(90deg);
+    }
+  }
 }
