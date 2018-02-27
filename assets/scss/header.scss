@@ -3,9 +3,9 @@ $black: #37333D;
 $blue: #4B93AF;
 // vpv
 // DEBUG
-body {
-  // background: rgba(255, 0, 0, 0.5)
-}
+// body {
+//   // background: rgba(255, 0, 0, 0.5)
+// }
 
 //
 .vertical-center {
@@ -156,7 +156,7 @@ body {
 // main carousel overwrites
 .carousel-item {
   img {
-    transform: scale(2.5, 2.5) // take out later, for demonstration purposes on carousel images
+    // transform: scale(2.5, 2.5) // take out later, for demonstration purposes on carousel images
   }
 }
 

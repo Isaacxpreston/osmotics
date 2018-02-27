@@ -122,7 +122,8 @@ export default class Navigation {
 
     if (this.$toggleParent.hasClass('menu-open')) {
       this.$toggleParent.removeClass('menu-open');
-
+// this.$primaryTier = this.$el.find('.nav-menu');
+//this.$toggleParent = $('.navigation-toggle-mobile-wrapper').parent()
       $('body').removeClass('mobile-nav-open').addClass('mobile-nav-closed');
       this.$primaryTier.removeClass('visible').addClass('hidden');
 
