@@ -48,7 +48,7 @@
       </li>
 
       {{#each categories}}
-      <li class="nav-menu-item nav-second-level-item {{#if children}}has-dropdown{{/if}}">
+      <li class="nav-menu-item nav-second-level-item {{#if children}}has-dropdown{{/if}}" data-name="{{name}}">
         {{> components/navigation-item}}
       </li>
       {{/each}}
@@ -57,8 +57,8 @@
       <!-- get started -->
 
       <li class="nav-menu-item nav-top-level" get-started-toggle><a href="#">Get Started</a>{{> components/chevron}}</li>
-      <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="#">Your Skincare Solution</a></li>
-      <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="#">4 Step Regimen</a></li>
+      <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="/pages/problem-solution-discovery-tool.html">Your Skincare Solution</a></li>
+      <li class="nav-menu-item nav-menu-item-hidden nav-second-level-item" get-started-child><a href="/pages/my-4-step-regimen.html">4 Step Regimen</a></li>
 
       <!--  -->
 

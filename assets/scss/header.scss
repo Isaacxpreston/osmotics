@@ -3,9 +3,13 @@ $black: #37333D;
 $blue: #4B93AF;
 // vpv
 // DEBUG
-// body {
-//   // background: rgba(255, 0, 0, 0.5)
-// }
+body {
+  background: $white;
+}
+
+.layout-block {
+  background: $white !important;
+}
 
 //
 .vertical-center {
@@ -185,6 +189,7 @@ $blue: #4B93AF;
   position: relative;
   margin: auto;
   z-index: 3;
+  transform: scale(1.075, 1);
   svg {
     transform: scale(1.15, 1.15);
   }
@@ -309,6 +314,9 @@ $blue: #4B93AF;
 
 .nav-submenu-item {
   background: rgba(55,51,61,0.06);
+  >svg {
+    display: none;
+  }
 }
 
 .nav-submenu-item>a {
@@ -495,6 +503,10 @@ $blue: #4B93AF;
   }
 }
 
+.cart-preview-wrap {
+  color: $black !important;
+}
+
 .navigation-toggle-mobile-wrapper.close {
   display: none;
 }
@@ -659,4 +671,10 @@ svg.nav-option-search {
       transform: rotate(90deg);
     }
   }
+}
+
+
+// header IA fix
+[data-name="About Francine"] {
+  display: none !important;
 }

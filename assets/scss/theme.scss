@@ -7098,7 +7098,7 @@ $rem-base: 16px !default;
 /* scss-combine:general/fonts */
 [class^="icon-"],
 [class*=" icon-"] {
-  font-family: "form-icons";
+  font-family: "form-icons" !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
