@@ -269,6 +269,9 @@ body {
     border-bottom: none;
     border-top: none;
   }
+  &.nav-menu-item-hidden {
+    display: none;
+  }
 }
 
 .nav-menu-item.menu-open>a {
@@ -591,8 +594,12 @@ svg.nav-option-search {
 
 .navigation-tier {
   &.hide-shop-navigation {
-    .nav-menu-item:not(.nav-account-item) {
+    .nav-menu-item:not(.nav-account-item):not(.shop-nav-toggle):not(.nav-top-level):not([get-started-child]) {
       display: none;
     }
   }
+}
+
+.nav-top-level {
+  background: rgba(255, 0, 0, 0.5);
 }

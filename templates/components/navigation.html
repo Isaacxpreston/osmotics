@@ -39,23 +39,31 @@
 
 
     <!-- mobile nav -->
-    <ul class="navigation-tier nav-menu">
+    <ul class="navigation-tier nav-menu hide-shop-navigation">
 
 
-      <!-- <li class="nav-menu-item"> -->
-          <a href="#" class="shop-nav-toggle">shop parent category</a>
+      <!-- shop -->
+      <li class="nav-menu-item shop-nav-toggle nav-top-level"><a href="#">Shop</a></li>
 
-          {{#each categories}}
-          <li class="nav-menu-item {{#if children}}has-dropdown{{/if}}">
-            {{> components/navigation-item}}
-          </li>
-          {{/each}}
-      <!-- </li> -->
+      {{#each categories}}
+      <li class="nav-menu-item {{#if children}}has-dropdown{{/if}}">
+        {{> components/navigation-item}}
+      </li>
+      {{/each}}
+      <!--  -->
 
+      <!-- get started -->
 
-      
+      <li class="nav-menu-item nav-top-level" get-started-toggle><a href="#">Get Started</a></li>
+      <li class="nav-menu-item nav-menu-item-hidden" get-started-child><a href="#">Your Skincare Solution</a></li>
+      <li class="nav-menu-item nav-menu-item-hidden" get-started-child><a href="#">4 Step Regimen</a></li>
+
+      <!--  -->
+
+      <li class="nav-menu-item nav-top-level"><a href="#">Francine's Philosophy</a></li>
+
       {{#if settings.account_creation_enabled}}
-      <li class="nav-menu-item mobile-list-item nav-account-item">
+      <li class="nav-menu-item mobile-list-item nav-account-item nav-top-level">
         {{#if customer}}
         <a href="{{urls.account.index}}">{{lang 'header.logged_in_as' name=customer.name}}</a>
         <a href="{{urls.auth.logout}}">{{lang 'header.log_out' }}</a>
