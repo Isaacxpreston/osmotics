@@ -579,12 +579,20 @@ svg.nav-option-search {
 // mobile navigation
 .navigation-wrap {
   @media screen and (max-width: 1039px) {
-    margin-top: 84px;
+    margin-top: 106px;
     height: calc(100vh - 84px);
     .navigation,
     .nav-menu {
       width: 100%;
       max-width: 100%;
+    }
+  }
+}
+
+.navigation-tier {
+  &.hide-shop-navigation {
+    .nav-menu-item:not(.nav-account-item) {
+      display: none;
     }
   }
 }
