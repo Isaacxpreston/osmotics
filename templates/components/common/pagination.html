@@ -1,7 +1,7 @@
-<div class="pagination-container">
+<div class="pagination-container fonts-vpv">
   <div class="pagination">
     {{#if previous}}
-      <a class="pagination-item previous" href="{{previous}}" rel="nofollow" data-faceted-search-facet>
+      <a class="pagination-item previous p medium" href="{{previous}}" rel="nofollow" data-faceted-search-facet>
         <i class="icon-arrow-left" aria-hidden="true"></i>
         {{lang 'common.pagination.previous'}}
       </a>
@@ -11,18 +11,18 @@
       {{#if links.length '>' 1}}
         {{#each links}}
           {{#if number '===' ../current}}
-            <span class="pagination-number pagination-current"><a href="{{url}}">{{number}}</a></span>
+            <span class="pagination-number pagination-current"><a href="{{url}}" class="p medium">{{number}}</a></span>
           {{else}}
-            <span class="pagination-number"><a href="{{url}}">{{number}}</a></span>
+            <span class="pagination-number"><a href="{{url}}" class="p medium">{{number}}</a></span>
           {{/if}}
         {{/each}}
       {{else}}
-        <span class="pagination-number pagination-current">1</span>
+        <span class="pagination-number pagination-current p medium">1</span>
       {{/if}}
     </output>
 
     {{#if next}}
-      <a class="pagination-item next" href="{{next}}" rel="nofollow" data-faceted-search-facet>
+      <a class="pagination-item next p medium" href="{{next}}" rel="nofollow" data-faceted-search-facet>
         {{lang 'common.pagination.next'}}
         <i class="icon-arrow-right" aria-hidden="true"></i>
       </a>

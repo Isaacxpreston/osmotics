@@ -27,27 +27,57 @@ $off-white: #FAFBFB;
   }
 }
 
-.face-svg {
+.face-svg-bg {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   margin: auto;
-  // width: 100%;
+  width: 37%;
   height: 55%;
   transform: translateY(-50%);
+  background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Face.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
+.face-svg {
+  position: absolute;
+  // top: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  // height: 55%;
+  // transform: translateY(-50%);
+}
+
+// .all-circles-container {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   margin: auto;
+//   background: rgba(255, 0, 0, 0.15);
+//   width: 379px;
+//   height: 278px;
+// }
 
 // circle icons
 .circle-container {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  // top: 0;
   left: 0;
   // TEST
   width: 100%;
   background: rgba(255, 0, 0, 0.15);
-  margin-top: -15vh;
+  // margin-top: -15vh;
+  margin-top: -16%;
   margin-right: 16.6%;
   //
   // width: 30px;

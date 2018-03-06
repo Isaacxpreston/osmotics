@@ -1,11 +1,11 @@
-<article class="blog-post">
+<article class="blog-post fonts-vpv">
 
   <h2 class="blog-post-title">
-    <a href="{{url}}">{{title}}</a>
+    <a href="{{url}}" class="h1 black">{{title}}</a>
   </h2>
 
   <div class="blog-post-meta">
-    <time class="blog-post-date">{{date_published}}</time>
+    <time class="blog-post-date p medium silver">{{date_published}}</time>
 
     {{#if this.author}}
       <div class="blog-post-author">
@@ -25,7 +25,7 @@
         </p>
       {{/if}}
 
-      <p>{{{summary}}}</p>
+      <p class="p medium">{{{summary}}}</p>
 
     {{else}}
 

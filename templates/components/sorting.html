@@ -1,9 +1,9 @@
 <div class="sorting">
   <h5 class="sorting-title">{{lang 'common.sorter.sort_by'}}</h5>
   <form class="product-sort-select" method="get" data-sort-by>
-    <div class="form-field form-inline">
+    <div class="form-field form-inline fonts-vpv">
         <label class="form-label show-for-sr" for="sort">{{lang 'common.sorter.sort_by'}}</label>
-        <div class="form-select-wrapper">
+        <div class="form-select-wrapper p medium">
           <select class="form-select" name="sort" id="sort">
             <option value="featured" {{#compare sort 'featured' operator='==='}}selected{{/compare}}>{{lang 'common.sorter.featured'}}</option>
             <option value="newest" {{#compare sort 'newest' operator='==='}}selected{{/compare}}>{{lang 'common.sorter.newest'}}</option>

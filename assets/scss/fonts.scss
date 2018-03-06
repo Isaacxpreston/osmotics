@@ -1,6 +1,3 @@
-// todo: register font faces
-// todo: colors
-
 @font-face {
   font-family: 'Karla-Bold';
   src: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Karla-Bold.ttf') format('truetype');
@@ -11,24 +8,41 @@
   src: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Karla-Regular.ttf') format('truetype');
 }
 
+
+// global karla fallback
+
 *{ 
   font-family: 'Karla-Regular', 'Futura', 'Lato', sans-serif !important;
 }
 
+
+// variables
+$black: #37333D;
+$silver: #858594;
+$white: #FFFFFF;
+
+// karla fonts wrapper
 .fonts-vpv {
   h1,
   .h1 {
-    font-family: 'Karla-Bold' !important;
+    font-family: 'Karla-Regular';
     font-size: 38px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 0;
     line-height: 48px;
+    &.h1-important {
+      font-family: 'Karla-Regular' !important;
+      font-size: 38px !important;
+      color: $black !important;
+      letter-spacing: 0 !important;
+      line-height: 48px !important;
+    }
   }
   h2,
   .h2 {
-    font-family: 'Karla-Bold' !important;
+    font-family: 'Karla-Regular';
     font-size: 28px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 0;
     line-height: 48px;
   }
@@ -36,7 +50,7 @@
   .h3 {
     font-family: 'Karla-Regular';
     font-size: 21px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 0;
     line-height: 24px;
   }
@@ -44,7 +58,7 @@
   .h4 {
     font-family: 'Karla-Bold' !important;
     font-size: 16px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 1px;
     line-height: 24px;
   }
@@ -52,31 +66,40 @@
   .h5 {
     font-family: 'Karla-Bold' !important;
     font-size: 14px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 1px;
     line-height: 24px;
     text-transform: uppercase;
   }
   p,
   .p {
-    .large {
+    &.large {
       font-family: 'Karla-Regular';
       font-size: 18px;
-      color: #37333D;
+      color: $black;
       letter-spacing: 0;
       line-height: 28px;
     }
-    .medium {
+    &.medium {
       font-family: 'Karla-Regular';
       font-size: 16px;
-      color: #37333D;
+      color: $black;
       letter-spacing: 0;
       line-height: 24px;
+      &.traverse {
+        * {
+          font-family: 'Karla-Regular' !important;
+          font-size: 16px !important;
+          color: $black !important;
+          letter-spacing: 0 !important;
+          line-height: 24px !important;
+        }
+      }
     }
-    .small {
+    &.small {
       font-family: 'Karla-Regular';
       font-size: 14px;
-      color: #37333D;
+      color: $black;
       letter-spacing: 0;
       line-height: 24px;
     }
@@ -84,8 +107,21 @@
   .utility {
     font-family: 'Karla-Regular';
     font-size: 12px;
-    color: #37333D;
+    color: $black;
     letter-spacing: 0;
     line-height: 24px;
+  }
+  // make any font bold
+  .bold {
+    font-family: 'Karla-Bold' !important;
+  }
+  .color-black {
+    color: $black !important;
+  }
+  .color-silver {
+    color: $silver !important;
+  }
+  .color-white {
+    color: $white !important;
   }
 }

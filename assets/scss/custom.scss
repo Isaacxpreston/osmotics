@@ -2403,3 +2403,32 @@ p strong .vglnk span {
   color: inherit;
   font-weight: inherit;
 }
+
+// vpv
+// form label
+
+.form-selected-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tab-title {
+  >a {
+    font-family: 'Karla-Regular';
+    font-size: 16px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+}
+
+.tabs-content-panel {
+   *{
+    font-family: 'Karla-Regular';
+    font-size: 16px;
+    color: #37333D;
+    letter-spacing: 0;
+    line-height: 24px;
+   }
+}

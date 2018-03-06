@@ -1,4 +1,4 @@
-<div class="product-details" data-product-details data-product-title="{{product.title}}">
+<div class="product-details fonts-vpv" data-product-details data-product-title="{{product.title}}">
   <div class="single-product-alerts">
     <div class="product-message alert" data-product-message></div>
 
@@ -28,7 +28,7 @@
           {{product.call_for_price}}
         </div>
       {{else}}
-        {{> components/products/price context="product" price=product.price show_savings=true}}
+        {{> components/products/price context="product" price=product.price show_savings=true is_large=true}}
       {{/if}}
     </div>
 
@@ -45,9 +45,9 @@
     {{/if}}
 
     {{#if settings.show_wishlist}}
-      <form class="single-product-add-to-wishlist" method="post" action="{{product.add_to_wishlist_url}}">
+      <form class="single-product-add-to-wishlist fonts-vpv" method="post" action="{{product.add_to_wishlist_url}}">
         <input type="hidden" name="variation_id" value="">
-        <button class="text-button icon" type="submit">
+        <button class="text-button icon p small" type="submit">
           <i class="icon-heart"></i> {{lang 'product.add_to_wishlist'}}
         </button>
       </form>
@@ -76,7 +76,7 @@
     {{> components/products/product/additional-details}}
   </div>
 
-  <div class="single-product-form">
+  <div class="single-product-form fonts-vpv">
     <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data" data-product-options-count="{{product.options.length}}" data-product-form data-validated-form>
       <input type="hidden" name="action" value="add">
       <input type="hidden" name="product_id" value="{{product.id}}" data-product-id>
@@ -85,7 +85,7 @@
         {{#if product.show_quantity_input}}
           <div class="product-quantity" data-product-quantity>
             <label class="form-label" for="quantity">
-              <span class="form-field-title">{{lang 'product.quantity'}}</span>
+              <span class="form-field-title p small color-silver">{{lang 'product.quantity'}}</span>
 
               <div class="quantity-input-wrap">
                 <div class="form-field-control">
@@ -179,11 +179,11 @@
     </form>
   </div>
 
-  <div class="form-actions single-product-add-to-cart" data-product-add>
+  <div class="form-actions single-product-add-to-cart fonts-vpv" data-product-add>
     {{#if product.can_purchase}}
       <div class="product-add-button-wrapper">
         <button class="product-add-button button {{#if product.out_of_stock}}disabled{{/if}}" data-button-purchase {{#if product.pre_order}}data-button-preorder{{/if}} {{#if product.out_of_stock}}disabled{{/if}}>
-          <span data-button-text>
+          <span data-button-text class="h4 bold color-white">
             {{#if product.out_of_stock}}
               {{lang 'product.sold_out'}}
             {{else}}
@@ -214,25 +214,25 @@
   </div>
 
   {{#unless quickshop}}
-    <div class="single-product-tabs">
+    <div class="single-product-tabs fonts-vpv">
       <ul class="tabs-navigation" data-tabs>
         {{#if product.description}}
-          <li class="tab-title"><a href="#product-details">{{lang 'products.tabs.details'}}</a></li>
+          <li class="tab-title"><a href="#product-details" class="p medium">{{lang 'products.tabs.details'}}</a></li>
         {{/if}}
 
         {{#if settings.show_product_reviews}}
-          <li class="tab-title"><a href="#product-reviews">{{lang 'products.tabs.reviews'}}</a></li>
+          <li class="tab-title"><a href="#product-reviews" class="p medium">{{lang 'products.tabs.reviews'}}</a></li>
         {{/if}}
 
         {{#if product.videos.list.length}}
-          <li class="tab-title"><a href="#product-videos">{{lang 'products.tabs.videos'}}</a></li>
+          <li class="tab-title"><a href="#product-videos" class="p medium">{{lang 'products.tabs.videos'}}</a></li>
         {{/if}}
       </ul>
 
       <div class="tabs-content">
         {{#if product.description}}
           <div class="tabs-content-panel" id="product-details">
-            <div class="product-description rte">
+            <div class="product-description rte p medium">
               {{{product.description}}}
 
               {{{snippet 'product_description'}}}
