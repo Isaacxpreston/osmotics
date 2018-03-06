@@ -9,7 +9,8 @@ $transition-1: all 0.4s ease-in-out;
   background: #4F5759;
   padding-top: 72px;
   padding-bottom: 0px; // row
-  margin-bottom: -24px;
+  // margin-bottom: -24px;
+  transform: translateY(24px);
   .container {
     position: relative;
     // background: rgba(255, 0, 0, 0.15);
@@ -141,4 +142,8 @@ li[data-page="Terms of Use"] {
     text-align: center;
     margin-top: 100px;
   }
+}
+
+input#mce-EMAIL::placeholder {
+  color: white !important;
 }

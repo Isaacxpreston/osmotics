@@ -10875,6 +10875,7 @@ $page-banner-border: darken($banner-background-color, 18%);
 }
 
 .shipping-banner {
+  display: none;
   color: $light-color;
   background-color: rgba($success-color, 0.6);
 

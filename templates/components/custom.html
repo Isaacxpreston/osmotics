@@ -281,16 +281,16 @@
 
 		// vpv
 		var navigationClose = function () {
+			console.log('started')
 			$('.nav-option').each(function () {
 				if ($(this).hasClass('nav-option-open')) {
-					console.log('has open')
-					$('.navigation-dropdown, .navigation-dropdown-search').removeClass('navigation-dropdown-open')
+					console.log('here')
+					$('.navigation-dropdown').removeClass('navigation-dropdown-open')
+					$('.navigation-dropdown-search').removeClass('navigation-dropdown-open')
 					$('.nav-option').removeClass('nav-option-open')
 					$('.nav-border-left, .nav-border-right').removeClass('borders-visible')
 					$('.navigation-wrap, .page-banner, .main-content').removeClass('navigation-is-open')
 					window.scrollTo(0, 0)
-				} else {
-					console.log('not open')
 				}
 			})
 		}
@@ -726,11 +726,11 @@
 				}
 			}
 
-			var extraSpace = (($(this).width() / 2) - 18)
+			var extraSpace = (($(this).width() / 2) - 30)
 			var windowWidth = window.innerWidth >= 1280 ? window.innerWidth : window.innerWidth // 1280 left option alternatively.
 
 			$('.nav-border-left').width((windowWidth - getNext(this)) + extraSpace)
-			$('.nav-border-right').width((getNext(this) - ($(this).innerWidth())) + (extraSpace + 0.35))
+			$('.nav-border-right').width((getNext(this) - ($(this).innerWidth())) + (extraSpace - 1.75))
 		})
 
 
