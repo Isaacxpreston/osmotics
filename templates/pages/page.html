@@ -1,5 +1,10 @@
 {{#partial "page"}}
 
+{{#if page.title '===' 'Problem/Solution Discovery Tool'}}
+  <!-- show discovery tool snippet if on discovery tool page -->
+  {{> components/discoveryTool/discoveryTool}}
+{{else}}
+  <!-- else show page template -->
   <header class="sub-header">
     {{> components/common/breadcrumbs breadcrumbs}}
   </header>
@@ -19,7 +24,7 @@
           <!-- show discovery tool snippet if on discovery tool page -->
           {{> components/discoveryTool/discoveryTool}}
         {{else}}
-          <!-- else show page content -->
+          <!-- else show page template -->
           {{{page.content}}}
           {{#if page.feed}}
             <ul class="page-feed">
@@ -32,11 +37,14 @@
             </ul>
           {{/if}}
         {{/if}}
-        
+
       </div>
     </div>
 
   </section>
+{{/if}}
+
+
 
 {{/partial}}
 

@@ -1,8 +1,67 @@
-        <!-- DISCOVERY TOOL DEVELOPMENT -->
-        <p><span style="font-size: x-large;">Target your specific concerns with these high-performance, anti-aging cosmeceuticals. Check the box next to your area of concern and scroll down to discover your product recommendation. It&rsquo;s as easy as 1, 2, 3.</span></p>
-        <hr />
-        <div class="face-holder"><a class="face-check one left" data-template="one.html">&nbsp;</a> <a class="face-check two left" data-template="two.html">&nbsp;</a> <a class="face-check three left" data-template="three.html">&nbsp;</a> <a class="face-check four left" data-template="four.html">&nbsp;</a> <a class="face-check five left" data-template="five.html">&nbsp;</a> <a class="face-check six left" data-template="six.html">&nbsp;</a> <a class="face-check seven right" data-template="seven.html">&nbsp;</a> <a class="face-check eight right" data-template="eight.html">&nbsp;</a> <a class="face-check nine right" data-template="nine.html">&nbsp;</a> <a class="face-check ten right" data-template="ten.html">&nbsp;</a> <a class="face-check eleven right" data-template="eleven.html">&nbsp;</a> <a class="face-check twelve right" data-template="twelve.html">&nbsp;</a></div>
-        <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="">
-        <div class="product-grid-list-items row-of-four interactive-items">&nbsp;</div>
-        </div>
-        <!--  -->
+<!-- (VPV) Discovery Tool  -->
+
+
+<!-- styles only for discoveryTool page -->
+{{{stylesheet '/assets/css/discoveryTool.css'}}}
+
+
+
+<!-- template -->
+
+<section class="layout-block">
+
+  <!-- copy -->
+  <div>
+    <h1>
+      {{page.title}}
+    </h1>
+    <p>
+      <span style="font-size: x-large;">Target your specific concerns with these high-performance, anti-aging cosmeceuticals. Check the box next to your area
+        of concern and scroll down to discover your product recommendation. It&rsquo;s as easy as 1, 2, 3.</span>
+    </p>
+  </div>
+
+
+  <div>
+    {{> components/discoveryTool/svg/face}}
+  </div>
+
+  <div>
+    {{> components/discoveryTool/svg/icon test='yoooooo'}}
+  </div>
+
+
+  <!-- original tool (hidden) -->
+  <div class="page-container">
+    <div class="page-content narrow">
+
+      <!-- face -->
+      <div class="face-holder">
+        <a class="face-check one left" data-template="one.html">&nbsp;</a>
+        <a class="face-check two left" data-template="two.html">&nbsp;</a>
+        <a class="face-check three left" data-template="three.html">&nbsp;</a>
+        <a class="face-check four left" data-template="four.html">&nbsp;</a>
+        <a class="face-check five left" data-template="five.html">&nbsp;</a>
+        <a class="face-check six left" data-template="six.html">&nbsp;</a>
+        <a class="face-check seven right" data-template="seven.html">&nbsp;</a>
+        <a class="face-check eight right" data-template="eight.html">&nbsp;</a>
+        <a class="face-check nine right" data-template="nine.html">&nbsp;</a>
+        <a class="face-check ten right" data-template="ten.html">&nbsp;</a>
+        <a class="face-check eleven right" data-template="eleven.html">&nbsp;</a>
+        <a class="face-check twelve right" data-template="twelve.html">&nbsp;</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- recommended products -->
+  <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="">
+    <div class="product-grid-list-items row-of-four interactive-items">&nbsp;</div>
+  </div>
+
+
+
+</section>
+<!--  -->

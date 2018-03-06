@@ -1,6 +1,12 @@
 // discovery tool //
 
-.face-holder{
+// layout styles only for discovery tool page
+.page-container {
+  display: none;
+}
+//
+
+.face-holder {
   width: 100%;
   height: 760px;
   background-image: url(/content/images/face.jpg);
@@ -11,7 +17,7 @@
   position: relative;
 }
 
-.face-check{
+.face-check {
   display: block;
   width: 10px;
   height: 10px;
@@ -19,68 +25,67 @@
   cursor: pointer;
 }
 
-.face-check:hover{
+.face-check:hover {
   background-color: #5e3869;
 }
 
-.face-check.active{
+.face-check.active {
   background-color: #5e3869;
 }
 
-.face-check.left{
+.face-check.left {
   left: 205px;
 }
 
-.face-check.right{
+.face-check.right {
   left: 592px;
 }
 
-.face-check.one{
+.face-check.one {
   top: 101px;
 }
 
-.face-check.two{
+.face-check.two {
   top: 208px;
 }
 
-.face-check.three{
+.face-check.three {
   top: 290px;
 }
 
-.face-check.four{
+.face-check.four {
   top: 367px;
 }
 
-.face-check.five{
+.face-check.five {
   top: 460px;
 }
 
-.face-check.six{
+.face-check.six {
   top: 533px;
 }
 
-
-.face-check.seven{
+.face-check.seven {
   top: 68px;
 }
 
-.face-check.eight{
+.face-check.eight {
   top: 137px;
 }
 
-.face-check.nine{
+.face-check.nine {
   top: 271px;
 }
 
-.face-check.ten{
+.face-check.ten {
   top: 407px;
 }
 
-.face-check.eleven{
+.face-check.eleven {
   top: 505px;
 }
 
-.face-check.twelve{
+.face-check.twelve {
   top: 573px;
 }
 
