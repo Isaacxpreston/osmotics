@@ -1,0 +1,117 @@
+<script>
+
+  Custom.CoreClient = (function() {
+	function CoreClient() {
+		var core_client = this;
+	}
+
+	// Find hidden cotent for extra tabs from the html editor
+	// Inject content and add new tab on product pages
+	CoreClient.prototype.extra_tabs = function() {
+		// ingredients
+		if ($('.ingredients').length > 0) {
+			$('.tabs-content').append('<div id="product-ingredients" class="tabs-content-panel">' + $('.ingredients').html() + '</div>');
+			$('.single-product-tabs').find('ul.tabs-navigation').append('<li class="tab-title"><a href="#product-ingredients">Ingredients</a></li>');
+		}
+		// usage
+		if ($('.usage').length > 0) {
+			$('.tabs-content').append('<div id="usage" class="tabs-content-panel">' + $('.usage').html() + '</div>');
+			$('.single-product-tabs').find('ul.tabs-navigation').append('<li class="tab-title"><a href="#usage">To Use</a></li>');
+		}
+		// usage
+		if ($('.tips').length > 0) {
+			$('.tabs-content').append('<div id="tips" class="tabs-content-panel">' + $('.tips').html() + '</div>');
+			$('.single-product-tabs').find('ul.tabs-navigation').append('<li class="tab-title"><a href="#tips">Fran\'s Tip</a></li>');
+		}
+	};
+
+	CoreClient.prototype.footer = function() {
+		$('.footer-copyright').append('<p>Order by Phone 800-440-1411 </p>');
+		$('.footer-newsletter .footer-section-title').text('Sign up for emails');
+	};
+
+	CoreClient.prototype.category_menu = function() {
+		$('li.nav-menu-item a:contains("Skincare")').attr('href', '#').click(function() {
+			return false;
+		});
+		$('li.nav-menu-item a:contains("Anti-Agers")').attr('href', '/anti-agers-overview/');
+		$('li.nav-menu-item a:contains("Concerns")').attr('href', '#').click(function() {
+			return false;
+		});
+		$('li.nav-menu-item a:contains("4 Step System")').attr('href', '/four-step-anti-aging-system/');
+	};
+
+	CoreClient.prototype.inject_form = function() {
+		var core_client = this;
+		$('[data-client=form-target]').load('/content/ps_form_control.html', function() {
+			console.log('form injected');
+			startupApp(stencilBootstrap);
+			core_client.ps_form();
+		});
+	};
+
+	CoreClient.prototype.ps_form = function() {
+		console.log('ps form');
+		var core_client = this;
+		$('#skin_type').change(function() {
+			console.log('skin care select');
+			$('#skin_concern').val('0').trigger('change');
+			if ($(this).val() === "0") {
+				$("#skin_concern").prop('disabled', true);
+			} else {
+				$("#skin_concern").prop('disabled', false);
+			}
+		});
+		$('#skin_concern').change(function() {
+			console.log('skin concern select');
+			if ($(this).val() === "0") {
+				$('[data-client=steps]').slideUp();
+			} else {
+				var path = $('#skin_type').val() + '_' + $(this).val();
+				$('[data-client=steps]').load('/content/' + path + '.html', function() {
+					$('[data-client=bundle]').click(function() {
+						basket = $(this).data('products');
+						console.log(basket);
+						core_client.addToCart(basket);
+					});
+					$(this).slideDown();
+					startupApp(stencilBootstrap);
+				});
+			}
+		});
+	};
+
+	CoreClient.prototype.addToCart = function(basket) {
+		if (basket.length) {
+			for (var i = 0; i < basket.length; i++) {
+				$.get('/cart.php?action=add&product_id=' + basket[i] + '&fastcart=1&ajaxsubmit=1', function(){
+					console.log('adding product ' + basket[i]);
+				});
+			}
+		}
+		// window.location.replace('/cart.php');
+	};
+
+	CoreClient.prototype.interactive = function () {
+		$('.face-check').click(function(e){
+			e.preventDefault();
+			$(this).toggleClass('active');
+			var template = $(this).data('template');
+			var path = '/content/' + template
+			if ($(this).hasClass('active')) {
+				$.get(path, function(data){
+					$('.product-grid-list-items').append(data);
+					startupApp(stencilBootstrap);
+				});
+			}else{
+				var remove = template.replace('.html', '');
+				$('[data-remove~=' + remove + ']').remove();
+			}
+		});
+	};
+
+
+
+	return CoreClient
+})();
+</script>

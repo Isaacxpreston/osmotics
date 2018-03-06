@@ -1,0 +1,87 @@
+// discovery tool //
+
+.face-holder{
+  width: 100%;
+  height: 760px;
+  background-image: url(/content/images/face.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin: 0 auto;
+  position: relative;
+}
+
+.face-check{
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.face-check:hover{
+  background-color: #5e3869;
+}
+
+.face-check.active{
+  background-color: #5e3869;
+}
+
+.face-check.left{
+  left: 205px;
+}
+
+.face-check.right{
+  left: 592px;
+}
+
+.face-check.one{
+  top: 101px;
+}
+
+.face-check.two{
+  top: 208px;
+}
+
+.face-check.three{
+  top: 290px;
+}
+
+.face-check.four{
+  top: 367px;
+}
+
+.face-check.five{
+  top: 460px;
+}
+
+.face-check.six{
+  top: 533px;
+}
+
+
+.face-check.seven{
+  top: 68px;
+}
+
+.face-check.eight{
+  top: 137px;
+}
+
+.face-check.nine{
+  top: 271px;
+}
+
+.face-check.ten{
+  top: 407px;
+}
+
+.face-check.eleven{
+  top: 505px;
+}
+
+.face-check.twelve{
+  top: 573px;
+}
+
+// //
