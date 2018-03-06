@@ -2,20 +2,55 @@
 
 // variables
 $transition-circle: 0.3s ease-in-out;
-
+$off-white: #FAFBFB;
 
 // layout styles only for discovery tool page
 .page-container {
   display: none;
 }
 
+.layout-block {
+  padding-top: 0px;
+}
+
 //
 
+// face container
+.face-container {
+  position: relative;
+  margin: auto;
+  background: rgba(255, 0, 0, 0.15);
+  width: calc(100% * (5/12));
+  min-height: 100vh;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.face-svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // width: 100%;
+  height: 55%;
+  transform: translateY(-50%);
+}
 
 // circle icons
 .circle-container {
   position: absolute;
-  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  // TEST
+  width: 100%;
+  background: rgba(255, 0, 0, 0.15);
+  margin-top: -15vh;
+  margin-right: 16.6%;
+  //
+  // width: 30px;
   height: 30px;
   >svg {
     position: absolute;
@@ -26,14 +61,32 @@ $transition-circle: 0.3s ease-in-out;
     .fill-hover {
       transition: all $transition-circle;
     }
-    &:hover, &.hovered {
+    &:hover,
+    &.hovered {
       .fill-hover {
         fill: #37333D;
       }
-      + .circle-label {
+      +.circle-label {
         color: white;
       }
-      
+    }
+  }
+  &.circle-container-right {
+    right: 0;
+    left: initial;
+    >svg {
+      right: 0;
+      left: initial;
+    }
+    >.circle-line {
+      right: 0;
+      margin-right: 30px;
+      left: initial;
+      margin-left: initial;
+    }
+    >.circle-label {
+      right: 0;
+      // left: initial;
     }
   }
 }
@@ -57,9 +110,7 @@ $transition-circle: 0.3s ease-in-out;
   pointer-events: none;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
   right: 0;
-  margin: auto;
   text-align: center;
   font-family: 'Karla-Bold' !important;
   font-size: 16px;
