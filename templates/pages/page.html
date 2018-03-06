@@ -1,6 +1,6 @@
 {{#partial "page"}}
 
-{{#if page.title '===' 'Problem/Solution Discovery Tool'}}
+{{#if page.title '===' 'Problem/Solution Discovery Tool DO NOT USE THIS IN PRODUCTION'}}
   <!-- show discovery tool snippet if on discovery tool page -->
   {{> components/discoveryTool/discoveryTool}}
 {{else}}
@@ -13,18 +13,10 @@
 
     <div class="page-header">
       <h1 class="page-title centered">{{page.title}}</h1>
-
-
     </div>
 
     <div class="page-container">
-      <div class="page-content narrow rte">
-        
-        {{#if page.title '===' 'Problem/Solution Discovery Tool'}}
-          <!-- show discovery tool snippet if on discovery tool page -->
-          {{> components/discoveryTool/discoveryTool}}
-        {{else}}
-          <!-- else show page template -->
+      <div class="page-content narrow rte"> 
           {{{page.content}}}
           {{#if page.feed}}
             <ul class="page-feed">
@@ -36,8 +28,6 @@
               {{/each}}
             </ul>
           {{/if}}
-        {{/if}}
-
       </div>
     </div>
 

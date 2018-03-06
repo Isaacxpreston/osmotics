@@ -7336,6 +7336,7 @@ p {
   line-height: 1.2;
   letter-spacing: 3px;
   text-align: center;
+  text-transform: capitalize !important;
 
   @if (stencilFontFamily("section-heading-font") == "Dosis") { font-weight: 700; }
 
