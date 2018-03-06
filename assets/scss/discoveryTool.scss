@@ -1,11 +1,76 @@
 // discovery tool //
 
+// variables
+$transition-circle: 0.3s ease-in-out;
+
+
 // layout styles only for discovery tool page
 .page-container {
   display: none;
 }
+
 //
 
+
+// circle icons
+.circle-container {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  >svg {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    .fill-hover {
+      transition: all $transition-circle;
+    }
+    &:hover, &.hovered {
+      .fill-hover {
+        fill: #37333D;
+      }
+      + .circle-label {
+        color: white;
+      }
+      
+    }
+  }
+}
+
+.circle-line {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  top: 50%;
+  left: 0;
+  margin-left: 30px;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 1px;
+  background: #37333D;
+}
+
+.circle-label {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-family: 'Karla-Bold' !important;
+  font-size: 16px;
+  color: #37333D;
+  letter-spacing: 1px;
+  line-height: 24px;
+  transition: all $transition-circle;
+}
+
+//
+// original styles
 .face-holder {
   width: 100%;
   height: 760px;
