@@ -1,50 +1,40 @@
 <!-- (VPV) Discovery Tool  -->
 
-
 <!-- styles only for discoveryTool page -->
 {{{stylesheet '/assets/css/discoveryTool.css'}}}
 
 
-
 <!-- template -->
-
-<section class="layout-block">
+<section class="layout-block fonts-vpv">
 
   <!-- copy -->
-  <!-- <div>
-    <h1>
-      {{page.title}}
-    </h1>
-    <p>
-      <span style="font-size: x-large;">Target your specific concerns with these high-performance, anti-aging cosmeceuticals. Check the box next to your area
-        of concern and scroll down to discover your product recommendation. It&rsquo;s as easy as 1, 2, 3.</span>
-    </p>
-  </div> -->
+  <div class="left-block">
+    <div class="content">
+      <div class="copy">
+        <div class="h2 bold">Your Skincare Solution</div>
+        <div class="p large">Target your specific concerns with these high-performance, anti-aging cosmeceuticals. Once you select your concerns,
+          you can view your recommended products.</div>
+      </div>
+    </div>
+  </div>
 
-
-  <!-- <div class="face-container"> -->
-    <!-- {{> components/discoveryTool/svg/face}} -->
-    <!-- <div class="face-svg-bg"></div> -->
-    <!-- <div class="circles-container">
-      {{> components/discoveryTool/svg/icon label='1' width='21%' class='circle-container-right'}}
-    </div> -->
-    
-  <!-- </div> -->
-
+  <!-- svg -->
   <div class="face-container">
     {{> components/discoveryTool/svg/fullFace}}
   </div>
 
-  <!-- <div class="all-circles-container"> -->
-    
-  <!-- </div> -->
+  <!-- list -->
+  <div class="right-block">
+    content here
+    <!-- add list of concerns -->
+    <!-- add toggle button -->
+    <!-- add slide in products view -->
+  </div>
 
 
   <!-- original tool (hidden) -->
-  <div class="page-container">
+  <!-- <div class="page-container">
     <div class="page-content narrow">
-
-      <!-- face -->
       <div class="face-holder">
         <a class="face-check one left" data-template="one.html">&nbsp;</a>
         <a class="face-check two left" data-template="two.html">&nbsp;</a>
@@ -59,18 +49,12 @@
         <a class="face-check eleven right" data-template="eleven.html">&nbsp;</a>
         <a class="face-check twelve right" data-template="twelve.html">&nbsp;</a>
       </div>
-
     </div>
-  </div>
+  </div> -->
 
-
-
-  <!-- recommended products -->
-  <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="">
+  <!-- recommended products (hidden for now) -->
+  <!-- <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="" style="display: none">
     <div class="product-grid-list-items row-of-four interactive-items">&nbsp;</div>
-  </div>
-
-
+  </div> -->
 
 </section>
-<!--  -->
