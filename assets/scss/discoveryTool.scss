@@ -25,39 +25,46 @@ $off-white: #FAFBFB;
   @media screen and (max-width: 768px) {
     width: 100%;
   }
+  >svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.face-svg-bg, .circles-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 37%;
-  height: 55%;
-  transform: translateY(-50%);
-  background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Face.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+// .face-svg-bg, .circles-container {
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   width: 37%;
+//   height: 55%;
+//   transform: translateY(-50%);
+//   background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Face.svg');
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
 
-.circles-container {
-  background-image: none;
-  background: rgba(255, 255, 0, 0.15);
-}
+// .circles-container {
+//   background-image: none;
+//   background: rgba(255, 255, 0, 0.15);
+// }
 
-.face-svg {
-  position: absolute;
-  // top: 50%;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  // height: 55%;
-  // transform: translateY(-50%);
-}
+// .face-svg {
+//   position: absolute;
+//   // top: 50%;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   width: 100%;
+//   // height: 55%;
+//   // transform: translateY(-50%);
+// }
 
 // .all-circles-container {
 //   position: absolute;
@@ -72,59 +79,59 @@ $off-white: #FAFBFB;
 // }
 
 // circle icons
-.circle-container {
-  position: absolute;
-  top: 0;
-  // transform: translateY(-50%);
-  // top: 0;
-  left: 0;
-  // TEST
-  // width: 100%;
-  background: rgba(255, 0, 0, 0.15);
-  // margin-top: -15vh;
-  margin-top: 50%;
-  margin-right: 16.6%;
-  //
-  // width: 30px;
-  height: 30px;
-  >svg {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    .fill-hover {
-      transition: all $transition-circle;
-    }
-    &:hover,
-    &.hovered {
-      .fill-hover {
-        fill: #37333D;
-      }
-      +.circle-label {
-        color: white;
-      }
-    }
-  }
-  &.circle-container-right {
-    right: 0;
-    left: initial;
-    >svg {
-      right: 0;
-      left: initial;
-    }
-    >.circle-line {
-      right: 0;
-      margin-right: 30px;
-      left: initial;
-      margin-left: initial;
-    }
-    >.circle-label {
-      right: 0;
-      // left: initial;
-    }
-  }
-}
+// .circle-container {
+//   position: absolute;
+//   top: 0;
+//   // transform: translateY(-50%);
+//   // top: 0;
+//   left: 0;
+//   // TEST
+//   // width: 100%;
+//   background: rgba(255, 0, 0, 0.15);
+//   // margin-top: -15vh;
+//   margin-top: 50%;
+//   margin-right: 16.6%;
+//   //
+//   // width: 30px;
+//   height: 30px;
+//   >svg {
+//     position: absolute;
+//     z-index: 2;
+//     top: 0;
+//     left: 0;
+//     cursor: pointer;
+//     .fill-hover {
+//       transition: all $transition-circle;
+//     }
+//     &:hover,
+//     &.hovered {
+//       .fill-hover {
+//         fill: #37333D;
+//       }
+//       +.circle-label {
+//         color: white;
+//       }
+//     }
+//   }
+//   &.circle-container-right {
+//     right: 0;
+//     left: initial;
+//     >svg {
+//       right: 0;
+//       left: initial;
+//     }
+//     >.circle-line {
+//       right: 0;
+//       margin-right: 30px;
+//       left: initial;
+//       margin-left: initial;
+//     }
+//     >.circle-label {
+//       right: 0;
+//       // left: initial;
+//     }
+//   }
+// }
 
 .circle-line {
   position: absolute;
@@ -252,7 +259,7 @@ $off-white: #FAFBFB;
   text {
     transform: translateY(5px);
   }
-  &:hover {
+  &:hover, &.selected {
     // transform: scale(2, 2);
     g {
       fill: red;
