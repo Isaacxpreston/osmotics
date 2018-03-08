@@ -42,7 +42,7 @@ $light-grey: #E6E6E7;
   position: relative;
   margin: auto;
   background: $white;
-  min-height: 100vh;
+  min-height: calc(100vh - 124px); // screen height minus navbar and banner
 }
 
 .left-block {
@@ -79,7 +79,8 @@ $light-grey: #E6E6E7;
   margin: auto;
   background: $off-white;
   width: calc(100% * (5/12)); // height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 124px); // screen height minus navbar and banner
+  overflow: hidden; // hide overflow from svg scale
   @media screen and (max-width: $tablet-max) {
     width: 100%;
     min-height: initial;
@@ -91,6 +92,7 @@ $light-grey: #E6E6E7;
     left: 0;
     width: 100%;
     height: 100%;
+    transform: scale(1.25, 1.25); // make entire face tool larger
   }
 }
 
@@ -188,8 +190,9 @@ $light-grey: #E6E6E7;
   bottom: initial;
   background-color: grey;
   z-index: 5;
+  transition: all 0.3s ease-in-out;
   @media screen and (max-width: $tablet-max) {
-    display: none; // debug
+    // display: none; // debug
     position: fixed;
     z-index: 9;
     margin-top: 106px;
@@ -201,21 +204,31 @@ $light-grey: #E6E6E7;
   box-sizing: border-box;
   border: 1px solid black;
   z-index: 4;
-  background: rgba(255, 255, 255, 1);
+  background: $white;
   padding-top: 120px;
   padding-bottom: 120px;
   padding-left: 16%; // 72px;
   padding-right: 16%; // 72px;
+  transition: all 0.3s ease-in-out;
   @media screen and (max-width: $tablet-max) {
-    display: none; // debug
     width: 100%;
     height: 100vh;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     z-index: 8;
     margin-top: 106px;
     // add body { overflow: hidden; } class when open
+  }
+  &.products-content-hidden {
+    transform: translateX(100%);
+    pointer-events: none;
+    opacity: 0;
+    + .hide-button {
+      transform: translateX(100%);
+      pointer-events: none;
+      opacity: 0;
+    }
   }
 }
 
