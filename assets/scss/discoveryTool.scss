@@ -27,7 +27,7 @@ $off-white: #FAFBFB;
   }
 }
 
-.face-svg-bg {
+.face-svg-bg, .circles-container {
   position: absolute;
   top: 50%;
   left: 0;
@@ -40,6 +40,11 @@ $off-white: #FAFBFB;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.circles-container {
+  background-image: none;
+  background: rgba(255, 255, 0, 0.15);
 }
 
 .face-svg {
@@ -69,15 +74,15 @@ $off-white: #FAFBFB;
 // circle icons
 .circle-container {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  // transform: translateY(-50%);
   // top: 0;
   left: 0;
   // TEST
-  width: 100%;
+  // width: 100%;
   background: rgba(255, 0, 0, 0.15);
   // margin-top: -15vh;
-  margin-top: -16%;
+  margin-top: 50%;
   margin-right: 16.6%;
   //
   // width: 30px;
