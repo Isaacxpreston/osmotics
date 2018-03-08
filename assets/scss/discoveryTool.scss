@@ -4,6 +4,7 @@
 $transition-circle: 0.3s ease-in-out;
 $off-white: #FAFBFB;
 $blue: #2B7FA0;
+$tablet-max: 1039px;
 
 // layout styles only for discovery tool page
 .page-container {
@@ -27,6 +28,9 @@ $blue: #2B7FA0;
   display: flex;
   justify-content: center;
   background: rgba(255, 0, 0, 0.1) !important;
+  @media screen and (max-width: $tablet-max) {
+    flex-wrap: wrap;
+  }
 }
 
 //
@@ -40,12 +44,27 @@ $blue: #2B7FA0;
 
 .left-block {
   width: calc(100% * (3/12));
+  @media screen and (max-width: $tablet-max) {
+    width: 100%;
+    min-height: initial;
+    height: 450px;
+  }
 }
 
 .right-block {
   width: calc(100% * (4/12));
   >.content {
     padding-bottom: 84px; // account for .view-button
+  }
+  @media screen and (max-width: $tablet-max) {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    margin-top: 106px;
+    // min-height: initial;
+    // height: 1000px;
   }
 }
 
@@ -57,8 +76,10 @@ $blue: #2B7FA0;
   background: rgba(255, 0, 0, 0.15);
   width: calc(100% * (5/12)); // height: 100%;
   min-height: 100vh;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $tablet-max) {
     width: 100%;
+    min-height: initial;
+    height: 450px;
   }
   >svg {
     position: absolute;

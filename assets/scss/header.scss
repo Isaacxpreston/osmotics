@@ -21,7 +21,7 @@ body {
 
 .navigation {
   max-width: initial; // full bleed nav instead of 1280
-  @media screen and (min-width: 1039px) {
+  @media screen and (min-width: 1040px) {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -30,7 +30,7 @@ body {
 }
 
 .navigation-wrap {
-  @media screen and (min-width: 1039px) {
+  @media screen and (min-width: 1040px) {
     padding-bottom: 0px;
     height: 84px;
   }
@@ -42,15 +42,20 @@ body {
 
 // hidden on desktop (includes account/cart buttons)
 .main-header {
-  @media screen and (min-width: 1039px) {
+  @media screen and (min-width: 1040px) {
     display: none;
   }
   z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-top: 40px;
 }
 
 // hidden on desktop
 .navigation-tier {
-  @media screen and (min-width: 1039px) {
+  @media screen and (min-width: 1040px) {
     display: none;
   }
 }
@@ -284,6 +289,13 @@ body {
 // page banner overwrites
 .page-banner {
   background: #583A5D; // #4B93AF;
+  @media screen and (max-width: 1039px) {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .page-banner-inner:last-of-type {
