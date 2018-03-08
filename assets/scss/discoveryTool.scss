@@ -241,3 +241,18 @@ $off-white: #FAFBFB;
 }
 
 // //
+
+.hook-this {
+  cursor: pointer;
+  transition: all 1s ease;
+  transform-origin: 350px 15px;
+  g, text {
+    transition: all 1s ease;
+  }
+  &:hover {
+    transform: scale(2, 2);
+    g, text {
+      fill: red;
+    }
+  }
+}
