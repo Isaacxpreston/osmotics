@@ -1,11 +1,21 @@
 // discovery tool //
+
 // variables
 $transition-circle: 0.3s ease-in-out;
 $off-white: #FAFBFB;
 $blue: #2B7FA0;
+
 // layout styles only for discovery tool page
 .page-container {
   display: none;
+}
+
+.main-footer {
+  display: none;
+}
+
+.main-content {
+  transform: none;
 }
 
 // .layout-block acting as flex container
@@ -34,6 +44,9 @@ $blue: #2B7FA0;
 
 .right-block {
   width: calc(100% * (4/12));
+  >.content {
+    padding-bottom: 84px; // account for .view-button
+  }
 }
 
 // face container
@@ -86,13 +99,46 @@ $blue: #2B7FA0;
   cursor: pointer;
   >.p {
     position: relative;
-    margin: auto;
+    margin-left: 0px;
     top: 50%;
     transform: translateY(-50%);
     padding-left: 24px;
+    width: calc(100% - 48px);
+  }
+  >.svg-circle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 24px;
+    transform: translateY(-50%);
+    .svg-circle-outline {
+      fill: red;
+    }
+    .svg-check {
+      opacity: 0;
+    }
+  }
+  &:hover, &.selected {
+    >.svg-circle {
+      .svg-check {
+        opacity: 1;
+      }
+      .svg-circle-outline {
+        fill: blue;
+      }
+      .svg-fill-hover {
+        fill: orange;
+      }
+    }
   }
 }
 
+.text-hook {
+  fill: lime !important;
+  *{ 
+    fill: lime !important;
+  }
+}
 
 .view-button {
   position: absolute;
