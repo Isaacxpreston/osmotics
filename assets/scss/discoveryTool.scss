@@ -242,17 +242,26 @@ $off-white: #FAFBFB;
 
 // //
 
-.hook-this {
+.circle-hover {
   cursor: pointer;
   transition: all 1s ease;
-  transform-origin: 350px 15px;
+  // transform-origin: 350px 15px;
   g, text {
     transition: all 1s ease;
   }
+  text {
+    transform: translateY(5px);
+  }
   &:hover {
-    transform: scale(2, 2);
-    g, text {
+    // transform: scale(2, 2);
+    g {
       fill: red;
+    }
+    .outline {
+      fill: blue;
+    }
+    text {
+      fill: blue;
     }
   }
 }
