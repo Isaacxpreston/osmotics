@@ -2,9 +2,11 @@
 
 // variables
 $transition-circle: 0.3s ease-in-out;
+$white: #FFFFFF;
 $off-white: #FAFBFB;
 $blue: #2B7FA0;
 $tablet-max: 1039px;
+$light-grey: #E6E6E7;
 
 // layout styles only for discovery tool page
 .page-container {
@@ -27,7 +29,7 @@ $tablet-max: 1039px;
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(255, 0, 0, 0.1) !important;
+  margin-bottom: -24px; // not sure why this is needed
   @media screen and (max-width: $tablet-max) {
     flex-wrap: wrap;
     margin-top: 106px;
@@ -39,7 +41,7 @@ $tablet-max: 1039px;
 .right-block {
   position: relative;
   margin: auto;
-  background: rgba(255, 0, 0, 0.25);
+  background: $white;
   min-height: 100vh;
 }
 
@@ -48,7 +50,9 @@ $tablet-max: 1039px;
   @media screen and (max-width: $tablet-max) {
     width: 100%;
     min-height: initial;
-    height: 450px;
+    >.content {
+      position: relative;
+    }
   }
 }
 
@@ -73,13 +77,13 @@ $tablet-max: 1039px;
   position: relative;
   z-index: 1;
   margin: auto;
-  background: rgba(255, 0, 0, 0.15);
+  background: $off-white;
   width: calc(100% * (5/12)); // height: 100%;
   min-height: 100vh;
   @media screen and (max-width: $tablet-max) {
     width: 100%;
-    min-height: 450px;
-    height: 100vh;
+    min-height: initial;
+    height: 450px;
   }
   >svg {
     position: absolute;
@@ -108,6 +112,12 @@ $tablet-max: 1039px;
   text-align: center;
   width: calc(100% - 48px);
   margin: auto;
+  @media screen and (max-width: $tablet-max) {
+    top: 0;
+    transform: none;
+    width: 100%;
+    padding: 48px;
+  }
 }
 
 .concern {
@@ -115,7 +125,7 @@ $tablet-max: 1039px;
   box-sizing: border-box;
   width: 100%;
   height: 76px;
-  background: grey;
+  background: $light-grey;
   border-bottom: 1px solid black;
   cursor: pointer;
   >.p {
@@ -154,12 +164,6 @@ $tablet-max: 1039px;
   }
 }
 
-.text-hook {
-  fill: lime !important;
-  *{ 
-    fill: lime !important;
-  }
-}
 
 .view-button, .hide-button {
   position: absolute;
