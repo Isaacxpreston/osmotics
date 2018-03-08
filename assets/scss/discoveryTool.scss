@@ -140,7 +140,7 @@ $blue: #2B7FA0;
   }
 }
 
-.view-button {
+.view-button, .hide-button {
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -156,6 +156,13 @@ $blue: #2B7FA0;
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+.hide-button {
+  top: 0;
+  bottom: initial;
+  background-color: grey;
+  z-index: 5;
 }
 
 // product grid container
@@ -178,6 +185,7 @@ $blue: #2B7FA0;
 .product-grid-item {
   background: rgba(0, 0, 255, 0.15);
 }
+
 
 //
 // original styles
