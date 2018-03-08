@@ -1,9 +1,8 @@
 // discovery tool //
-
 // variables
 $transition-circle: 0.3s ease-in-out;
 $off-white: #FAFBFB;
-
+$blue: #2B7FA0;
 // layout styles only for discovery tool page
 .page-container {
   display: none;
@@ -21,7 +20,8 @@ $off-white: #FAFBFB;
 }
 
 //
-.left-block, .right-block {
+.left-block,
+.right-block {
   position: relative;
   margin: auto;
   background: rgba(255, 0, 0, 0.25);
@@ -39,10 +39,10 @@ $off-white: #FAFBFB;
 // face container
 .face-container {
   position: relative;
+  z-index: 1;
   margin: auto;
   background: rgba(255, 0, 0, 0.15);
-  width: calc(100% * (5/12));
-  // height: 100%;
+  width: calc(100% * (5/12)); // height: 100%;
   min-height: 100vh;
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -62,7 +62,10 @@ $off-white: #FAFBFB;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  overflow: auto;
 }
+
 
 .copy {
   position: relative;
@@ -73,7 +76,41 @@ $off-white: #FAFBFB;
   margin: auto;
 }
 
+.concern {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 76px;
+  background: grey;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  >.p {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 24px;
+  }
+}
 
+
+.view-button {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background-color: $blue;
+  cursor: pointer;
+  > .h3 {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
 //
 // original styles
@@ -161,18 +198,18 @@ $off-white: #FAFBFB;
 }
 
 // //
-
 .circle-hover {
   cursor: pointer;
-  transition: all 1s ease;
-  // transform-origin: 350px 15px;
-  g, text {
+  transition: all 1s ease; // transform-origin: 350px 15px;
+  g,
+  text {
     transition: all 1s ease;
   }
   text {
     transform: translateY(5px);
   }
-  &:hover, &.selected {
+  &:hover,
+  &.selected {
     // transform: scale(2, 2);
     g {
       fill: red;
