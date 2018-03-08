@@ -30,6 +30,7 @@ $tablet-max: 1039px;
   background: rgba(255, 0, 0, 0.1) !important;
   @media screen and (max-width: $tablet-max) {
     flex-wrap: wrap;
+    margin-top: 106px;
   }
 }
 
@@ -57,14 +58,13 @@ $tablet-max: 1039px;
     padding-bottom: 84px; // account for .view-button
   }
   @media screen and (max-width: $tablet-max) {
+    position: relative;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    margin-top: 106px;
-    // min-height: initial;
-    // height: 1000px;
+    min-height: initial;
+    // height: 450px;
+    >.content {
+      position: relative;
+    }
   }
 }
 
@@ -78,8 +78,8 @@ $tablet-max: 1039px;
   min-height: 100vh;
   @media screen and (max-width: $tablet-max) {
     width: 100%;
-    min-height: initial;
-    height: 450px;
+    min-height: 450px;
+    height: 100vh;
   }
   >svg {
     position: absolute;
@@ -184,6 +184,12 @@ $tablet-max: 1039px;
   bottom: initial;
   background-color: grey;
   z-index: 5;
+  @media screen and (max-width: $tablet-max) {
+    display: none; // debug
+    position: fixed;
+    z-index: 9;
+    margin-top: 106px;
+  }
 }
 
 // product grid container
@@ -196,6 +202,17 @@ $tablet-max: 1039px;
   padding-bottom: 120px;
   padding-left: 16%; // 72px;
   padding-right: 16%; // 72px;
+  @media screen and (max-width: $tablet-max) {
+    display: none; // debug
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    margin-top: 106px;
+    // add body { overflow: hidden; } class when open
+  }
 }
 
 // product grid overrides
