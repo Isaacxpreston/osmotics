@@ -14,6 +14,21 @@
         <div class="h2 bold">Your Skincare Solution</div>
         <div class="p large">Target your specific concerns with these high-performance, anti-aging cosmeceuticals. Once you select your concerns,
           you can view your recommended products.</div>
+        <div>
+          TEST
+          <a class="face-check one left" data-template="one.html">one</a>
+          <a class="face-check two left" data-template="two.html">two</a>
+          <a class="face-check three left" data-template="three.html">three</a>
+          <a class="face-check four left" data-template="four.html">four</a>
+          <a class="face-check five left" data-template="five.html">five</a>
+          <a class="face-check six left" data-template="six.html">six</a>
+          <a class="face-check seven right" data-template="seven.html">seven</a>
+          <a class="face-check eight right" data-template="eight.html">eight</a>
+          <a class="face-check nine right" data-template="nine.html">nine</a>
+          <a class="face-check ten right" data-template="ten.html">ten</a>
+          <a class="face-check eleven right" data-template="eleven.html">eleven</a>
+          <a class="face-check twelve right" data-template="twelve.html">twelve</a>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +40,8 @@
 
   <!-- list -->
   <div class="right-block">
-    <!-- add slide in products view -->
+
+    <!-- concerns -->
     <div class="content">
       <div class="concern">
         <div class="p large">1) Expression Lines</div>
@@ -76,14 +92,25 @@
         {{> components/discoveryTool/svg/circle id="12"}}
       </div>
     </div>
+
+    <!-- button -->
     <div class="view-button">
       <div class="h3 color-white">View Recommended Products</div>
     </div>
+
+    <!-- products -->
+    <div class="content products-content">
+      <!-- recommended products (hidden for now) -->
+      <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="">
+        <div class="product-grid-list-items row-of-two interactive-items">&nbsp;</div>
+      </div>
+    </div>
+
   </div>
 
 
   <!-- original tool (hidden) -->
-  <!-- <div class="page-container">
+  <div class="page-container">
     <div class="page-content narrow">
       <div class="face-holder">
         <a class="face-check one left" data-template="one.html">&nbsp;</a>
@@ -100,11 +127,6 @@
         <a class="face-check twelve right" data-template="twelve.html">&nbsp;</a>
       </div>
     </div>
-  </div> -->
-
-  <!-- recommended products (hidden for now) -->
-  <!-- <div class="product-grid-list quickshop-enabled interactive-grid" data-quickshop="" style="display: none">
-    <div class="product-grid-list-items row-of-four interactive-items">&nbsp;</div>
-  </div> -->
+  </div>
 
 </section>
