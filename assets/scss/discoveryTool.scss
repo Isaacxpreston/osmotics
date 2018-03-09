@@ -201,6 +201,22 @@ body {
   }
 }
 
+.view-button {
+  >svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 24px;
+    transform: translateY(-50%);
+    transition: all $transition-1;
+  }
+  &:hover {
+    >svg {
+      transform: translateY(-50%) translateX(4px);
+    }
+  }
+}
+
 .hide-button {
   top: 0;
   bottom: initial;
@@ -208,6 +224,19 @@ body {
   color: $white;
   z-index: 5;
   transition: all $transition-1;
+  >svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 24px;
+    transform: scaleX(-1) translateY(-50%);
+    transition: all $transition-1;
+  }
+  &:hover {
+    >svg {
+      transform: scaleX(-1) translateY(-50%) translateX(4px);
+    }
+  }
   @media screen and (max-width: $tablet-max) {
     // display: none; // debug
     position: fixed;
