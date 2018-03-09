@@ -1,7 +1,8 @@
 // discovery tool //
 
 // variables
-$transition-circle: 0.3s ease-in-out;
+$transition-1: 0.3s ease-in-out;
+$black: #37333D;
 $white: #FFFFFF;
 $off-white: #FAFBFB;
 $blue: #2B7FA0;
@@ -144,8 +145,11 @@ $light-grey: #E6E6E7;
     right: 0;
     margin-right: 24px;
     transform: translateY(-50%);
+    .svg-fill-hover {
+      fill: $light-grey;
+    }
     .svg-circle-outline {
-      fill: red;
+      fill: $black;
     }
     .svg-check {
       opacity: 0;
@@ -155,12 +159,13 @@ $light-grey: #E6E6E7;
     >.svg-circle {
       .svg-check {
         opacity: 1;
+        // change fill
       }
       .svg-circle-outline {
-        fill: blue;
+        fill: $blue;
       }
       .svg-fill-hover {
-        fill: orange;
+        fill: $blue;
       }
     }
   }
@@ -190,7 +195,7 @@ $light-grey: #E6E6E7;
   bottom: initial;
   background-color: grey;
   z-index: 5;
-  transition: all 0.3s ease-in-out;
+  transition: all $transition-1;
   @media screen and (max-width: $tablet-max) {
     // display: none; // debug
     position: fixed;
@@ -209,7 +214,7 @@ $light-grey: #E6E6E7;
   padding-bottom: 120px;
   padding-left: 16%; // 72px;
   padding-right: 16%; // 72px;
-  transition: all 0.3s ease-in-out;
+  transition: all $transition-1;
   @media screen and (max-width: $tablet-max) {
     width: 100%;
     height: 100vh;
@@ -331,10 +336,10 @@ $light-grey: #E6E6E7;
 // //
 .circle-hover {
   cursor: pointer;
-  transition: all 1s ease; // transform-origin: 350px 15px;
+  transition: all $transition-1; // transform-origin: 350px 15px;
   g,
   text {
-    transition: all 1s ease;
+    transition: all $transition-1; 
   }
   text {
     transform: translateY(5px);
@@ -343,13 +348,13 @@ $light-grey: #E6E6E7;
   &.selected {
     // transform: scale(2, 2);
     g {
-      fill: red;
+      fill: $blue;
     }
     .outline {
-      fill: blue;
+      fill: $blue;
     }
     text {
-      fill: blue;
+      fill: $white;
     }
   }
 }
