@@ -783,9 +783,23 @@
 			$('.products-content').toggleClass('products-content-hidden')
 		})
 
+		$('.circle-hover').click(function() {
+			$(this).toggleClass('selected')
+		})
+
+		$('.concern').click(function() {
+			$(this).toggleClass('selected')
+
+			
+		})
+
+
+		setTimeout(function() {
+			console.log('firing outsidie wrapper')
+			// $('[data-template="two.html"]').trigger('click')
+		}, 1000)
+
 		
-
-
 		// end solution tool scripts
 
 		//
