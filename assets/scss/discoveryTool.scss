@@ -23,6 +23,13 @@ $extra-light-grey: #F5F5F6;
   transform: none;
 }
 
+// hide scroll on body
+body {
+  &.no-scroll {
+    overflow: hidden !important;
+  }
+}
+
 // .layout-block acting as flex container
 .layout-block {
   padding-top: 0px;
@@ -45,6 +52,7 @@ $extra-light-grey: #F5F5F6;
   margin: auto;
   background: $white;
   min-height: calc(100vh - 124px); // screen height minus navbar and banner
+  overflow-x: hidden;
 }
 
 .left-block {
