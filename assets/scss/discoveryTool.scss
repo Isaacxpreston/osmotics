@@ -8,6 +8,7 @@ $off-white: #FAFBFB;
 $blue: #2B7FA0;
 $tablet-max: 1039px;
 $light-grey: #E6E6E7;
+$extra-light-grey: #F5F5F6;
 
 // layout styles only for discovery tool page
 .page-container {
@@ -128,8 +129,8 @@ $light-grey: #E6E6E7;
   box-sizing: border-box;
   width: 100%;
   height: 76px;
-  background: $light-grey;
-  border-bottom: 1px solid black;
+  background: $extra-light-grey; // $light-grey;
+  border-bottom: 1px solid #E2E2E3;
   cursor: pointer;
   >.p {
     position: relative;
@@ -146,20 +147,22 @@ $light-grey: #E6E6E7;
     margin-right: 24px;
     transform: translateY(-50%);
     .svg-fill-hover {
-      fill: $light-grey;
+      fill: $extra-light-grey;
+      transition: all $transition-1;
     }
     .svg-circle-outline {
       fill: $black;
+      transition: all $transition-1;
     }
     .svg-check {
       opacity: 0;
+      transition: all $transition-1;
     }
   }
   &:hover, &.selected {
     >.svg-circle {
       .svg-check {
         opacity: 1;
-        // change fill
       }
       .svg-circle-outline {
         fill: $blue;
@@ -193,7 +196,8 @@ $light-grey: #E6E6E7;
 .hide-button {
   top: 0;
   bottom: initial;
-  background-color: grey;
+  background-color: $black;
+  color: $white;
   z-index: 5;
   transition: all $transition-1;
   @media screen and (max-width: $tablet-max) {
@@ -207,7 +211,7 @@ $light-grey: #E6E6E7;
 // product grid container
 .products-content {
   box-sizing: border-box;
-  border: 1px solid black;
+  // border: 1px solid black;
   z-index: 4;
   background: $white;
   padding-top: 120px;
@@ -239,12 +243,12 @@ $light-grey: #E6E6E7;
 
 // product grid overrides
 .product-grid-item-thumbnail {
-  background: rgba(255, 0, 0, 0.25);
+  background: $extra-light-grey; // rgba(255, 0, 0, 0.25);
 }
 
-.product-grid-item {
-  background: rgba(0, 0, 255, 0.15);
-}
+// .product-grid-item {
+//   background: rgba(0, 0, 255, 0.15);
+// }
 
 
 //
