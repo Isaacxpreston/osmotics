@@ -336,3 +336,19 @@ body {
     }
   }
 }
+
+.product-grid-spacer {
+  width: 0px !important;
+  margin: 0px !important;
+}
+
+.product-grid-title {
+  width: 100% !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-bottom: 48px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+  text-transform: capitalize;
+}

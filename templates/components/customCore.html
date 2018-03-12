@@ -100,12 +100,14 @@
 			var path = '/content/' + template
 			if ($(this).hasClass('active')) {
 				$.get(path, function(data){
+					$('div[data-title="' + template +'"]').appendTo($('.product-grid-list-items'))
 					$('.product-grid-list-items').append(data);
 					startupApp(stencilBootstrap);
 				});
 			}else{
 				var remove = template.replace('.html', '');
 				$('[data-remove~=' + remove + ']').remove();
+				$('div[data-title="' + template +'"]').appendTo($('div[hiddenlist]'))
 			}
 		});
 	};
