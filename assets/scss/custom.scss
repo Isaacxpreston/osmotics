@@ -275,14 +275,19 @@ h1.category-title {
   font-weight: 700;
 }
 
-h1.page-title.centered, h1.page-title {
-  text-transform: none;
-  font-family: 'Baskerville';
-  font-weight: 400;
-  color: black;
-  letter-spacing: -4px;
-  font-size: 80px;
-}
+// vpv 
+// removed baskerville
+
+// h1.page-title.centered, h1.page-title {
+//   text-transform: none;
+//   font-family: 'Baskerville';
+//   font-weight: 400;
+//   color: black;
+//   letter-spacing: -4px;
+//   font-size: 80px;
+// }
+
+//
 
 h1.page-title.centered::after {
   display: none !important;

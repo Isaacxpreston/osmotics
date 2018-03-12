@@ -352,3 +352,8 @@ body {
   text-align: center;
   text-transform: capitalize;
 }
+
+// product price
+span[data-product-price] {
+  color: #858594;
+}
