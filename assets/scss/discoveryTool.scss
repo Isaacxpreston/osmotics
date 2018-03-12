@@ -7,6 +7,7 @@ $white: #FFFFFF;
 $off-white: #FAFBFB;
 $blue: #2B7FA0;
 $tablet-max: 1039px;
+$desktop-min: 1040px;
 $light-grey: #E6E6E7;
 $extra-light-grey: #F5F5F6;
 
@@ -167,7 +168,23 @@ body {
       transition: all $transition-1;
     }
   }
-  &:hover, &.selected {
+  &:hover {
+    @media screen and (min-width: $desktop-min) {
+      >.svg-circle {
+        .svg-check {
+          opacity: 1;
+        }
+        .svg-circle-outline {
+          fill: $blue;
+        }
+        .svg-fill-hover {
+          fill: $blue;
+        }
+      }
+    }
+  }
+  
+  &.selected {
     >.svg-circle {
       .svg-check {
         opacity: 1;
@@ -294,7 +311,19 @@ body {
   text {
     transform: translateY(5px);
   }
-  &:hover,
+  &:hover {
+    @media screen and (min-width: $desktop-min) {
+      g {
+        fill: $blue;
+      }
+      .outline {
+        fill: $blue;
+      }
+      text {
+        fill: $white;
+      }
+    }
+  }
   &.selected {
     g {
       fill: $blue;

@@ -1098,6 +1098,9 @@ p.custom{
     border: 1px solid red !important; }
 
   .footer-opt-in {
+    // hidden (ip)
+    display: none !important;
+    //
     border-top: 1px solid #eee;
     padding-top: 30px;
     margin-top: 30px; }
