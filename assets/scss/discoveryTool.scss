@@ -1,5 +1,4 @@
 // discovery tool //
-
 // variables
 $transition-1: 0.3s ease-in-out;
 $black: #37333D;
@@ -10,15 +9,14 @@ $tablet-max: 1039px;
 $desktop-min: 1040px;
 $light-grey: #E6E6E7;
 $extra-light-grey: #F5F5F6;
-
 // layout styles only for discovery tool page
 .page-container {
   display: none;
 }
 
-.main-footer {
-  display: none;
-}
+// .main-footer {
+//   display: none;
+// }
 
 .main-content {
   transform: none;
@@ -75,8 +73,7 @@ body {
   @media screen and (max-width: $tablet-max) {
     position: relative;
     width: 100%;
-    min-height: initial;
-    // height: 450px;
+    min-height: initial; // height: 450px;
     >.content {
       position: relative;
     }
@@ -116,7 +113,6 @@ body {
   z-index: 1;
   overflow: auto;
 }
-
 
 .copy {
   position: relative;
@@ -183,7 +179,6 @@ body {
       }
     }
   }
-  
   &.selected {
     >.svg-circle {
       .svg-check {
@@ -197,10 +192,25 @@ body {
       }
     }
   }
+  &.unselected {
+    @media screen and (min-width: $desktop-min) {
+      >.svg-circle {
+        .svg-check {
+          opacity: 0 !important;
+        }
+        .svg-circle-outline {
+          fill: $black !important;
+        }
+        .svg-fill-hover {
+          fill: $extra-light-grey !important;
+        }
+      }
+    }
+  }
 }
 
-
-.view-button, .hide-button {
+.view-button,
+.hide-button {
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -209,7 +219,7 @@ body {
   height: 84px;
   background-color: $blue;
   cursor: pointer;
-  > .h3 {
+  >.h3 {
     position: relative;
     margin: auto;
     text-align: center;
@@ -264,8 +274,7 @@ body {
 
 // product grid container
 .products-content {
-  box-sizing: border-box;
-  // border: 1px solid black;
+  box-sizing: border-box; // border: 1px solid black;
   z-index: 4;
   background: $white;
   padding-top: 120px;
@@ -280,14 +289,13 @@ body {
     top: 0;
     left: 0;
     z-index: 8;
-    margin-top: 106px;
-    // add body { overflow: hidden; } class when open
+    margin-top: 106px; // add body { overflow: hidden; } class when open
   }
   &.products-content-hidden {
     transform: translateX(100%);
     pointer-events: none;
     opacity: 0;
-    + .hide-button {
+    +.hide-button {
       transform: translateX(100%);
       pointer-events: none;
       opacity: 0;
@@ -306,7 +314,7 @@ body {
   transition: all $transition-1;
   g,
   text {
-    transition: all $transition-1; 
+    transition: all $transition-1;
   }
   text {
     transform: translateY(5px);

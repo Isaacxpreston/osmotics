@@ -121,7 +121,7 @@ body {
   width: 100%;
   height: calc(100vh - 102px); // background: rgba(255, 0, 0, 0.9);
   background-color: white;
-  background-image: linear-gradient(-249deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 22%, rgba(255, 255, 255, 0.99) 79%, rgba(255, 255, 255, 0.93) 100%); // background-image: linear-gradient(-251deg, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.79) 32%, rgba(255,255,255,0.90) 50%, rgba(255,255,255,0.90) 100%);
+  background-image: linear-gradient(-249deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 22%, rgba(255, 255, 255, 0.99) 79%, rgba(255, 255, 255, 0.93) 100%);
   box-shadow: inset 0 2px 2px 0 rgba(55, 51, 61, 0.15);
   z-index: 31;
   &.navigation-dropdown-open {
@@ -503,7 +503,7 @@ body {
     right: 19px;
     background: transparent;
     @media screen and (max-width: 1039px) {
-      top: 16px;
+      top: 18px;
     }
   } // @media screen and (max-width: 1039px) {
   //   display: none;
@@ -562,7 +562,7 @@ body {
     }
     .visible {
       .cart-count {
-        top: 25px !important;
+        top: 28px !important;
       }
     }
   }
@@ -692,7 +692,8 @@ body {
 .main-content {
   transform: translateY(4px);
   @media screen and (max-width: 1039px) {
-    transform: translateY(66px); // mobile nav space
+    // transform: translateY(66px); // mobile nav space
+    margin-top: 106px; // use margin instead
   }
   &.navigation-is-open {
     transform: translateY(124px); // dropdown space
@@ -803,11 +804,11 @@ a.p.small, #home-banner-text-1, #home-banner-text-2 {
     fill: $black;
   }
   .cart-count, .p {
-    color: $black;
+    color: $black !important;
   }
-  .cart-count {
-    top: 19px;
-  }
+  // .cart-count {
+  //   top: 19px;
+  // }
 }
 
 

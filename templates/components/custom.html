@@ -604,9 +604,26 @@
 		})
 		//
 
+		// vpv
+
+		var checkStickyNav = function () {
+			if (window.innerWidth > 1039) {
+				$('.navigation-wrap').sticky({
+					zIndex: 999
+				})
+			} else {
+				$('.navigation-wrap').unstick()
+			}
+		}
+		//
+
+
+		// window resize listener (ip)
+
 		$(window).resize(function () {
 			getPressLogoImageSize();
-			navigationClose();
+			navigationClose(); // close nav
+			checkStickyNav() // disable stickyjs if on tablet or mobile
 		});
 
 		function constructSlider() {
@@ -1099,10 +1116,17 @@
 			$(this).toggleClass('selected')
 			var template = $(this).attr('data-template')
 			$('.circle-hover[data-template="' + template + '"]').toggleClass('selected')
+			if (!($(this).hasClass('selected'))) {
+				$(this).addClass('unselected')
+			}
 		})
 
-		$('.navigation-wrap').sticky({zIndex: 999})
+		$('.concern').hover(function () {
+			$(this).removeClass('unselected')
+		})
 
+		// initialize sticky nav
+		checkStickyNav()
 
 
 		// end solution tool scripts
