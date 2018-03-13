@@ -286,8 +286,10 @@ body {
   user-select: none;
   cursor: pointer;
   @media screen and (max-width: 1039px) {
-    margin-top: 22px;
+    margin-top: 28px;
     pointer-events: none;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -560,9 +562,10 @@ body {
       // top: 15px;
       pointer-events: none;
     }
-    .visible {
+    .visible { // mobile cart count when cart visible
       .cart-count {
-        top: 28px !important;
+        top: 12px !important;
+        left: 16px;
       }
     }
   }
@@ -690,7 +693,7 @@ body {
 
 // main content block
 .main-content {
-  transform: translateY(4px);
+  // transform: translateY(4px);
   @media screen and (max-width: 1039px) {
     // transform: translateY(66px); // mobile nav space
     margin-top: 106px; // use margin instead
@@ -715,7 +718,7 @@ svg.nav-option-search {
   width: 16px;
   top: 0;
   right: 0;
-  margin-top: 18px;
+  margin-top: 22px;
   @media screen and (max-width: 1039px) {
     margin-top: 6px;
   }
@@ -800,11 +803,21 @@ a.p.small, #home-banner-text-1, #home-banner-text-2 {
 
 // cart
 .cart-toggle.visible {
+
+  @media screen and (max-width: 1039px) { // mobile svg and positioning when cart visible
+    top: 5px !important;
+    svg {
+      transform: translate(31px, -20px);
+    }
+  }
   #Mask2 {
     fill: $black;
   }
   .cart-count, .p {
     color: $black !important;
+    @media screen and (min-width: 1040px) {
+      padding-left: 16px;
+    }
   }
   // .cart-count {
   //   top: 19px;

@@ -624,6 +624,9 @@
 			getPressLogoImageSize();
 			navigationClose(); // close nav
 			checkStickyNav() // disable stickyjs if on tablet or mobile
+			if (window.innerWidth > 1039) {
+				$('body').removeClass('no-scroll')
+			}
 		});
 
 		function constructSlider() {
@@ -978,7 +981,7 @@
 		$('.blog-post-content.summary').each(function () {
 			var Blog__Link = $(this).parent().children('.blog-post-title').children('a').attr('href');
 			var Blog__ReadMore = '<a class="read__more" href="' + Blog__Link +
-				'">Read More <i class="fa fa-angle-right"></i><a/>';
+				'">Read More <a/>';
 			$(this).children('p').last().after(Blog__ReadMore);
 		});
 
@@ -1102,8 +1105,17 @@
 		// solution tool scripts
 
 		$('.view-button, .hide-button').click(function () {
-			$('body').toggleClass('no-scroll')
 			$('.products-content').toggleClass('products-content-hidden')
+		})
+
+		$('.view-button').click(function () {
+			if (window.innerWidth < 1040) {
+				$('body').addClass('no-scroll')
+			}
+		})
+
+		$('.hide-button').click(function () {
+			$('body').removeClass('no-scroll')
 		})
 
 		$('.circle-hover').click(function () {
@@ -1129,7 +1141,21 @@
 		checkStickyNav()
 
 
-		// end solution tool scripts
+		// test
+		var preloadImageList = ['https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedLeftThree.png', 'https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedRight+Three.png']
+		var preloadStore = {}
+
+		for (var i = 0; i < preloadImageList.length; i++) {
+			var imageSource = preloadImageList[i]
+			var id = 'temp_' + i
+			preloadStore[id] = new Image();
+			// preloadStore[id].onload = function () {
+				// console.log('this image is loaded: ', this.src)
+			// }
+			preloadStore[id].src = imageSource
+		}
+
+
 
 		//
 		// end VPV

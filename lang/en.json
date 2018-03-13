@@ -90,7 +90,7 @@
     "label": "Cart",
     "checkout_label": "Checkout",
     "checkout": {
-      "empty_cart": "Your shopping bag is currently empty.",
+      "empty_cart": "Your shopping cart is currently empty.",
       "remove_confirm": "Do you want to remove this product from your cart?",
       "item": "Item",
       "brand": "Brand",

@@ -6,6 +6,10 @@
       {{else}}
         <span class="breadcrumb-label p small color-silver">{{name}}</span>
       {{/if}}
+      <!-- francine's blog name is blank -->
+      {{#if name '===' ''}}
+        <a href="{{url}}" class="breadcrumb-label p small color-silver">Francine's Blog</a>
+      {{/if}}
     </li>
   {{/each}}
 </ul>
