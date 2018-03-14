@@ -131,6 +131,7 @@ body {
 
 .navigation-dropdown-search {
   height: 100px;
+  // margin-top: 66px;
   >.navigation-dropdown-content {
     background: #F5F5F5;
   }
@@ -443,7 +444,8 @@ body {
   z-index: 1;
   opacity: 0.35;
   left: 0;
-  background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedLeftThree.png');
+  background-color: white;
+  // background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedLeftThree.png');
   transition: all $transition-1;
 }
 
@@ -451,7 +453,8 @@ body {
   z-index: 1;
   opacity: 0.35;
   right: 0;
-  background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedRight+Three.png');
+  background-color: white;
+  // background-image: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/getStartedRight+Three.png');
   transition: all $transition-1;
 }
 
@@ -699,7 +702,7 @@ body {
     margin-top: 106px; // use margin instead
   }
   &.navigation-is-open {
-    transform: translateY(124px); // dropdown space
+    transform: translateY(40px); // dropdown space
   }
 }
 
@@ -846,6 +849,8 @@ a.p.small, #home-banner-text-1, #home-banner-text-2 {
     margin-top: 0px;
     .navigation-dropdown {
       height: calc(100vh - 66px) !important;
+    }
+    .navigation-dropdown, .navigation-dropdown-search {
       margin-top: 66px !important;
     }
   }
@@ -860,9 +865,22 @@ a.p.small, #home-banner-text-1, #home-banner-text-2 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
+  @media screen and (max-width: 1039px) {
+    height: 36px;
+    margin-left: 12px;
+  }
 }
 
 // hide the meet francine column in nav
 [data-name="Meet Francine"] {
   display: none !important;
+}
+
+// wrapper class for copyright Rs
+.r-text {
+  position: relative;
+  display: inline-block;
+  font-size: 50%;
+  transform: translateY(-25%);
+  margin-left: 2px;
 }

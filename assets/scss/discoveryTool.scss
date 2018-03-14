@@ -225,6 +225,7 @@ body {
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
+    transition: all $transition-1;
   }
 }
 
@@ -240,6 +241,12 @@ body {
   &:hover {
     >svg {
       transform: translateY(-50%) translateX(4px);
+    }
+  }
+  &.view-button-disabled {
+    pointer-events: none;
+    >.h3, >svg {
+      opacity: 0.4;
     }
   }
 }
