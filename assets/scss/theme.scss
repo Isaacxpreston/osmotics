@@ -10498,11 +10498,11 @@ $auth-font-size: $account-font-size !default;
     top: 3px;
     left: 13px;
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     font-size: 10px;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 20px;
     color: $light-color;
     text-align: center;
     background-color: $accent-color;
@@ -10519,6 +10519,8 @@ $auth-font-size: $account-font-size !default;
       color: $accent-color;
       background-color: $light-color;
     }
+    // vpv
+    pointer-events: none;
   }
 }
 
@@ -10578,10 +10580,10 @@ $auth-font-size: $account-font-size !default;
       }
       .cart-count { // desktop cart count
         // vpv
-        top: 18px;
-        @media screen and (min-width: 1040px) {
-          transform: translateX(-10px);
-        }
+        // top: 18px;
+        // @media screen and (min-width: 1040px) {
+        //   transform: translateX(-10px);
+        // }
         .header-alternate & {
           top: 50%;
         }
@@ -15864,3 +15866,4 @@ $product-option-size: 35px;
 }
 
 /* Rebillia Style End */
+
