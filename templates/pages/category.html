@@ -16,8 +16,10 @@ category:
         <div class="category-details-row">
 
           {{#if category.image}}
-            <div class="category-image">
+            <!-- <div class="category-image">
               <img src="{{getImage category.image 'product_item'}}">
+            </div> -->
+            <div class="category-image" style="background-image: url('{{getImage category.image 'product_item'}}')">
             </div>
           {{/if}}
 
@@ -40,7 +42,7 @@ category:
 
       {{#if category.products.length}}
         {{#unless category.faceted_search_enabled}}
-          <div class="product-grid-sorting">
+          <div class="product-grid-sorting {{#if category.image}}has-image{{/if}}">
             {{> components/sorting sort=pagination.category.sort}}
           </div>
         {{/unless}}
