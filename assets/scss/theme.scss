@@ -546,10 +546,10 @@ $text-inputs-list: 'input[type="color"]',
 'input[type="week"]',
 'input:not([type])',
 'textarea';
-$all-text-inputs : assign-inputs($text-inputs-list);
+$all-text-inputs: assign-inputs($text-inputs-list);
 $all-text-inputs-active: assign-inputs($text-inputs-list, active);
-$all-text-inputs-focus : assign-inputs($text-inputs-list, focus);
-$all-text-inputs-hover : assign-inputs($text-inputs-list, hover);
+$all-text-inputs-focus: assign-inputs($text-inputs-list, focus);
+$all-text-inputs-hover: assign-inputs($text-inputs-list, hover);
 /* scss-combine:styles/general */
 
 // scss-lint:disable VariableForProperty ColorVariable
@@ -767,11 +767,11 @@ td {
 
 @charset "UTF-8";
 /// Global variables to enable or disable vendor prefixes
-$prefix-for-webkit : true !default;
-$prefix-for-mozilla : true !default;
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
 $prefix-for-microsoft: true !default;
-$prefix-for-opera : true !default;
-$prefix-for-spec : true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
 /* scss-combine:settings/px-to-em */
 
 $em-base: 16px !default;
@@ -1052,23 +1052,23 @@ $asset-pipeline: false !default;
 /* scss-combine:functions/modular-scale */
 
 // Scaling Variables
-$golden : 1.618;
-$minor-second : 1.067;
-$major-second : 1.125;
-$minor-third : 1.2;
-$major-third : 1.25;
-$perfect-fourth : 1.333;
+$golden: 1.618;
+$minor-second: 1.067;
+$major-second: 1.125;
+$minor-third: 1.2;
+$major-third: 1.25;
+$perfect-fourth: 1.333;
 $augmented-fourth: 1.414;
-$perfect-fifth : 1.5;
-$minor-sixth : 1.6;
-$major-sixth : 1.667;
-$minor-seventh : 1.778;
-$major-seventh : 1.875;
-$octave : 2;
-$major-tenth : 2.5;
-$major-eleventh : 2.667;
-$major-twelfth : 3;
-$double-octave : 4;
+$perfect-fifth: 1.5;
+$minor-sixth: 1.6;
+$major-sixth: 1.667;
+$minor-seventh: 1.778;
+$major-seventh: 1.875;
+$octave: 2;
+$major-tenth: 2.5;
+$major-eleventh: 2.667;
+$major-twelfth: 3;
+$double-octave: 4;
 $modular-scale-ratio: $perfect-fourth !default;
 $modular-scale-base: em($em-base) !default;
 @function modular-scale($increment, $value: $modular-scale-base, $ratio: $modular-scale-ratio) {
@@ -1210,11 +1210,11 @@ $modular-scale-base: em($em-base) !default;
 /// @require {function} contains-falsy
 @mixin directional-property($pre, $suf, $vals) {
   // Property Names
-  $top : $pre+"-top"+if($suf, "-#{$suf}", "");
+  $top: $pre+"-top"+if($suf, "-#{$suf}", "");
   $bottom: $pre+"-bottom"+if($suf, "-#{$suf}", "");
-  $left : $pre+"-left"+if($suf, "-#{$suf}", "");
-  $right : $pre+"-right"+if($suf, "-#{$suf}", "");
-  $all : $pre+if($suf, "-#{$suf}", "");
+  $left: $pre+"-left"+if($suf, "-#{$suf}", "");
+  $right: $pre+"-right"+if($suf, "-#{$suf}", "");
+  $all: $pre+if($suf, "-#{$suf}", "");
   $vals: collapse-directionals($vals);
   @if contains-falsy($vals) {
     @if nth($vals, 1) {
@@ -1275,7 +1275,7 @@ $modular-scale-base: em($em-base) !default;
 
 @function font-source-declaration( $font-family, $file-path, $asset-pipeline, $file-formats, $font-url) {
   $src: ();
-  $formats-map: ( eot : "#{$file-path}.eot?#iefix" format("embedded-opentype"), woff2: "#{$file-path}.woff2" format("woff2"), woff : "#{$file-path}.woff" format("woff"), ttf : "#{$file-path}.ttf" format("truetype"), svg : "#{$file-path}.svg##{$font-family}" format("svg"));
+  $formats-map: ( eot: "#{$file-path}.eot?#iefix" format("embedded-opentype"), woff2: "#{$file-path}.woff2" format("woff2"), woff: "#{$file-path}.woff" format("woff"), ttf: "#{$file-path}.ttf" format("truetype"), svg: "#{$file-path}.svg##{$font-family}" format("svg"));
   @each $key,
   $values in $formats-map {
     @if contains($file-formats, $key) {
@@ -1407,7 +1407,7 @@ $modular-scale-base: em($em-base) !default;
     }
   }
   $degree: unquote($degree + ",");
-  $spec : unquote($spec + ",");
+  $spec: unquote($spec + ",");
   @return $degree $spec;
 }
 
@@ -1716,7 +1716,7 @@ $modular-scale-base: em($em-base) !default;
       $spec-background: $background;
     }
     $webkit-backgrounds: append($webkit-backgrounds, $webkit-background, comma);
-    $spec-backgrounds : append($spec-backgrounds, $spec-background, comma);
+    $spec-backgrounds: append($spec-backgrounds, $spec-background, comma);
   }
   background: $webkit-backgrounds;
   background: $spec-backgrounds;
@@ -1753,7 +1753,7 @@ $modular-scale-base: em($em-base) !default;
       }
     }
     $webkit-images: append($webkit-images, $webkit-image, comma);
-    $spec-images : append($spec-images, $spec-image, comma);
+    $spec-images: append($spec-images, $spec-image, comma);
   }
   background-image: $webkit-images;
   background-image: $spec-images;
@@ -1796,7 +1796,7 @@ $modular-scale-base: em($em-base) !default;
       $spec-border: $border;
     }
     $webkit-borders: append($webkit-borders, $webkit-border, comma);
-    $spec-borders : append($spec-borders, $spec-border, comma);
+    $spec-borders: append($spec-borders, $spec-border, comma);
   }
   -webkit-border-image: $webkit-borders;
   border-image: $spec-borders;
@@ -2206,11 +2206,11 @@ $modular-scale-base: em($em-base) !default;
       @content;
     }
   }
-  $prefix-for-webkit : $original-prefix-for-webkit !global;
-  $prefix-for-mozilla : $original-prefix-for-mozilla !global;
+  $prefix-for-webkit: $original-prefix-for-webkit !global;
+  $prefix-for-mozilla: $original-prefix-for-mozilla !global;
   $prefix-for-microsoft: $original-prefix-for-microsoft !global;
-  $prefix-for-opera : $original-prefix-for-opera !global;
-  $prefix-for-spec : $original-prefix-for-spec !global;
+  $prefix-for-opera: $original-prefix-for-opera !global;
+  $prefix-for-spec: $original-prefix-for-spec !global;
   @if $original-prefix-for-spec {
     @keyframes #{$name} {
       @content;
@@ -2301,10 +2301,10 @@ $modular-scale-base: em($em-base) !default;
     $fallback-color: $fallback;
   } // Add Commas and spaces
   $shape-size: if($shape-size, "#{$shape-size}, ", null);
-  $pos : if($pos, "#{$pos}, ", null);
-  $pos-spec : if($pos, "at #{$pos}", null);
+  $pos: if($pos, "#{$pos}, ", null);
+  $pos-spec: if($pos, "at #{$pos}", null);
   $shape-size-spec: if(($shape-size-spec !=" ") and ($pos==null), "#{$shape-size-spec}, ", "#{$shape-size-spec} ");
-  background-color : $fallback-color;
+  background-color: $fallback-color;
   background-image: -webkit-radial-gradient(unquote(#{$pos}#{$shape-size}#{$full}));
   background-image: unquote("radial-gradient(#{$shape-size-spec}#{$pos-spec}#{$full})");
 }
@@ -2417,8 +2417,8 @@ $modular-scale-base: em($em-base) !default;
         }
       }
       $webkit: append($webkit, $list1);
-      $moz : append($moz, $list2);
-      $spec : append($spec, $list3);
+      $moz: append($moz, $list2);
+      $spec: append($spec, $list3);
     }
     @else {
       $webkit: append($webkit, $list, comma);
@@ -2649,14 +2649,14 @@ $buttons-list: 'button',
 'input[type="button"]',
 'input[type="reset"]',
 'input[type="submit"]';
-$all-buttons : assign-inputs($buttons-list);
+$all-buttons: assign-inputs($buttons-list);
 $all-buttons-active: assign-inputs($buttons-list, active);
-$all-buttons-focus : assign-inputs($buttons-list, focus);
-$all-buttons-hover : assign-inputs($buttons-list, hover);
-$all-button-inputs : $all-buttons;
+$all-buttons-focus: assign-inputs($buttons-list, focus);
+$all-buttons-hover: assign-inputs($buttons-list, hover);
+$all-button-inputs: $all-buttons;
 $all-button-inputs-active: $all-buttons-active;
-$all-button-inputs-focus : $all-buttons-focus;
-$all-button-inputs-hover : $all-buttons-hover;
+$all-button-inputs-focus: $all-buttons-focus;
+$all-button-inputs-hover: $all-buttons-hover;
 /* scss-combine:addons/clearfix */
 
 @charset "UTF-8";
@@ -2867,7 +2867,7 @@ sans-serif;
     $position: relative;
   }
   $coordinates: unpack($coordinates);
-  $offsets: ( top : nth($coordinates, 1), right : nth($coordinates, 2), bottom: nth($coordinates, 3), left : nth($coordinates, 4));
+  $offsets: ( top: nth($coordinates, 1), right: nth($coordinates, 2), bottom: nth($coordinates, 3), left: nth($coordinates, 4));
   position: $position;
   @each $offset,
   $value in $offsets {
@@ -2956,7 +2956,7 @@ sans-serif;
     background-image: image-url("#{$filename}.#{$extension}");
   }
   @else {
-    background-image : url("#{$filename}.#{$extension}");
+    background-image: url("#{$filename}.#{$extension}");
   }
   @include hidpi {
     @if $asset-pipeline {
@@ -3137,12 +3137,12 @@ $text-inputs-list: 'input[type="color"]',
 'input[type="url"]',
 'input[type="week"]',
 'textarea';
-$all-text-inputs : assign-inputs($text-inputs-list);
+$all-text-inputs: assign-inputs($text-inputs-list);
 $all-text-inputs-active: assign-inputs($text-inputs-list,
 active);
-$all-text-inputs-focus : assign-inputs($text-inputs-list,
+$all-text-inputs-focus: assign-inputs($text-inputs-list,
 focus);
-$all-text-inputs-hover : assign-inputs($text-inputs-list,
+$all-text-inputs-hover: assign-inputs($text-inputs-list,
 hover);
 /* scss-combine:addons/timing-functions */
 
@@ -3152,71 +3152,71 @@ hover);
 /// Timing functions are the same as demoed here: http://jqueryui.com/resources/demos/effect/easing.html
 ///
 /// @type cubic-bezier
-$ease-in-quad : cubic-bezier(0.550,
+$ease-in-quad: cubic-bezier(0.550,
 0.085,
 0.680,
 0.530);
-$ease-in-cubic : cubic-bezier(0.550,
+$ease-in-cubic: cubic-bezier(0.550,
 0.055,
 0.675,
 0.190);
-$ease-in-quart : cubic-bezier(0.895,
+$ease-in-quart: cubic-bezier(0.895,
 0.030,
 0.685,
 0.220);
-$ease-in-quint : cubic-bezier(0.755,
+$ease-in-quint: cubic-bezier(0.755,
 0.050,
 0.855,
 0.060);
-$ease-in-sine : cubic-bezier(0.470,
+$ease-in-sine: cubic-bezier(0.470,
 0.000,
 0.745,
 0.715);
-$ease-in-expo : cubic-bezier(0.950,
+$ease-in-expo: cubic-bezier(0.950,
 0.050,
 0.795,
 0.035);
-$ease-in-circ : cubic-bezier(0.600,
+$ease-in-circ: cubic-bezier(0.600,
 0.040,
 0.980,
 0.335);
-$ease-in-back : cubic-bezier(0.600,
+$ease-in-back: cubic-bezier(0.600,
 -0.280,
 0.735,
 0.045);
-$ease-out-quad : cubic-bezier(0.250,
+$ease-out-quad: cubic-bezier(0.250,
 0.460,
 0.450,
 0.940);
-$ease-out-cubic : cubic-bezier(0.215,
+$ease-out-cubic: cubic-bezier(0.215,
 0.610,
 0.355,
 1.000);
-$ease-out-quart : cubic-bezier(0.165,
+$ease-out-quart: cubic-bezier(0.165,
 0.840,
 0.440,
 1.000);
-$ease-out-quint : cubic-bezier(0.230,
+$ease-out-quint: cubic-bezier(0.230,
 1.000,
 0.320,
 1.000);
-$ease-out-sine : cubic-bezier(0.390,
+$ease-out-sine: cubic-bezier(0.390,
 0.575,
 0.565,
 1.000);
-$ease-out-expo : cubic-bezier(0.190,
+$ease-out-expo: cubic-bezier(0.190,
 1.000,
 0.220,
 1.000);
-$ease-out-circ : cubic-bezier(0.075,
+$ease-out-circ: cubic-bezier(0.075,
 0.820,
 0.165,
 1.000);
-$ease-out-back : cubic-bezier(0.175,
+$ease-out-back: cubic-bezier(0.175,
 0.885,
 0.320,
 1.275);
-$ease-in-out-quad : cubic-bezier(0.455,
+$ease-in-out-quad: cubic-bezier(0.455,
 0.030,
 0.515,
 0.955);
@@ -3232,19 +3232,19 @@ $ease-in-out-quint: cubic-bezier(0.860,
 0.000,
 0.070,
 1.000);
-$ease-in-out-sine : cubic-bezier(0.445,
+$ease-in-out-sine: cubic-bezier(0.445,
 0.050,
 0.550,
 0.950);
-$ease-in-out-expo : cubic-bezier(1.000,
+$ease-in-out-expo: cubic-bezier(1.000,
 0.000,
 0.000,
 1.000);
-$ease-in-out-circ : cubic-bezier(0.785,
+$ease-in-out-circ: cubic-bezier(0.785,
 0.135,
 0.150,
 0.860);
-$ease-in-out-back : cubic-bezier(0.680,
+$ease-in-out-back: cubic-bezier(0.680,
 -0.550,
 0.265,
 1.550);
@@ -5042,7 +5042,7 @@ $global-function: ease !default;
 $global-delay: .2s !default;
 $global-count: 1 !default;
 $global-fill: both !default;
-$global-visibility : hidden !default;
+$global-visibility: hidden !default;
 $prefixes: (webkit moz ms o spec);
 $prefix-for-webkit: true !default;
 $prefix-for-mozilla: true !default;
@@ -7813,8 +7813,7 @@ button {
     padding-top: $gutter * 2;
     padding-bottom: 12px;
     text-align: center;
-    border-top: 1px solid $border-color;
-    // vpv
+    border-top: 1px solid $border-color; // vpv
     @media screen and (max-width: 1039px) {
       height: 48px;
     }
@@ -8863,8 +8862,7 @@ th {
   margin-top: -35px;
   @include breakpoint(m-only) {
     top: 20px;
-    margin-top: 0;
-    // vpv
+    margin-top: 0; // vpv
     top: 0px;
     height: 100%;
     >div[data-carousel-nav-item] {
@@ -8875,7 +8873,7 @@ th {
       margin: auto;
       height: 48px;
       width: 24px;
-      &:last-child  {
+      &:last-child {
         left: initial;
         right: 0;
       }
@@ -10518,8 +10516,7 @@ $auth-font-size: $account-font-size !default;
       line-height: 16px;
       color: $accent-color;
       background-color: $light-color;
-    }
-    // vpv
+    } // vpv
     pointer-events: none;
   }
 }
@@ -10578,7 +10575,8 @@ $auth-font-size: $account-font-size !default;
         background-color: transparent;
         border: 0;
       }
-      .cart-count { // desktop cart count
+      .cart-count {
+        // desktop cart count
         // vpv
         // top: 18px;
         // @media screen and (min-width: 1040px) {
@@ -11534,8 +11532,7 @@ $page-banner-border: darken($banner-background-color,
 // Sorting
 .product-grid-sorting {
   position: relative;
-  margin-bottom: $gutter * 3;
-  // vpv
+  margin-bottom: $gutter * 3; // vpv
   &.has-image {
     margin-top: 42px;
   }
@@ -11816,12 +11813,10 @@ $page-banner-border: darken($banner-background-color,
     left: 0;
     z-index: -1;
     width: 450px;
-    height: 100vh;
-    // vpv
+    height: 100vh; // vpv
     @media screen and (max-width: 1039px) {
       height: calc(100vh - 106px);
-    }
-    //
+    } //
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -12698,8 +12693,7 @@ $page-banner-border: darken($banner-background-color,
   text-transform: capitalize; // scss-lint:disable VariableForProperty
   .price-rrp {
     // vpv
-    padding-left: 4px;
-    // padding-right: 10px;
+    padding-left: 4px; // padding-right: 10px;
     color: rgba($dark-color, 0.5);
     text-decoration: line-through;
   }
@@ -12905,8 +12899,7 @@ $page-banner-border: darken($banner-background-color,
     color: $meta-color;
     @include breakpoint(m-only) {
       display: inline-block;
-    }
-    // vpv
+    } // vpv
     @media screen and (min-width: 770px) {
       position: absolute !important;
     }
@@ -14029,8 +14022,7 @@ $product-option-size: 35px;
 
 // Details
 .category-details {
-  @include outer-container;
-  // vpv
+  @include outer-container; // vpv
   position: relative;
 }
 
@@ -14056,6 +14048,8 @@ $product-option-size: 35px;
 }
 
 .category-details-row {
+  // vpv
+  width: 100%; //
   display: table-row;
   @include breakpoint(l-only) {
     display: block;
@@ -14065,8 +14059,7 @@ $product-option-size: 35px;
 .category-image,
 .category-info {
   display: table-cell;
-  width: 50%;
-  // vpv
+  width: 50%; // vpv
   // width: auto;
   //
   padding-right: $gutter * 2;
@@ -14093,8 +14086,7 @@ $product-option-size: 35px;
   }
   @include breakpoint(m-only) {
     padding-top: $gutter;
-  }
-  // .has-image & {
+  } // .has-image & {
   //   padding-left: $gutter * 2;
   //   @include breakpoint(xl-only) {
   //     padding-left: $gutter * 3 - 5px;
@@ -14105,17 +14097,14 @@ $product-option-size: 35px;
   // }
   p:last-of-type {
     margin-bottom: 0;
-  }
-
-  // vpv
-  .has-image  & {
+  } // vpv
+  .has-image & {
     position: relative;
     display: block;
     margin: auto;
     padding: none;
     z-index: 3;
   }
-
 }
 
 .category-image {
@@ -14128,13 +14117,11 @@ $product-option-size: 35px;
   //     display: inline-block;
   //   }
   // }
-
   // vpv
-
   position: absolute;
   top: 0;
   left: 0;
-  height: 27vw; // 400px;
+  height: 350px; // 27vw; // 400px;
   width: calc(100% - 60px);
   margin-left: 30px;
   margin-top: -48px;
@@ -14143,13 +14130,11 @@ $product-option-size: 35px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
   @media screen and (max-width: 1039px) {
     width: calc(100% - 48px);
     margin-left: 24px;
     margin-top: -24px;
-  }
-  // >img {
+  } // >img {
   //   position :absolute;
   //   top: 0;
   //   left: 0;
@@ -14179,7 +14164,8 @@ $product-option-size: 35px;
 
 .category-title,
 .category-description {
-  width: 66%;
+  $desktop-min: 1040px;
+  width: 66%; // this is overwritten in production to be 100%
   margin-top: 0;
   @include breakpoint(xl-only) {
     width: 100%;
@@ -14192,8 +14178,35 @@ $product-option-size: 35px;
   .has-image & {
     width: 100%;
   }
-  img {
+  &[data-categoryName="Meet Francine"] {
+    width: 100%;
+  }
+  img:not([alt="Francine Porter, Creator"]) {
     display: none;
+  }
+  img[alt="Francine Porter, Creator"] {
+    position: relative;
+    display: block; // width: 100%;
+    height: 100%;
+  }
+  .francine-left,
+  .francine-right {
+    @media screen and (min-width: $desktop-min) {
+      position: relative;
+      display: inline-block;
+    }
+  }
+  .francine-left {
+    @media screen and (min-width: $desktop-min) {
+      width: 40%;
+      vertical-align: top;
+      margin-right: 24px;
+    }
+  }
+  .francine-right {
+    @media screen and (min-width: $desktop-min) {
+      width: 50%;
+    }
   }
 }
 
@@ -15913,4 +15926,3 @@ $product-option-size: 35px;
 }
 
 /* Rebillia Style End */
-
