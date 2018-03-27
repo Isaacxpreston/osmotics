@@ -24,7 +24,7 @@ category:
           {{/if}}
 
           <div class="fonts-vpv category-info {{#if category.description.length}}has-description{{/if}}">
-            <h1 class="category-title h1-important">{{category.name}}</h1>
+            <h1 class="category-title h1-important" data-categoryName="{{category.name}}">{{category.name}}</h1>
             {{#if category.description.length}}
               <div class="category-description p medium traverse" data-categoryName="{{category.name}}">{{{category.description}}}</div>
             {{/if}}
