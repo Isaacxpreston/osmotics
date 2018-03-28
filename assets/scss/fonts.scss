@@ -8,19 +8,16 @@
   src: url('https://s3-us-west-2.amazonaws.com/osmotics-vpv/Karla-Regular.ttf') format('truetype');
 }
 
-
 // global karla fallback
-
-*{ 
+* {
   font-family: 'Karla-Regular', 'Futura', 'Lato', sans-serif !important;
 }
-
 
 // variables
 $black: #37333D;
 $silver: #858594;
 $white: #FFFFFF;
-
+$tablet-max: 1039px;
 // karla fonts wrapper
 .fonts-vpv {
   h1,
@@ -111,8 +108,19 @@ $white: #FFFFFF;
     color: $black;
     letter-spacing: 0;
     line-height: 24px;
-  }
-  // make any font bold
+  } // new PDP styles
+  .pdp-header {
+    font-family: 'Baskerville' !important;
+    font-size: 54px;
+    color: $black;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 60px;
+    @media screen and (max-width: $tablet-max) {
+      font-size: 38px;
+      line-height: 48px;
+    }
+  } // make any font bold
   .bold {
     font-family: 'Karla-Bold' !important;
   }

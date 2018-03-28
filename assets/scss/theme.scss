@@ -1,3 +1,14 @@
+// vpv
+
+$desktop-min: 1040px;
+$tablet-max: 1039px;
+$tablet-min: 768px;
+$mobile-max: 767px;
+
+//
+
+
+
 /*! Theme: Foundry v1.1.13 */
 
 // Libraries
@@ -12202,8 +12213,11 @@ $page-banner-border: darken($banner-background-color,
 
 // Header
 .product-grid-header {
-  padding-bottom: 0;
+  // vpv
+  padding-top: 20px;
+  padding-bottom: 0px;
   border-bottom: 0;
+  //
   &.has-sidebar {
     padding-bottom: 75px;
     border-bottom: 1px solid $border-color;
@@ -12223,6 +12237,8 @@ $page-banner-border: darken($banner-background-color,
 // List
 .product-grid {
   overflow: hidden;
+  // vpv
+  padding-top: 0px;
 }
 
 .product-grid-list {
@@ -14022,13 +14038,29 @@ $product-option-size: 35px;
 
 // Details
 .category-details {
-  @include outer-container; // vpv
+  @include outer-container;
+  // vpv
   position: relative;
+  display: flex;
+  justify-content: center;
+  //
 }
 
 .category-details-wrap {
-  display: table;
-  width: 100%;
+  // display: table;
+  // width: 100%;
+  // vpv 
+  position: relative;
+  display: block;
+  width: 55%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: $mobile-max) {
+    width: calc(100% - 20px) !important;
+  }
+  //
   max-width: $max-width + ($gutter * 4);
   border-collapse: separate;
   border-spacing: 30px 0;
@@ -14058,8 +14090,11 @@ $product-option-size: 35px;
 
 .category-image,
 .category-info {
-  display: table-cell;
-  width: 50%; // vpv
+  // display: table-cell;
+  display: block;
+  width: 100%;
+  // width: 50%; // vpv
+  // background: blue;
   // width: auto;
   //
   padding-right: $gutter * 2;
@@ -14119,12 +14154,15 @@ $product-option-size: 35px;
   // }
   // vpv
   position: absolute;
-  top: 0;
+  // top: 0;
   left: 0;
-  height: 350px; // 27vw; // 400px;
+  right: 0;
+  margin: auto;
+  max-width: calc(1280px - 60px);
+  height: 100%; //  calc(100% - 75px); // 27vw; // 400px;
   width: calc(100% - 60px);
-  margin-left: 30px;
-  margin-top: -48px;
+  // margin-left: 30px;
+  // margin-top: -48px;
   overflow: hidden;
   z-index: 1;
   background-size: cover;
@@ -14162,12 +14200,13 @@ $product-option-size: 35px;
   }
 }
 
-$desktop-min: 1040px;
-
 .category-title,
 .category-description {
 
-  width: 66%; // this is overwritten in production to be 100%
+  // width: 66%; // this is overwritten in production to be 100%
+  // vpv
+  width: 100%;
+  //
   margin-top: 0;
   @include breakpoint(xl-only) {
     width: 100%;
@@ -14216,6 +14255,7 @@ $desktop-min: 1040px;
 }
 
 .category-title {
+  // vpv
   &[data-categoryName="Meet Francine"] {
     padding-right: 0px !important;
     @media screen and (min-width: $desktop-min) {
@@ -14223,6 +14263,18 @@ $desktop-min: 1040px;
       width: 50%;
       margin-left: calc(24px + 40%);
     }
+  }
+  padding-top: 92px;
+  @media screen and (max-width: $tablet-max) {
+    padding-top: 36px;
+  }
+}
+
+.category-description {
+  // vpv
+  padding-bottom: 92px;
+  @media screen and (max-width: $tablet-max) {
+    padding-bottom: 48px;
   }
 }
 

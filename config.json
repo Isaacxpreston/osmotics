@@ -157,6 +157,10 @@
       "product_zoom": {
         "width": 1000,
         "height": 1000
+      },
+      "plp_header": {
+        "width": 2500,
+        "height": 2500
       }
     }
   },
