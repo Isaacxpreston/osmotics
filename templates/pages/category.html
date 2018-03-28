@@ -1,10 +1,16 @@
---- category: products: limit: {{theme_settings.product_results_per_page}} --- {{#partial "page"}}
+---
+category:
+  products:
+    limit: {{theme_settings.product_results_per_page}}
+---
+
+{{#partial "page"}}
 
 <header class="sub-header">
   {{> components/common/breadcrumbs breadcrumbs}}
 </header>
 
-<section class="layout-block position-relative product-grid-header{{#if category.faceted_search_enabled}}has-sidebar{{/if}}">
+<section class="layout-block position-relative product-grid-header{{#if category.faceted_search_enabled}}has-sidebar{{/if}} {{#if category.description.length}}has-description{{/if}}">
 
   <!-- image -->
   {{#if category.image}}
@@ -14,7 +20,7 @@
 
   <!-- details -->
   <div class="category-details">
-    <div class="category-details-wrap {{#if category.image}}has-image{{/if}}">
+    <div class="category-details-wrap {{#if category.image}}has-image{{/if}}" data-categoryName="{{category.name}}">
       <div class="category-details-row">
 
 
@@ -32,7 +38,7 @@
   </div>
 </section>
 
-<section class="layout-block product-grid">
+<section class="layout-block product-grid {{#if category.image}}has-image{{/if}}">
   <div class="product-grid-container {{#if category.faceted_search_enabled}}has-sidebar{{/if}}">
 
     {{#if category.products.length}} {{#unless category.faceted_search_enabled}}

@@ -1289,6 +1289,9 @@ p.custom{
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
+            // vpv
+            width: calc(100% - 60px);
+            margin: auto;
           }
           .top-page-header.sun-damage {
             background-image: url('https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/sunprotectionheader-slices3.jpg?t=1492641167&_ga=1.216461203.422858291.1492640256');
