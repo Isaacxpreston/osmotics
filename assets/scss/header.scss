@@ -660,6 +660,7 @@ body {
     display: block;
     position: relative;
     margin-top: 12px;
+    z-index: 99;
     >a {
       font-size: 0px !important;
     }

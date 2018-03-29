@@ -10551,6 +10551,7 @@ $auth-font-size: $account-font-size !default;
 .header-tools-item {
   position: relative;
   z-index: inherit;
+  // z-index: 2;
   float: left;
   height: 30px;
   line-height: 30px;
@@ -14235,6 +14236,13 @@ $product-option-size: 35px;
   }
   &[data-categoryName="Meet Francine"] {
     width: 100%;
+  }
+  // hide text on renovage and spring collection because title is in image
+  &[data-categoryname="Fran's Spring Must Haves"], &[data-categoryname="Renovage®"] {
+    &.has-image {
+      opacity: 0;
+      user-select: none;
+    }
   }
   img:not([alt="Francine Porter, Creator"]) {
     display: none;
