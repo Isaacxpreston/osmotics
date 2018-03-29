@@ -620,7 +620,29 @@
 
 		$(window).resize(function () {
 			getPressLogoImageSize();
+
+			var keepOpen = null
+			var resizeTimer = null
+
+			$('.nav-option').each(function () {
+				if ($(this).hasClass('nav-option-open')) {
+					keepOpen = this
+				}
+			})
+
 			navigationClose(); // close nav
+
+			// debounce, wait until resize ends to fire click
+			// https://css-tricks.com/snippets/jquery/done-resizing-event/
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+
+				if (keepOpen) {
+					$(keepOpen).click()
+				}
+
+			}, 250);
+
 			checkStickyNav() // disable stickyjs if on tablet or mobile
 			if (window.innerWidth > 1039) {
 				$('body').removeClass('no-scroll')
@@ -1103,7 +1125,7 @@
 		}
 
 		// disable second level nav items
-		$('.nav-second-level-item.has-dropdown > a').each(function() {
+		$('.nav-second-level-item.has-dropdown > a').each(function () {
 			$(this).removeAttr('href')
 		})
 
@@ -1214,6 +1236,18 @@
 				$(this).html(temp.replace(/®/g, '<div class="r-text">®</div>'))
 			}
 		})
+
+
+
+		// hide title and description if 'notext' flag found
+
+		var notext = !!document.querySelector('.notext')
+
+		if (notext) {
+			$('[noTextFlag]').each(function () {
+				$(this).addClass('hidetext')
+			})
+		}
 
 
 

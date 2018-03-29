@@ -25,9 +25,9 @@ category:
 
 
         <div class="fonts-vpv category-info {{#if category.description.length}}has-description{{/if}}">
-          <h1 class="category-title pdp-header {{#if category.image}}has-image{{/if}}" data-categoryName="{{category.name}}">{{category.name}}</h1>
+          <h1 class="category-title pdp-header {{#if category.image}}has-image{{/if}}" data-categoryName="{{category.name}}" noTextFlag>{{category.name}}</h1>
           {{#if category.description.length}}
-          <div class="category-description p medium traverse {{#if category.image}}has-image{{/if}}" data-categoryName="{{category.name}}">{{{category.description}}}</div>
+          <div class="category-description p medium traverse {{#if category.image}}has-image{{/if}}" data-categoryName="{{category.name}}" noTextFlag>{{{category.description}}}</div>
           {{/if}}
         </div>
 
