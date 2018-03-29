@@ -161,6 +161,7 @@ body {
       line-height: 32px !important;
       opacity: 0.9;
       transition: all $transition-1;
+      font-weight: normal !important;
       &:hover {
         opacity: 1;
         color: #2B7FA0 !important;
@@ -276,13 +277,13 @@ body {
 
 .navigation-search-submit {
   position: absolute;
-  height: 24px;
-  width: 24px;
+  height: 17px;
+  width: 17px;
   z-index: 2;
   top: 0;
   right: 0;
   margin-top: 50px;
-  margin-right: 36px;
+  margin-right: 28px;
   user-select: none;
   cursor: pointer;
   @media screen and (max-width: 1039px) {
@@ -290,6 +291,7 @@ body {
     pointer-events: none;
     width: 18px;
     height: 18px;
+    margin-right: 36px;
   }
 }
 
@@ -821,7 +823,7 @@ a.p.small,
   }
   @media screen and (max-width: 1039px) {
     margin-top: 22px;
-    margin-right: 10px;
+    margin-right: 16px;
   }
 }
 

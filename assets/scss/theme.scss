@@ -1,14 +1,9 @@
 // vpv
-
 $desktop-min: 1040px;
 $tablet-max: 1039px;
 $tablet-min: 768px;
 $mobile-max: 767px;
-
 //
-
-
-
 /*! Theme: Foundry v1.1.13 */
 
 // Libraries
@@ -7660,8 +7655,7 @@ p {
   &.centered {
     display: inline-block;
     margin-top: 0;
-    margin-bottom: $gutter * 2;
-    // color: $body-color;
+    margin-bottom: $gutter * 2; // color: $body-color;
     text-transform: none;
     @include breakpoint(l-only) {
       margin-bottom: $gutter * 2;
@@ -10516,6 +10510,10 @@ $auth-font-size: $account-font-size !default;
     text-align: center;
     background-color: $accent-color;
     border-radius: 50%;
+    // vpv
+    user-select: none;
+    cursor: pointer;
+    //
     .header-alternate & {
       position: absolute;
       top: 50%;
@@ -10527,8 +10525,7 @@ $auth-font-size: $account-font-size !default;
       line-height: 16px;
       color: $accent-color;
       background-color: $light-color;
-    } // vpv
-    pointer-events: none;
+    }
   }
 }
 
@@ -10550,8 +10547,7 @@ $auth-font-size: $account-font-size !default;
 
 .header-tools-item {
   position: relative;
-  z-index: inherit;
-  // z-index: 2;
+  z-index: inherit; // z-index: 2;
   float: left;
   height: 30px;
   line-height: 30px;
@@ -10579,7 +10575,10 @@ $auth-font-size: $account-font-size !default;
       position: relative;
       top: -10px;
       height: 50px;
-      line-height: 50px;
+      line-height: 50px; // vpv
+      @media screen and (min-width: $desktop-min) {
+        margin-left: -2px;
+      }
       .header-alternate & {
         top: auto;
         height: 50px;
@@ -10588,12 +10587,6 @@ $auth-font-size: $account-font-size !default;
         border: 0;
       }
       .cart-count {
-        // desktop cart count
-        // vpv
-        // top: 18px;
-        // @media screen and (min-width: 1040px) {
-        //   transform: translateX(-10px);
-        // }
         .header-alternate & {
           top: 50%;
         }
@@ -10604,12 +10597,12 @@ $auth-font-size: $account-font-size !default;
     background-color: $body-background-color;
     border: 1px solid $border-color;
     border-bottom-color: $body-background-color; // scss-lint:disable UnnecessaryParentReference
-    &+li {
-      z-index: -1;
-      .header-alternate & {
-        z-index: 1;
-      }
-    }
+    // &+li {
+    //   z-index: -1;
+    //   .header-alternate & {
+    //     z-index: 1;
+    //   }
+    // }
   } // skipping the mobile nav toggle
   &:nth-child(2) {
     border: 0;
@@ -12031,7 +12024,7 @@ $page-banner-border: darken($banner-background-color,
       padding-top: 10px;
       padding-right: 20px;
       padding-bottom: 10px;
-      padding-left: 20px;
+      // padding-left: 20px;
       border: 1px solid $border-color;
       border-radius: 4px;
       box-sizing: border-box;
@@ -12047,7 +12040,9 @@ $page-banner-border: darken($banner-background-color,
     padding-top: 0;
     padding-right: 20px;
     padding-bottom: 0;
-    padding-left: 20px;
+    // padding-left: 20px;
+    // vpv
+    margin-left: 20px;
     font-size: 25px;
     line-height: 45px;
     vertical-align: top;
@@ -12218,11 +12213,9 @@ $page-banner-border: darken($banner-background-color,
   padding-bottom: 92px;
   padding-top: 20px;
   border-bottom: 0;
-
   &.has-description {
     padding-bottom: 0px;
-  }
-  //
+  } //
   &.has-sidebar {
     padding-bottom: 75px;
     border-bottom: 1px solid $border-color;
@@ -12241,12 +12234,10 @@ $page-banner-border: darken($banner-background-color,
 
 // List
 .product-grid {
-  overflow: hidden;
-  // vpv
+  overflow: hidden; // vpv
   &.has-image {
     padding-top: 0px;
   }
-
 }
 
 .product-grid-list {
@@ -14046,12 +14037,10 @@ $product-option-size: 35px;
 
 // Details
 .category-details {
-  @include outer-container;
-  // vpv
+  @include outer-container; // vpv
   position: relative;
   display: flex;
-  justify-content: center;
-  //
+  justify-content: center; //
 }
 
 .category-details-wrap {
@@ -14070,9 +14059,8 @@ $product-option-size: 35px;
   }
   @media screen and (max-width: $mobile-max) {
     width: calc(100% - 20px) !important;
-  }
-  //
-  max-width: $max-width + ($gutter * 4);
+  } //
+  max-width: $max-width+($gutter * 4);
   border-collapse: separate;
   border-spacing: 30px 0;
   table-layout: fixed;
@@ -14103,8 +14091,7 @@ $product-option-size: 35px;
 .category-info {
   // display: table-cell;
   display: block;
-  width: 100%;
-  // width: 50%; // vpv
+  width: 100%; // width: 50%; // vpv
   // background: blue;
   // width: auto;
   //
@@ -14164,15 +14151,13 @@ $product-option-size: 35px;
   //   }
   // }
   // vpv
-  position: absolute;
-  // top: 0;
+  position: absolute; // top: 0;
   left: 0;
   right: 0;
   margin: auto;
   max-width: calc(1280px - 60px);
   height: 100%; //  calc(100% - 75px); // 27vw; // 400px;
-  width: calc(100% - 60px);
-  // margin-left: 30px;
+  width: calc(100% - 60px); // margin-left: 30px;
   // margin-top: -48px;
   overflow: hidden;
   z-index: 1;
@@ -14181,8 +14166,7 @@ $product-option-size: 35px;
   background-position: center center;
   @media screen and (max-width: $mobile-max) {
     display: none;
-  }
-  // @media screen and (max-width: 1039px) {
+  } // @media screen and (max-width: 1039px) {
   //   width: calc(100% - 48px);
   //   margin-left: 24px;
   //   margin-top: -24px;
@@ -14217,11 +14201,9 @@ $product-option-size: 35px;
 
 .category-title,
 .category-description {
-
   // width: 66%; // this is overwritten in production to be 100%
   // vpv
-  width: 100%;
-  //
+  width: 100%; //
   margin-top: 0;
   @include breakpoint(xl-only) {
     width: 100%;
@@ -14236,8 +14218,7 @@ $product-option-size: 35px;
   }
   &[data-categoryName="Meet Francine"] {
     width: 100%;
-  }
-  // hide text on renovage and spring collection because title is in image
+  } // hide text on renovage and spring collection because title is in image
   &.hidetext {
     &.has-image {
       opacity: 0;
