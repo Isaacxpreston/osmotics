@@ -1102,15 +1102,16 @@
 			})
 		}
 
-		var getState = function (exp) {
-			return exp
-		}
+		// disable second level nav items
+		$('.nav-second-level-item.has-dropdown > a').each(function() {
+			$(this).removeAttr('href')
+		})
 
-		$('.nav-second-level-item').click(function (e) {
+		$('.nav-second-level-item').click(function () {
 
 			// var isOpen = $(this).hasClass('menu-open')
 
-			e.preventDefault();
+			// e.preventDefault();
 			closeSecondLevels()
 
 			// if (!isOpen) {
@@ -1209,7 +1210,7 @@
 			var R = '®'
 			if ($(this).text().indexOf(R) !== -1) {
 				var temp = $(this).html()
-				console.log(temp)
+				// console.log(temp)
 				$(this).html(temp.replace(/®/g, '<div class="r-text">®</div>'))
 			}
 		})

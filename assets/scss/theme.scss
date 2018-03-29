@@ -7661,7 +7661,7 @@ p {
     display: inline-block;
     margin-top: 0;
     margin-bottom: $gutter * 2;
-    color: $body-color;
+    // color: $body-color;
     text-transform: none;
     @include breakpoint(l-only) {
       margin-bottom: $gutter * 2;

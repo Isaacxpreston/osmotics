@@ -109,13 +109,14 @@ $tablet-max: 1039px;
     letter-spacing: 0;
     line-height: 24px;
   } // new PDP styles
-  .pdp-header {
+  .pdp-header, .baskerville-header {
     font-family: 'Baskerville' !important;
     font-size: 54px;
     color: $black;
     letter-spacing: 0;
     text-align: center;
     line-height: 60px;
+    color: $black;
     @media screen and (max-width: $tablet-max) {
       font-size: 38px;
       line-height: 48px;

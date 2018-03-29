@@ -307,7 +307,7 @@ body.four-step-systemstep-2-correct .category-details-wrap,
 body.four-step-systemstep-3-defend .category-details-wrap,
 body.four-step-systemstep-4-protect .category-details-wrap,
 body.four-step-collections .category-details-wrap,
-body.osmotics-elite .page-header,
+// body.osmotics-eliteDONOTUSE .page-header,
 body.step-1-cleansers .category-details-wrap,
 body.step-2-correct-anti-agers .category-details-wrap,
 body.step-3-defend-moisturizers .category-details-wrap,
@@ -393,9 +393,9 @@ body.four-step-collections .category-details-wrap {
   background: url('images/navheader-4stepcollections.jpg');
 }
 
-body.osmotics-elite .page-header {
-  background: url('images/navheader-osmoticselite.jpg');
-}
+// body.osmotics-elite .page-header {
+//   background: url('images/navheader-osmoticselite.jpg');
+// }
 
 body.anti-agers-overview .page-header {
   background: url('https://cdn6.bigcommerce.com/s-29yprjq96w/product_images/uploaded_images/step-2-header.jpg');
@@ -506,19 +506,19 @@ body.three-in-1-ageless-facial-enhancer-1 .category-details-wrap h1.category-tit
   margin-bottom: 15px;
 }
 
-body.osmotics-elite .page-title.centered::after {
-  display: none !important;
-}
+// body.osmotics-elite .page-title.centered::after {
+//   display: none !important;
+// }
 
-body.osmotics-elite .page-title.centered {
-  font-size: 80px;
-  text-transform: none;
-  font-family: 'Baskerville';
-  font-weight: 400;
-  color: black;
-  letter-spacing: -4px;
-  margin-bottom: 0px !important;
-}
+// body.osmotics-elite .page-title.centered {
+//   font-size: 80px;
+//   text-transform: none;
+//   font-family: 'Baskerville';
+//   font-weight: 400;
+//   color: black;
+//   letter-spacing: -4px;
+//   margin-bottom: 0px !important;
+// }
 
 body.dark-circles-and-under-eye-puffiness h1, body.expression-lines-loss-of-volume h1, body.neck-and-decollete h1, body.fine-lines-and-wrinkles h1 {
   text-transform: none !important;
