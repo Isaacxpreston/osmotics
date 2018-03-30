@@ -2469,5 +2469,14 @@ p strong .vglnk span {
 // notext flag
 
 .notext {
-  display: none;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+// white text fix on osmotics elite
+
+#fake-footer-button, .join-now {
+  color: white !important;
 }

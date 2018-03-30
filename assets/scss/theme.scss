@@ -14221,8 +14221,10 @@ $product-option-size: 35px;
   } // hide text on renovage and spring collection because title is in image
   &.hidetext {
     &.has-image {
-      opacity: 0;
-      user-select: none;
+      @media screen and (min-width: 768px) {
+        opacity: 0;
+        user-select: none;
+      }
     }
   }
   img:not([alt="Francine Porter, Creator"]) {
