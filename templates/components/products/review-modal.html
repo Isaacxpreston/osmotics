@@ -64,16 +64,7 @@
         {{!-- Comments --}}
         {{> core/forms/common/multiline label=(lang 'product.reviews.form.comments') name="revtext" id="rating-comment" required="true" rows=6 prefill=(lang 'product.reviews.form.comments')}}
 
-        {{#if product.reviews.captcha}}
-          <div class="review-form-captcha">
-            <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k={{product.reviews.captcha}}"></script>
-            <noscript>
-              <iframe src="https://www.google.com/recaptcha/api/noscript?k={{product.reviews.captcha}}" height="300" width="500" frameborder="0"></iframe>
-              <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
-              <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-            </noscript>
-          </div>
-        {{/if}}
+        {{{product.reviews.recaptcha.markup}}}
 
         <input type="hidden" name="product_id" value="{{product.id}}" />
         <input type="hidden" name="action" value="post_review" />
